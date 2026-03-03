@@ -1,0 +1,1353 @@
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 8, in <module>
+    from logger import logger
+  File "/Users/ashleyberndt/solana-perps-bot/logger.py", line 8, in <module>
+    from loguru import logger
+ModuleNotFoundError: No module named 'loguru'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    
+    ^
+SyntaxError: invalid non-printable character U+E000
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 11, in <module>
+    from logger import setup_logger
+ImportError: cannot import name 'setup_logger' from 'logger' (/Users/ashleyberndt/solana-perps-bot/logger.py)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+  File "/Users/ashleyberndt/solana-perps-bot/signal_generator.py", line 114
+    f"[bold re*
+    ^
+SyntaxError: unterminated f-string literal (detected at line 114)
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+ModuleNotFoundError: No module named 'signal_generator'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 12, in <module>
+    from signal_generator import SignalGenerator
+ModuleNotFoundError: No module named 'signal_generator'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'
+Traceback (most recent call last):
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 80, in <module>
+    main()
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 74, in main
+    asyncio.run(run_signal_generator(symbols=args.symbols, duration=args.duration))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/perps/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/ashleyberndt/solana-perps-bot/main.py", line 51, in run_signal_generator
+    sg = SignalGenerator(symbols=symbols, timeframe="5m")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalGenerator.__init__() got an unexpected keyword argument 'symbols'

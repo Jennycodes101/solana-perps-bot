@@ -1,0 +1,1425 @@
+2026-03-03 10:34:00 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 10:34:45 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 10:36:45 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 10:40:23 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 10:40:23 | INFO     | __main__:run_backtest:17 - Starting backtest for SOL (180 days)
+2026-03-03 10:40:23 | INFO     | __main__:run_backtest:21 - Generating synthetic data for SOL...
+2026-03-03 10:40:23 | INFO     | data_loader:generate_synthetic_ohlcv:167 - Generated synthetic SOL_5m: 51840 candles
+2026-03-03 10:41:09 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 10:41:11 | INFO     | __main__:run_backtest:17 - Starting backtest for SOL (180 days)
+2026-03-03 10:41:11 | INFO     | __main__:run_backtest:21 - Generating synthetic data for SOL...
+2026-03-03 10:41:11 | INFO     | data_loader:generate_synthetic_ohlcv:167 - Generated synthetic SOL_5m: 51840 candles
+2026-03-03 10:41:12 | INFO     | data_loader:save_cached_data:62 - Cached 51840 rows: SOL_5m
+2026-03-03 10:41:12 | INFO     | backtest:run_backtest:128 - Starting backtest for SOL | Data: 51840 candles | Start: 2025-09-04 10:41:11.631828 | End: 2026-03-03 10:36:11.631828
+2026-03-03 10:50:00 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 10:52:46 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 10:54:25 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 10:55:06 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 10:56:40 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 10:58:47 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:04:10 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:08:42 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:10:39 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:13:45 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:16:27 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:19:25 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:19:26 | INFO     | __main__:run_backtest:17 - Starting backtest for SOL (180 days)
+2026-03-03 11:19:27 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 11:19:27 | INFO     | backtest:run_backtest:128 - Starting backtest for SOL | Data: 51840 candles | Start: 2025-09-04 10:41:11.631828 | End: 2026-03-03 10:36:11.631828
+2026-03-03 11:21:19 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:21:19 | INFO     | __main__:run_backtest:17 - Starting backtest for SOL (180 days)
+2026-03-03 11:21:19 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 11:21:19 | INFO     | backtest:run_backtest:128 - Starting backtest for SOL | Data: 51840 candles | Start: 2025-09-04 10:41:11.631828 | End: 2026-03-03 10:36:11.631828
+2026-03-03 11:22:33 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:22:33 | INFO     | __main__:run_backtest:17 - Starting backtest for SOL (180 days)
+2026-03-03 11:22:33 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 11:22:33 | INFO     | backtest:run_backtest:128 - Starting backtest for SOL | Data: 51840 candles | Start: 2025-09-04 10:41:11.631828 | End: 2026-03-03 10:36:11.631828
+2026-03-03 11:23:48 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:23:49 | INFO     | __main__:run_backtest:17 - Starting backtest for SOL (180 days)
+2026-03-03 11:23:49 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 11:23:49 | INFO     | backtest:run_backtest:128 - Starting backtest for SOL | Data: 51840 candles | Start: 2025-09-04 10:41:11.631828 | End: 2026-03-03 10:36:11.631828
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #1] LONG SOL @ $138.41 | Size: $6.70 | Leverage: 8.2x | SL: $134.68 | TP: $145.87
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | backtest:_check_exit:259 - [TRADE #1] CLOSED (SL) | P&L: $-206.25 (-22.23%)
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #2] LONG SOL @ $138.98 | Size: $5.60 | Leverage: 8.2x | SL: $134.51 | TP: $147.91
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | backtest:_check_exit:265 - [TRADE #2] CLOSED (TP) | P&L: $412.50 (53.05%)
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #3] LONG SOL @ $144.19 | Size: $5.70 | Leverage: 8.2x | SL: $139.80 | TP: $152.97
+2026-03-03 11:23:49 | INFO     | backtest:_check_exit:259 - [TRADE #3] CLOSED (SL) | P&L: $-206.25 (-25.12%)
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #4] LONG SOL @ $144.35 | Size: $6.47 | Leverage: 10.0x | SL: $140.48 | TP: $152.07
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | backtest:_check_exit:259 - [TRADE #4] CLOSED (SL) | P&L: $-250.00 (-26.76%)
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #5] LONG SOL @ $142.98 | Size: $6.40 | Leverage: 8.2x | SL: $139.07 | TP: $150.79
+2026-03-03 11:23:49 | INFO     | backtest:_check_exit:259 - [TRADE #5] CLOSED (SL) | P&L: $-206.25 (-22.53%)
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #6] LONG SOL @ $142.69 | Size: $5.81 | Leverage: 8.2x | SL: $138.38 | TP: $151.30
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | backtest:_check_exit:259 - [TRADE #6] CLOSED (SL) | P&L: $-206.25 (-24.89%)
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #7] LONG SOL @ $142.25 | Size: $5.11 | Leverage: 8.2x | SL: $137.35 | TP: $152.04
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:49 | INFO     | backtest:_check_exit:259 - [TRADE #7] CLOSED (SL) | P&L: $-206.25 (-28.40%)
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #8] SHORT SOL @ $137.83 | Size: $5.66 | Leverage: 8.2x | SL: $142.25 | TP: $128.99
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:49 | INFO     | backtest:_check_exit:272 - [TRADE #8] CLOSED (SL) | P&L: $-206.25 (-26.46%)
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #9] SHORT SOL @ $142.86 | Size: $6.46 | Leverage: 8.2x | SL: $146.73 | TP: $135.12
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:49 | INFO     | backtest:_check_exit:278 - [TRADE #9] CLOSED (TP) | P&L: $412.50 (44.69%)
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #10] SHORT SOL @ $140.79 | Size: $6.58 | Leverage: 8.2x | SL: $144.59 | TP: $133.19
+2026-03-03 11:23:49 | INFO     | backtest:_check_exit:272 - [TRADE #10] CLOSED (SL) | P&L: $-206.25 (-22.27%)
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #11] SHORT SOL @ $140.46 | Size: $5.74 | Leverage: 8.2x | SL: $144.81 | TP: $131.74
+2026-03-03 11:23:49 | INFO     | backtest:_check_exit:272 - [TRADE #11] CLOSED (SL) | P&L: $-206.25 (-25.59%)
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #12] SHORT SOL @ $141.10 | Size: $5.73 | Leverage: 8.2x | SL: $145.47 | TP: $132.37
+2026-03-03 11:23:49 | INFO     | backtest:_check_exit:272 - [TRADE #12] CLOSED (SL) | P&L: $-206.25 (-25.53%)
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #13] SHORT SOL @ $141.22 | Size: $5.41 | Leverage: 8.2x | SL: $145.84 | TP: $131.98
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:49 | INFO     | backtest:_check_exit:272 - [TRADE #13] CLOSED (SL) | P&L: $-206.25 (-26.98%)
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #14] SHORT SOL @ $142.91 | Size: $6.28 | Leverage: 8.2x | SL: $146.89 | TP: $134.94
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:49 | INFO     | backtest:_check_exit:272 - [TRADE #14] CLOSED (SL) | P&L: $-206.25 (-23.00%)
+2026-03-03 11:23:49 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:49 | INFO     | backtest:_open_position:244 - [TRADE #15] SHORT SOL @ $142.54 | Size: $6.14 | Leverage: 8.2x | SL: $146.62 | TP: $134.39
+2026-03-03 11:23:50 | INFO     | backtest:_check_exit:272 - [TRADE #15] CLOSED (SL) | P&L: $-206.25 (-23.58%)
+2026-03-03 11:23:50 | INFO     | backtest:_open_position:244 - [TRADE #16] LONG SOL @ $143.62 | Size: $5.56 | Leverage: 8.2x | SL: $139.12 | TP: $152.61
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | backtest:_check_exit:259 - [TRADE #16] CLOSED (SL) | P&L: $-206.25 (-25.83%)
+2026-03-03 11:23:50 | INFO     | backtest:_open_position:244 - [TRADE #17] LONG SOL @ $142.36 | Size: $5.69 | Leverage: 8.2x | SL: $137.96 | TP: $151.16
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | backtest:_check_exit:259 - [TRADE #17] CLOSED (SL) | P&L: $-206.25 (-25.48%)
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | backtest:_open_position:244 - [TRADE #18] SHORT SOL @ $138.58 | Size: $5.97 | Leverage: 8.2x | SL: $142.77 | TP: $130.21
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | backtest:_check_exit:272 - [TRADE #18] CLOSED (SL) | P&L: $-206.25 (-24.93%)
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | backtest:_open_position:244 - [TRADE #19] SHORT SOL @ $139.30 | Size: $5.80 | Leverage: 8.2x | SL: $143.61 | TP: $130.69
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | backtest:_check_exit:278 - [TRADE #19] CLOSED (TP) | P&L: $412.50 (51.03%)
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | backtest:_open_position:244 - [TRADE #20] SHORT SOL @ $138.46 | Size: $5.01 | Leverage: 8.2x | SL: $143.44 | TP: $128.48
+2026-03-03 11:23:50 | INFO     | backtest:_check_exit:272 - [TRADE #20] CLOSED (SL) | P&L: $-206.25 (-29.71%)
+2026-03-03 11:23:50 | INFO     | backtest:_open_position:244 - [TRADE #21] LONG SOL @ $139.40 | Size: $6.09 | Leverage: 8.2x | SL: $135.30 | TP: $147.61
+2026-03-03 11:23:50 | INFO     | backtest:_check_exit:259 - [TRADE #21] CLOSED (SL) | P&L: $-206.25 (-24.29%)
+2026-03-03 11:23:50 | INFO     | backtest:_open_position:244 - [TRADE #22] LONG SOL @ $140.61 | Size: $6.76 | Leverage: 8.2x | SL: $136.92 | TP: $148.01
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | backtest:_check_exit:259 - [TRADE #22] CLOSED (SL) | P&L: $-206.25 (-21.69%)
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | backtest:_open_position:244 - [TRADE #23] LONG SOL @ $139.80 | Size: $5.85 | Leverage: 8.2x | SL: $135.52 | TP: $148.35
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | backtest:_check_exit:259 - [TRADE #23] CLOSED (SL) | P&L: $-206.25 (-25.23%)
+2026-03-03 11:23:50 | INFO     | backtest:_open_position:244 - [TRADE #24] LONG SOL @ $142.56 | Size: $6.80 | Leverage: 8.2x | SL: $138.89 | TP: $149.92
+2026-03-03 11:23:50 | INFO     | backtest:_check_exit:259 - [TRADE #24] CLOSED (SL) | P&L: $-206.25 (-21.27%)
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | backtest:_open_position:244 - [TRADE #25] LONG SOL @ $142.31 | Size: $5.41 | Leverage: 8.2x | SL: $137.68 | TP: $151.55
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | backtest:_check_exit:259 - [TRADE #25] CLOSED (SL) | P&L: $-206.25 (-26.81%)
+2026-03-03 11:23:50 | INFO     | backtest:_open_position:244 - [TRADE #26] LONG SOL @ $140.20 | Size: $6.56 | Leverage: 8.2x | SL: $136.39 | TP: $147.82
+2026-03-03 11:23:50 | INFO     | backtest:_check_exit:259 - [TRADE #26] CLOSED (SL) | P&L: $-206.25 (-22.42%)
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | backtest:_open_position:244 - [TRADE #27] LONG SOL @ $138.84 | Size: $6.58 | Leverage: 8.2x | SL: $135.04 | TP: $146.45
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:50 | INFO     | backtest:_check_exit:259 - [TRADE #27] CLOSED (SL) | P&L: $-206.25 (-22.59%)
+2026-03-03 11:23:50 | INFO     | backtest:_open_position:244 - [TRADE #28] SHORT SOL @ $135.81 | Size: $6.66 | Leverage: 8.2x | SL: $139.56 | TP: $128.30
+2026-03-03 11:23:50 | INFO     | backtest:_check_exit:272 - [TRADE #28] CLOSED (SL) | P&L: $-206.25 (-22.81%)
+2026-03-03 11:23:50 | INFO     | backtest:_open_position:244 - [TRADE #29] SHORT SOL @ $137.92 | Size: $5.08 | Leverage: 8.2x | SL: $142.85 | TP: $128.08
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:50 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:278 - [TRADE #29] CLOSED (TP) | P&L: $412.50 (58.90%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #30] SHORT SOL @ $130.30 | Size: $6.22 | Leverage: 8.2x | SL: $134.32 | TP: $122.26
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:278 - [TRADE #30] CLOSED (TP) | P&L: $412.50 (50.91%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #31] SHORT SOL @ $125.37 | Size: $6.91 | Leverage: 8.2x | SL: $128.99 | TP: $118.14
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:272 - [TRADE #31] CLOSED (SL) | P&L: $-206.25 (-23.80%)
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #32] SHORT SOL @ $126.02 | Size: $6.37 | Leverage: 8.2x | SL: $129.95 | TP: $118.17
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:272 - [TRADE #32] CLOSED (SL) | P&L: $-206.25 (-25.71%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #33] LONG SOL @ $127.66 | Size: $6.22 | Leverage: 10.0x | SL: $123.64 | TP: $135.69
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:265 - [TRADE #33] CLOSED (TP) | P&L: $500.00 (62.93%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #34] LONG SOL @ $133.05 | Size: $7.25 | Leverage: 8.2x | SL: $129.60 | TP: $139.94
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #34] CLOSED (SL) | P&L: $-206.25 (-21.38%)
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #35] LONG SOL @ $133.82 | Size: $6.01 | Leverage: 8.2x | SL: $129.66 | TP: $142.14
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #35] CLOSED (SL) | P&L: $-206.25 (-25.65%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #36] LONG SOL @ $130.97 | Size: $6.67 | Leverage: 10.0x | SL: $127.22 | TP: $138.47
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #36] CLOSED (SL) | P&L: $-250.00 (-28.62%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #37] LONG SOL @ $134.47 | Size: $6.17 | Leverage: 8.2x | SL: $130.42 | TP: $142.57
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #37] CLOSED (SL) | P&L: $-206.25 (-24.86%)
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #38] LONG SOL @ $133.73 | Size: $6.91 | Leverage: 8.2x | SL: $130.11 | TP: $140.96
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #38] CLOSED (SL) | P&L: $-206.25 (-22.31%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #39] LONG SOL @ $134.89 | Size: $6.17 | Leverage: 10.0x | SL: $130.83 | TP: $143.00
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #39] CLOSED (SL) | P&L: $-250.00 (-30.06%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #40] LONG SOL @ $135.60 | Size: $6.09 | Leverage: 8.2x | SL: $131.49 | TP: $143.81
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #40] CLOSED (SL) | P&L: $-206.25 (-24.97%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #41] LONG SOL @ $134.90 | Size: $6.28 | Leverage: 8.2x | SL: $130.92 | TP: $142.86
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #41] CLOSED (SL) | P&L: $-206.25 (-24.34%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #42] LONG SOL @ $134.48 | Size: $5.91 | Leverage: 8.2x | SL: $130.24 | TP: $142.94
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #42] CLOSED (SL) | P&L: $-206.25 (-25.97%)
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #43] LONG SOL @ $133.62 | Size: $6.04 | Leverage: 8.2x | SL: $129.48 | TP: $141.89
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #43] CLOSED (SL) | P&L: $-206.25 (-25.54%)
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #44] LONG SOL @ $132.17 | Size: $7.08 | Leverage: 8.2x | SL: $128.64 | TP: $139.23
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #44] CLOSED (SL) | P&L: $-206.25 (-22.04%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #45] LONG SOL @ $132.08 | Size: $6.44 | Leverage: 8.2x | SL: $128.20 | TP: $139.85
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #45] CLOSED (SL) | P&L: $-206.25 (-24.26%)
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #46] SHORT SOL @ $129.93 | Size: $6.89 | Leverage: 8.2x | SL: $133.55 | TP: $122.67
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:272 - [TRADE #46] CLOSED (SL) | P&L: $-206.25 (-23.04%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #47] SHORT SOL @ $129.71 | Size: $6.27 | Leverage: 8.2x | SL: $133.69 | TP: $121.74
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:272 - [TRADE #47] CLOSED (SL) | P&L: $-206.25 (-25.34%)
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #48] SHORT SOL @ $131.94 | Size: $5.87 | Leverage: 8.2x | SL: $136.20 | TP: $123.42
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:272 - [TRADE #48] CLOSED (SL) | P&L: $-206.25 (-26.64%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #49] SHORT SOL @ $132.50 | Size: $6.28 | Leverage: 8.2x | SL: $136.48 | TP: $124.53
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:272 - [TRADE #49] CLOSED (SL) | P&L: $-206.25 (-24.78%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #50] LONG SOL @ $133.96 | Size: $7.30 | Leverage: 8.2x | SL: $130.54 | TP: $140.81
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #50] CLOSED (SL) | P&L: $-206.25 (-21.09%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #51] LONG SOL @ $136.29 | Size: $5.76 | Leverage: 8.2x | SL: $131.95 | TP: $144.98
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:265 - [TRADE #51] CLOSED (TP) | P&L: $412.50 (52.58%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #52] LONG SOL @ $142.94 | Size: $6.26 | Leverage: 8.2x | SL: $138.94 | TP: $150.92
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #52] CLOSED (SL) | P&L: $-206.25 (-23.05%)
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #53] LONG SOL @ $143.27 | Size: $5.88 | Leverage: 8.2x | SL: $139.01 | TP: $151.78
+2026-03-03 11:23:51 | INFO     | backtest:_check_exit:259 - [TRADE #53] CLOSED (SL) | P&L: $-206.25 (-24.50%)
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | backtest:_open_position:244 - [TRADE #54] LONG SOL @ $142.86 | Size: $5.72 | Leverage: 8.2x | SL: $138.49 | TP: $151.60
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:259 - [TRADE #54] CLOSED (SL) | P&L: $-206.25 (-25.23%)
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #55] SHORT SOL @ $137.27 | Size: $6.06 | Leverage: 8.2x | SL: $141.40 | TP: $129.02
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:272 - [TRADE #55] CLOSED (SL) | P&L: $-206.25 (-24.79%)
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #56] SHORT SOL @ $138.98 | Size: $6.99 | Leverage: 8.2x | SL: $142.55 | TP: $131.83
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:272 - [TRADE #56] CLOSED (SL) | P&L: $-206.25 (-21.22%)
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #57] SHORT SOL @ $140.16 | Size: $7.05 | Leverage: 8.2x | SL: $143.71 | TP: $133.07
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:272 - [TRADE #57] CLOSED (SL) | P&L: $-206.25 (-20.88%)
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #58] SHORT SOL @ $141.22 | Size: $5.99 | Leverage: 8.2x | SL: $145.39 | TP: $132.88
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:272 - [TRADE #58] CLOSED (SL) | P&L: $-206.25 (-24.36%)
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #59] LONG SOL @ $140.23 | Size: $5.65 | Leverage: 8.2x | SL: $135.80 | TP: $149.08
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:259 - [TRADE #59] CLOSED (SL) | P&L: $-206.25 (-26.03%)
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #60] LONG SOL @ $138.11 | Size: $6.24 | Leverage: 8.2x | SL: $134.11 | TP: $146.12
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:259 - [TRADE #60] CLOSED (SL) | P&L: $-206.25 (-23.92%)
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #61] LONG SOL @ $139.78 | Size: $7.21 | Leverage: 8.2x | SL: $136.31 | TP: $146.71
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:259 - [TRADE #61] CLOSED (SL) | P&L: $-206.25 (-20.46%)
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #62] LONG SOL @ $139.91 | Size: $6.31 | Leverage: 8.2x | SL: $135.95 | TP: $147.84
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:259 - [TRADE #62] CLOSED (SL) | P&L: $-206.25 (-23.37%)
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #63] LONG SOL @ $138.97 | Size: $6.84 | Leverage: 8.2x | SL: $135.32 | TP: $146.29
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:259 - [TRADE #63] CLOSED (SL) | P&L: $-206.25 (-21.71%)
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #64] LONG SOL @ $138.51 | Size: $5.77 | Leverage: 8.2x | SL: $134.18 | TP: $147.18
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:259 - [TRADE #64] CLOSED (SL) | P&L: $-206.25 (-25.79%)
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #65] LONG SOL @ $144.97 | Size: $6.34 | Leverage: 8.2x | SL: $141.03 | TP: $152.87
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:259 - [TRADE #65] CLOSED (SL) | P&L: $-206.25 (-22.46%)
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #66] LONG SOL @ $143.72 | Size: $6.58 | Leverage: 8.2x | SL: $139.92 | TP: $151.32
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:259 - [TRADE #66] CLOSED (SL) | P&L: $-206.25 (-21.81%)
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #67] LONG SOL @ $143.79 | Size: $5.92 | Leverage: 8.2x | SL: $139.57 | TP: $152.23
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:259 - [TRADE #67] CLOSED (SL) | P&L: $-206.25 (-24.21%)
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #68] SHORT SOL @ $142.12 | Size: $5.38 | Leverage: 8.2x | SL: $146.77 | TP: $132.83
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:278 - [TRADE #68] CLOSED (TP) | P&L: $412.50 (53.93%)
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #69] SHORT SOL @ $134.53 | Size: $5.83 | Leverage: 8.2x | SL: $138.82 | TP: $125.95
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:272 - [TRADE #69] CLOSED (SL) | P&L: $-206.25 (-26.30%)
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #70] SHORT SOL @ $134.68 | Size: $5.75 | Leverage: 8.2x | SL: $139.03 | TP: $125.98
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:272 - [TRADE #70] CLOSED (SL) | P&L: $-206.25 (-26.64%)
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #71] SHORT SOL @ $134.97 | Size: $5.92 | Leverage: 8.2x | SL: $139.19 | TP: $126.53
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:272 - [TRADE #71] CLOSED (SL) | P&L: $-206.25 (-25.80%)
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #72] SHORT SOL @ $135.22 | Size: $6.18 | Leverage: 8.2x | SL: $139.27 | TP: $127.12
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:272 - [TRADE #72] CLOSED (SL) | P&L: $-206.25 (-24.70%)
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #73] SHORT SOL @ $136.19 | Size: $6.21 | Leverage: 8.2x | SL: $140.21 | TP: $128.14
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:272 - [TRADE #73] CLOSED (SL) | P&L: $-206.25 (-24.37%)
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #74] SHORT SOL @ $131.73 | Size: $5.79 | Leverage: 8.2x | SL: $136.05 | TP: $123.10
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:272 - [TRADE #74] CLOSED (SL) | P&L: $-206.25 (-27.02%)
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #75] SHORT SOL @ $133.21 | Size: $5.44 | Leverage: 8.2x | SL: $137.80 | TP: $124.02
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:278 - [TRADE #75] CLOSED (TP) | P&L: $412.50 (56.92%)
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #76] SHORT SOL @ $127.20 | Size: $5.90 | Leverage: 8.2x | SL: $131.44 | TP: $118.73
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:272 - [TRADE #76] CLOSED (SL) | P&L: $-206.25 (-27.47%)
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #77] SHORT SOL @ $127.92 | Size: $6.58 | Leverage: 8.2x | SL: $131.72 | TP: $120.32
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:272 - [TRADE #77] CLOSED (SL) | P&L: $-206.25 (-24.51%)
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #78] LONG SOL @ $133.25 | Size: $5.83 | Leverage: 8.2x | SL: $128.97 | TP: $141.83
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | backtest:_check_exit:259 - [TRADE #78] CLOSED (SL) | P&L: $-206.25 (-26.56%)
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | backtest:_open_position:244 - [TRADE #79] LONG SOL @ $132.71 | Size: $4.91 | Leverage: 8.2x | SL: $127.62 | TP: $142.89
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #79] CLOSED (SL) | P&L: $-206.25 (-31.66%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #80] LONG SOL @ $130.28 | Size: $7.25 | Leverage: 8.2x | SL: $126.83 | TP: $137.18
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #80] CLOSED (SL) | P&L: $-206.25 (-21.85%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #81] LONG SOL @ $130.55 | Size: $5.51 | Leverage: 8.2x | SL: $126.02 | TP: $139.63
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #81] CLOSED (SL) | P&L: $-206.25 (-28.67%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #82] LONG SOL @ $127.86 | Size: $7.20 | Leverage: 8.2x | SL: $124.39 | TP: $134.81
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #82] CLOSED (SL) | P&L: $-206.25 (-22.41%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #83] LONG SOL @ $127.85 | Size: $7.64 | Leverage: 8.2x | SL: $124.58 | TP: $134.39
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:265 - [TRADE #83] CLOSED (TP) | P&L: $412.50 (42.22%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #84] LONG SOL @ $128.39 | Size: $6.03 | Leverage: 8.2x | SL: $124.25 | TP: $136.69
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #84] CLOSED (SL) | P&L: $-206.25 (-26.66%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #85] LONG SOL @ $127.24 | Size: $5.85 | Leverage: 8.2x | SL: $122.97 | TP: $135.79
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #85] CLOSED (SL) | P&L: $-206.25 (-27.70%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #86] SHORT SOL @ $126.88 | Size: $7.56 | Leverage: 8.2x | SL: $130.18 | TP: $120.26
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:278 - [TRADE #86] CLOSED (TP) | P&L: $412.50 (43.01%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #87] SHORT SOL @ $123.02 | Size: $7.07 | Leverage: 8.2x | SL: $126.56 | TP: $115.96
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:272 - [TRADE #87] CLOSED (SL) | P&L: $-206.25 (-23.70%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #88] SHORT SOL @ $123.45 | Size: $6.43 | Leverage: 8.2x | SL: $127.34 | TP: $115.68
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:272 - [TRADE #88] CLOSED (SL) | P&L: $-206.25 (-25.96%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #89] LONG SOL @ $128.45 | Size: $6.65 | Leverage: 8.2x | SL: $124.69 | TP: $135.97
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #89] CLOSED (SL) | P&L: $-206.25 (-24.14%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #90] LONG SOL @ $126.72 | Size: $7.01 | Leverage: 8.2x | SL: $123.16 | TP: $133.85
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #90] CLOSED (SL) | P&L: $-206.25 (-23.20%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #91] LONG SOL @ $126.46 | Size: $7.31 | Leverage: 8.2x | SL: $123.04 | TP: $133.30
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #91] CLOSED (SL) | P&L: $-206.25 (-22.31%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #92] LONG SOL @ $126.59 | Size: $7.07 | Leverage: 8.2x | SL: $123.06 | TP: $133.67
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #92] CLOSED (SL) | P&L: $-206.25 (-23.06%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #93] LONG SOL @ $125.99 | Size: $6.14 | Leverage: 8.2x | SL: $121.92 | TP: $134.13
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #93] CLOSED (SL) | P&L: $-206.25 (-26.64%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #94] LONG SOL @ $125.28 | Size: $6.19 | Leverage: 8.2x | SL: $121.24 | TP: $133.36
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #94] CLOSED (SL) | P&L: $-206.25 (-26.59%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #95] LONG SOL @ $125.31 | Size: $6.69 | Leverage: 8.2x | SL: $121.57 | TP: $132.78
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #95] CLOSED (SL) | P&L: $-206.25 (-24.60%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #96] LONG SOL @ $124.28 | Size: $7.14 | Leverage: 10.0x | SL: $120.78 | TP: $131.29
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:265 - [TRADE #96] CLOSED (TP) | P&L: $500.00 (56.37%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #97] LONG SOL @ $129.25 | Size: $6.27 | Leverage: 8.2x | SL: $125.27 | TP: $137.22
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #97] CLOSED (SL) | P&L: $-206.25 (-25.44%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #98] LONG SOL @ $127.22 | Size: $6.46 | Leverage: 8.2x | SL: $123.35 | TP: $134.97
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #98] CLOSED (SL) | P&L: $-206.25 (-25.11%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #99] LONG SOL @ $126.64 | Size: $6.68 | Leverage: 8.2x | SL: $122.90 | TP: $134.13
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #99] CLOSED (SL) | P&L: $-206.25 (-24.40%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #100] LONG SOL @ $127.14 | Size: $6.99 | Leverage: 8.2x | SL: $123.57 | TP: $134.30
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #100] CLOSED (SL) | P&L: $-206.25 (-23.22%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #101] LONG SOL @ $127.42 | Size: $6.68 | Leverage: 8.2x | SL: $123.68 | TP: $134.90
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #101] CLOSED (SL) | P&L: $-206.25 (-24.22%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #102] LONG SOL @ $126.51 | Size: $7.34 | Leverage: 8.2x | SL: $123.10 | TP: $133.32
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #102] CLOSED (SL) | P&L: $-206.25 (-22.22%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #103] LONG SOL @ $126.01 | Size: $7.67 | Leverage: 8.2x | SL: $122.75 | TP: $132.53
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:259 - [TRADE #103] CLOSED (SL) | P&L: $-206.25 (-21.33%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #104] SHORT SOL @ $119.94 | Size: $6.58 | Leverage: 8.2x | SL: $123.74 | TP: $112.34
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:272 - [TRADE #104] CLOSED (SL) | P&L: $-206.25 (-26.14%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #105] SHORT SOL @ $120.24 | Size: $6.83 | Leverage: 8.2x | SL: $123.90 | TP: $112.92
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:272 - [TRADE #105] CLOSED (SL) | P&L: $-206.25 (-25.10%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #106] SHORT SOL @ $120.58 | Size: $7.38 | Leverage: 8.2x | SL: $123.97 | TP: $113.81
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:272 - [TRADE #106] CLOSED (SL) | P&L: $-206.25 (-23.17%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #107] SHORT SOL @ $120.85 | Size: $6.59 | Leverage: 8.2x | SL: $124.64 | TP: $113.26
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:272 - [TRADE #107] CLOSED (SL) | P&L: $-206.25 (-25.90%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #108] SHORT SOL @ $121.83 | Size: $8.17 | Leverage: 8.2x | SL: $124.89 | TP: $115.71
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:272 - [TRADE #108] CLOSED (SL) | P&L: $-206.25 (-20.72%)
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #109] SHORT SOL @ $121.76 | Size: $6.86 | Leverage: 8.2x | SL: $125.40 | TP: $114.46
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:272 - [TRADE #109] CLOSED (SL) | P&L: $-206.25 (-24.71%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #110] SHORT SOL @ $121.98 | Size: $7.60 | Leverage: 10.0x | SL: $125.27 | TP: $115.41
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:272 - [TRADE #110] CLOSED (SL) | P&L: $-250.00 (-26.96%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #111] SHORT SOL @ $122.12 | Size: $6.52 | Leverage: 8.2x | SL: $125.95 | TP: $114.45
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:278 - [TRADE #111] CLOSED (TP) | P&L: $412.50 (51.83%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #112] SHORT SOL @ $115.73 | Size: $7.58 | Leverage: 8.2x | SL: $119.03 | TP: $109.14
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:272 - [TRADE #112] CLOSED (SL) | P&L: $-206.25 (-23.50%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #113] SHORT SOL @ $117.16 | Size: $6.71 | Leverage: 8.2x | SL: $120.89 | TP: $109.70
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:272 - [TRADE #113] CLOSED (SL) | P&L: $-206.25 (-26.25%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #114] SHORT SOL @ $117.89 | Size: $6.76 | Leverage: 8.2x | SL: $121.59 | TP: $110.50
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_check_exit:272 - [TRADE #114] CLOSED (SL) | P&L: $-206.25 (-25.89%)
+2026-03-03 11:23:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:53 | INFO     | backtest:_open_position:244 - [TRADE #115] SHORT SOL @ $119.23 | Size: $6.90 | Leverage: 8.2x | SL: $122.86 | TP: $111.99
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:272 - [TRADE #115] CLOSED (SL) | P&L: $-206.25 (-25.07%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #116] LONG SOL @ $122.27 | Size: $7.59 | Leverage: 8.2x | SL: $118.97 | TP: $128.86
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:259 - [TRADE #116] CLOSED (SL) | P&L: $-206.25 (-22.24%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #117] LONG SOL @ $121.49 | Size: $7.73 | Leverage: 8.2x | SL: $118.25 | TP: $127.96
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:265 - [TRADE #117] CLOSED (TP) | P&L: $412.50 (43.95%)
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #118] LONG SOL @ $123.37 | Size: $6.81 | Leverage: 8.2x | SL: $119.70 | TP: $130.71
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:265 - [TRADE #118] CLOSED (TP) | P&L: $412.50 (49.08%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #119] LONG SOL @ $127.58 | Size: $6.87 | Leverage: 8.2x | SL: $123.94 | TP: $134.86
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:259 - [TRADE #119] CLOSED (SL) | P&L: $-206.25 (-23.54%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #120] LONG SOL @ $126.53 | Size: $6.07 | Leverage: 8.2x | SL: $122.41 | TP: $134.77
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:259 - [TRADE #120] CLOSED (SL) | P&L: $-206.25 (-26.86%)
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #121] LONG SOL @ $126.93 | Size: $7.65 | Leverage: 8.2x | SL: $123.66 | TP: $133.46
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:259 - [TRADE #121] CLOSED (SL) | P&L: $-206.25 (-21.24%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #122] LONG SOL @ $126.67 | Size: $6.48 | Leverage: 8.2x | SL: $122.81 | TP: $134.39
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:259 - [TRADE #122] CLOSED (SL) | P&L: $-206.25 (-25.14%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #123] LONG SOL @ $126.74 | Size: $6.03 | Leverage: 8.2x | SL: $122.59 | TP: $135.02
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:259 - [TRADE #123] CLOSED (SL) | P&L: $-206.25 (-26.98%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #124] LONG SOL @ $124.82 | Size: $6.35 | Leverage: 8.2x | SL: $120.88 | TP: $132.70
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:259 - [TRADE #124] CLOSED (SL) | P&L: $-206.25 (-26.04%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #125] LONG SOL @ $124.48 | Size: $6.60 | Leverage: 8.2x | SL: $120.70 | TP: $132.06
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:265 - [TRADE #125] CLOSED (TP) | P&L: $412.50 (50.19%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #126] LONG SOL @ $128.23 | Size: $7.50 | Leverage: 8.2x | SL: $124.89 | TP: $134.89
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:259 - [TRADE #126] CLOSED (SL) | P&L: $-206.25 (-21.44%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #127] LONG SOL @ $124.95 | Size: $7.56 | Leverage: 8.2x | SL: $121.64 | TP: $131.56
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:259 - [TRADE #127] CLOSED (SL) | P&L: $-206.25 (-21.83%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #128] LONG SOL @ $124.85 | Size: $6.72 | Leverage: 8.2x | SL: $121.13 | TP: $132.29
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:259 - [TRADE #128] CLOSED (SL) | P&L: $-206.25 (-24.59%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #129] SHORT SOL @ $122.77 | Size: $5.86 | Leverage: 8.2x | SL: $127.04 | TP: $114.23
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:272 - [TRADE #129] CLOSED (SL) | P&L: $-206.25 (-28.69%)
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #130] SHORT SOL @ $123.48 | Size: $6.80 | Leverage: 8.2x | SL: $127.15 | TP: $116.13
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:272 - [TRADE #130] CLOSED (SL) | P&L: $-206.25 (-24.55%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #131] SHORT SOL @ $124.18 | Size: $6.91 | Leverage: 8.2x | SL: $127.80 | TP: $116.95
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:272 - [TRADE #131] CLOSED (SL) | P&L: $-206.25 (-24.03%)
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #132] SHORT SOL @ $124.59 | Size: $5.78 | Leverage: 8.2x | SL: $128.91 | TP: $115.94
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:272 - [TRADE #132] CLOSED (SL) | P&L: $-206.25 (-28.63%)
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #133] SHORT SOL @ $126.27 | Size: $6.76 | Leverage: 8.2x | SL: $129.97 | TP: $118.87
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:272 - [TRADE #133] CLOSED (SL) | P&L: $-206.25 (-24.17%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #134] SHORT SOL @ $126.12 | Size: $7.10 | Leverage: 8.2x | SL: $129.64 | TP: $119.08
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:272 - [TRADE #134] CLOSED (SL) | P&L: $-206.25 (-23.03%)
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #135] LONG SOL @ $127.64 | Size: $6.04 | Leverage: 10.0x | SL: $123.50 | TP: $135.91
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:265 - [TRADE #135] CLOSED (TP) | P&L: $500.00 (64.81%)
+2026-03-03 11:23:54 | INFO     | backtest:_open_position:244 - [TRADE #136] LONG SOL @ $132.03 | Size: $6.73 | Leverage: 8.2x | SL: $128.32 | TP: $139.46
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | backtest:_check_exit:265 - [TRADE #136] CLOSED (TP) | P&L: $412.50 (46.40%)
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #137] LONG SOL @ $131.68 | Size: $7.07 | Leverage: 8.2x | SL: $128.14 | TP: $138.76
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:259 - [TRADE #137] CLOSED (SL) | P&L: $-206.25 (-22.16%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #138] LONG SOL @ $130.29 | Size: $7.10 | Leverage: 8.2x | SL: $126.78 | TP: $137.33
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:259 - [TRADE #138] CLOSED (SL) | P&L: $-206.25 (-22.28%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #139] LONG SOL @ $130.23 | Size: $6.49 | Leverage: 8.2x | SL: $126.38 | TP: $137.93
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:259 - [TRADE #139] CLOSED (SL) | P&L: $-206.25 (-24.40%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #140] LONG SOL @ $130.33 | Size: $5.82 | Leverage: 8.2x | SL: $126.03 | TP: $138.92
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:259 - [TRADE #140] CLOSED (SL) | P&L: $-206.25 (-27.21%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #141] LONG SOL @ $133.50 | Size: $5.90 | Leverage: 8.2x | SL: $129.26 | TP: $141.98
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:259 - [TRADE #141] CLOSED (SL) | P&L: $-206.25 (-26.20%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #142] LONG SOL @ $132.00 | Size: $6.57 | Leverage: 8.2x | SL: $128.19 | TP: $139.60
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:259 - [TRADE #142] CLOSED (SL) | P&L: $-206.25 (-23.78%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #143] LONG SOL @ $130.74 | Size: $6.04 | Leverage: 8.2x | SL: $126.60 | TP: $139.02
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:265 - [TRADE #143] CLOSED (TP) | P&L: $412.50 (52.23%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #144] LONG SOL @ $135.68 | Size: $5.87 | Leverage: 8.2x | SL: $131.43 | TP: $144.20
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:259 - [TRADE #144] CLOSED (SL) | P&L: $-206.25 (-25.88%)
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #145] LONG SOL @ $134.03 | Size: $5.48 | Leverage: 8.2x | SL: $129.47 | TP: $143.16
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:259 - [TRADE #145] CLOSED (SL) | P&L: $-206.25 (-28.10%)
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #146] LONG SOL @ $132.47 | Size: $6.87 | Leverage: 8.2x | SL: $128.84 | TP: $139.75
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:259 - [TRADE #146] CLOSED (SL) | P&L: $-206.25 (-22.65%)
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #147] SHORT SOL @ $131.37 | Size: $6.82 | Leverage: 10.0x | SL: $135.03 | TP: $124.04
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #147] CLOSED (SL) | P&L: $-250.00 (-27.89%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #148] SHORT SOL @ $132.80 | Size: $6.56 | Leverage: 8.2x | SL: $136.61 | TP: $125.17
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #148] CLOSED (SL) | P&L: $-206.25 (-23.68%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #149] SHORT SOL @ $132.55 | Size: $5.61 | Leverage: 8.2x | SL: $137.01 | TP: $123.65
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #149] CLOSED (SL) | P&L: $-206.25 (-27.71%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #150] SHORT SOL @ $134.49 | Size: $6.58 | Leverage: 8.2x | SL: $138.29 | TP: $126.89
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #150] CLOSED (SL) | P&L: $-206.25 (-23.31%)
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #151] SHORT SOL @ $131.93 | Size: $6.91 | Leverage: 8.2x | SL: $135.54 | TP: $124.70
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #151] CLOSED (SL) | P&L: $-206.25 (-22.61%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #152] SHORT SOL @ $132.19 | Size: $6.02 | Leverage: 8.2x | SL: $136.35 | TP: $123.88
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #152] CLOSED (SL) | P&L: $-206.25 (-25.94%)
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #153] SHORT SOL @ $133.10 | Size: $6.15 | Leverage: 8.2x | SL: $137.16 | TP: $124.98
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #153] CLOSED (SL) | P&L: $-206.25 (-25.18%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #154] SHORT SOL @ $133.78 | Size: $6.70 | Leverage: 8.2x | SL: $137.51 | TP: $126.32
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:278 - [TRADE #154] CLOSED (TP) | P&L: $412.50 (46.02%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #155] SHORT SOL @ $130.19 | Size: $6.95 | Leverage: 8.2x | SL: $133.79 | TP: $122.99
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #155] CLOSED (SL) | P&L: $-206.25 (-22.81%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #156] SHORT SOL @ $129.87 | Size: $6.21 | Leverage: 8.2x | SL: $133.90 | TP: $121.82
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #156] CLOSED (SL) | P&L: $-206.25 (-25.58%)
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #157] SHORT SOL @ $131.46 | Size: $6.61 | Leverage: 8.2x | SL: $135.24 | TP: $123.90
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #157] CLOSED (SL) | P&L: $-206.25 (-23.73%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #158] SHORT SOL @ $131.30 | Size: $5.83 | Leverage: 8.2x | SL: $135.58 | TP: $122.73
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:278 - [TRADE #158] CLOSED (TP) | P&L: $412.50 (53.85%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #159] SHORT SOL @ $125.73 | Size: $7.71 | Leverage: 10.0x | SL: $128.97 | TP: $119.25
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #159] CLOSED (SL) | P&L: $-250.00 (-25.78%)
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #160] SHORT SOL @ $127.10 | Size: $6.36 | Leverage: 8.2x | SL: $131.03 | TP: $119.24
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #160] CLOSED (SL) | P&L: $-206.25 (-25.51%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #161] SHORT SOL @ $128.72 | Size: $6.27 | Leverage: 8.2x | SL: $132.71 | TP: $120.75
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #161] CLOSED (SL) | P&L: $-206.25 (-25.56%)
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #162] SHORT SOL @ $129.76 | Size: $6.69 | Leverage: 8.2x | SL: $133.50 | TP: $122.29
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #162] CLOSED (SL) | P&L: $-206.25 (-23.75%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #163] SHORT SOL @ $129.97 | Size: $6.96 | Leverage: 8.2x | SL: $133.56 | TP: $122.78
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #163] CLOSED (SL) | P&L: $-206.25 (-22.80%)
+2026-03-03 11:23:55 | INFO     | backtest:_open_position:244 - [TRADE #164] SHORT SOL @ $129.72 | Size: $7.14 | Leverage: 8.2x | SL: $133.23 | TP: $122.72
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | backtest:_check_exit:272 - [TRADE #164] CLOSED (SL) | P&L: $-206.25 (-22.27%)
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #165] SHORT SOL @ $129.71 | Size: $5.92 | Leverage: 8.2x | SL: $133.93 | TP: $121.27
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:272 - [TRADE #165] CLOSED (SL) | P&L: $-206.25 (-26.84%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #166] LONG SOL @ $131.23 | Size: $6.49 | Leverage: 8.2x | SL: $127.38 | TP: $138.94
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:259 - [TRADE #166] CLOSED (SL) | P&L: $-206.25 (-24.22%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #167] LONG SOL @ $128.65 | Size: $7.31 | Leverage: 8.2x | SL: $125.23 | TP: $135.49
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:265 - [TRADE #167] CLOSED (TP) | P&L: $412.50 (43.86%)
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #168] LONG SOL @ $133.56 | Size: $5.45 | Leverage: 8.2x | SL: $128.97 | TP: $142.73
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:259 - [TRADE #168] CLOSED (SL) | P&L: $-206.25 (-28.32%)
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #169] SHORT SOL @ $131.80 | Size: $6.55 | Leverage: 10.0x | SL: $135.62 | TP: $124.17
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:278 - [TRADE #169] CLOSED (TP) | P&L: $500.00 (57.92%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #170] SHORT SOL @ $123.38 | Size: $6.77 | Leverage: 8.2x | SL: $127.07 | TP: $115.99
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:272 - [TRADE #170] CLOSED (SL) | P&L: $-206.25 (-24.70%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #171] SHORT SOL @ $123.31 | Size: $6.36 | Leverage: 8.2x | SL: $127.24 | TP: $115.46
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:272 - [TRADE #171] CLOSED (SL) | P&L: $-206.25 (-26.28%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #172] SHORT SOL @ $123.77 | Size: $7.27 | Leverage: 8.2x | SL: $127.21 | TP: $116.89
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:272 - [TRADE #172] CLOSED (SL) | P&L: $-206.25 (-22.93%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #173] SHORT SOL @ $120.95 | Size: $6.17 | Leverage: 8.2x | SL: $125.00 | TP: $112.85
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:278 - [TRADE #173] CLOSED (TP) | P&L: $412.50 (55.27%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #174] SHORT SOL @ $115.71 | Size: $6.78 | Leverage: 8.2x | SL: $119.39 | TP: $108.33
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:278 - [TRADE #174] CLOSED (TP) | P&L: $412.50 (52.59%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #175] SHORT SOL @ $110.65 | Size: $8.13 | Leverage: 8.2x | SL: $113.72 | TP: $104.50
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:272 - [TRADE #175] CLOSED (SL) | P&L: $-206.25 (-22.93%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #176] SHORT SOL @ $112.08 | Size: $8.03 | Leverage: 8.2x | SL: $115.19 | TP: $105.85
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:272 - [TRADE #176] CLOSED (SL) | P&L: $-206.25 (-22.92%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #177] SHORT SOL @ $112.10 | Size: $6.78 | Leverage: 8.2x | SL: $115.79 | TP: $104.73
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:272 - [TRADE #177] CLOSED (SL) | P&L: $-206.25 (-27.14%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #178] SHORT SOL @ $111.57 | Size: $6.17 | Leverage: 8.2x | SL: $115.63 | TP: $103.47
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:272 - [TRADE #178] CLOSED (SL) | P&L: $-206.25 (-29.98%)
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #179] SHORT SOL @ $112.50 | Size: $8.07 | Leverage: 8.2x | SL: $115.60 | TP: $106.31
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:272 - [TRADE #179] CLOSED (SL) | P&L: $-206.25 (-22.71%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #180] SHORT SOL @ $111.62 | Size: $7.65 | Leverage: 8.2x | SL: $114.89 | TP: $105.09
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:272 - [TRADE #180] CLOSED (SL) | P&L: $-206.25 (-24.14%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #181] SHORT SOL @ $110.77 | Size: $7.86 | Leverage: 8.2x | SL: $113.95 | TP: $104.41
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:272 - [TRADE #181] CLOSED (SL) | P&L: $-206.25 (-23.70%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #182] SHORT SOL @ $110.69 | Size: $8.06 | Leverage: 10.0x | SL: $113.79 | TP: $104.49
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_check_exit:272 - [TRADE #182] CLOSED (SL) | P&L: $-250.00 (-28.01%)
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | backtest:_open_position:244 - [TRADE #183] SHORT SOL @ $110.68 | Size: $6.83 | Leverage: 8.2x | SL: $114.35 | TP: $103.36
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:272 - [TRADE #183] CLOSED (SL) | P&L: $-206.25 (-27.30%)
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #184] SHORT SOL @ $111.09 | Size: $6.07 | Leverage: 8.2x | SL: $115.20 | TP: $102.85
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:272 - [TRADE #184] CLOSED (SL) | P&L: $-206.25 (-30.57%)
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #185] LONG SOL @ $115.63 | Size: $7.26 | Leverage: 8.2x | SL: $112.18 | TP: $122.51
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:259 - [TRADE #185] CLOSED (SL) | P&L: $-206.25 (-24.56%)
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #186] LONG SOL @ $114.96 | Size: $7.44 | Leverage: 8.2x | SL: $111.60 | TP: $121.69
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:259 - [TRADE #186] CLOSED (SL) | P&L: $-206.25 (-24.13%)
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #187] LONG SOL @ $115.12 | Size: $7.55 | Leverage: 8.2x | SL: $111.81 | TP: $121.74
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:259 - [TRADE #187] CLOSED (SL) | P&L: $-206.25 (-23.73%)
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #188] LONG SOL @ $115.06 | Size: $6.84 | Leverage: 8.2x | SL: $111.41 | TP: $122.37
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:259 - [TRADE #188] CLOSED (SL) | P&L: $-206.25 (-26.20%)
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #189] LONG SOL @ $114.75 | Size: $7.28 | Leverage: 10.0x | SL: $111.31 | TP: $121.62
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:259 - [TRADE #189] CLOSED (SL) | P&L: $-250.00 (-29.93%)
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #190] SHORT SOL @ $112.76 | Size: $7.68 | Leverage: 8.2x | SL: $116.01 | TP: $106.25
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:272 - [TRADE #190] CLOSED (SL) | P&L: $-206.25 (-23.82%)
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #191] SHORT SOL @ $113.24 | Size: $6.43 | Leverage: 8.2x | SL: $117.13 | TP: $105.46
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:272 - [TRADE #191] CLOSED (SL) | P&L: $-206.25 (-28.33%)
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #192] SHORT SOL @ $114.55 | Size: $7.24 | Leverage: 8.2x | SL: $118.00 | TP: $107.64
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:272 - [TRADE #192] CLOSED (SL) | P&L: $-206.25 (-24.86%)
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #193] LONG SOL @ $116.28 | Size: $6.32 | Leverage: 8.2x | SL: $112.32 | TP: $124.19
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:259 - [TRADE #193] CLOSED (SL) | P&L: $-206.25 (-28.06%)
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #194] LONG SOL @ $115.32 | Size: $6.80 | Leverage: 8.2x | SL: $111.64 | TP: $122.67
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:259 - [TRADE #194] CLOSED (SL) | P&L: $-206.25 (-26.30%)
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #195] LONG SOL @ $115.44 | Size: $6.78 | Leverage: 8.2x | SL: $111.75 | TP: $122.82
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:259 - [TRADE #195] CLOSED (SL) | P&L: $-206.25 (-26.37%)
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #196] LONG SOL @ $114.89 | Size: $6.95 | Leverage: 8.2x | SL: $111.29 | TP: $122.08
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:259 - [TRADE #196] CLOSED (SL) | P&L: $-206.25 (-25.82%)
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #197] LONG SOL @ $114.12 | Size: $8.44 | Leverage: 8.2x | SL: $111.16 | TP: $120.04
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:259 - [TRADE #197] CLOSED (SL) | P&L: $-206.25 (-21.40%)
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #198] LONG SOL @ $112.84 | Size: $5.35 | Leverage: 8.2x | SL: $108.17 | TP: $122.19
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:265 - [TRADE #198] CLOSED (TP) | P&L: $412.50 (68.30%)
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #199] LONG SOL @ $119.38 | Size: $7.17 | Leverage: 8.2x | SL: $115.89 | TP: $126.34
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:259 - [TRADE #199] CLOSED (SL) | P&L: $-206.25 (-24.08%)
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #200] LONG SOL @ $115.18 | Size: $6.91 | Leverage: 8.2x | SL: $111.56 | TP: $122.42
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:259 - [TRADE #200] CLOSED (SL) | P&L: $-206.25 (-25.93%)
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #201] SHORT SOL @ $114.63 | Size: $7.46 | Leverage: 8.2x | SL: $117.98 | TP: $107.93
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:272 - [TRADE #201] CLOSED (SL) | P&L: $-206.25 (-24.11%)
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #202] SHORT SOL @ $114.85 | Size: $7.34 | Leverage: 8.2x | SL: $118.26 | TP: $108.04
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:272 - [TRADE #202] CLOSED (SL) | P&L: $-206.25 (-24.46%)
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #203] SHORT SOL @ $114.54 | Size: $7.71 | Leverage: 8.2x | SL: $117.79 | TP: $108.05
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:272 - [TRADE #203] CLOSED (SL) | P&L: $-206.25 (-23.37%)
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #204] SHORT SOL @ $115.54 | Size: $6.99 | Leverage: 8.2x | SL: $119.11 | TP: $108.39
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:278 - [TRADE #204] CLOSED (TP) | P&L: $412.50 (51.06%)
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #205] SHORT SOL @ $113.19 | Size: $7.56 | Leverage: 8.2x | SL: $116.50 | TP: $106.58
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:272 - [TRADE #205] CLOSED (SL) | P&L: $-206.25 (-24.11%)
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #206] SHORT SOL @ $113.25 | Size: $7.13 | Leverage: 8.2x | SL: $116.76 | TP: $106.24
+2026-03-03 11:23:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:57 | INFO     | backtest:_check_exit:272 - [TRADE #206] CLOSED (SL) | P&L: $-206.25 (-25.56%)
+2026-03-03 11:23:57 | INFO     | backtest:_open_position:244 - [TRADE #207] SHORT SOL @ $114.77 | Size: $6.83 | Leverage: 8.2x | SL: $118.43 | TP: $107.44
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0000 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:278 - [TRADE #207] CLOSED (TP) | P&L: $412.50 (52.63%)
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #208] SHORT SOL @ $111.73 | Size: $8.47 | Leverage: 8.2x | SL: $114.68 | TP: $105.83
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:272 - [TRADE #208] CLOSED (SL) | P&L: $-206.25 (-21.78%)
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #209] SHORT SOL @ $109.97 | Size: $7.49 | Leverage: 8.2x | SL: $113.31 | TP: $103.29
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:272 - [TRADE #209] CLOSED (SL) | P&L: $-206.25 (-25.06%)
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #210] SHORT SOL @ $113.34 | Size: $8.45 | Leverage: 8.2x | SL: $116.30 | TP: $107.43
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:272 - [TRADE #210] CLOSED (SL) | P&L: $-206.25 (-21.53%)
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #211] LONG SOL @ $112.40 | Size: $7.93 | Leverage: 8.2x | SL: $109.25 | TP: $118.71
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:259 - [TRADE #211] CLOSED (SL) | P&L: $-206.25 (-23.15%)
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #212] LONG SOL @ $113.60 | Size: $7.82 | Leverage: 8.2x | SL: $110.40 | TP: $119.99
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:265 - [TRADE #212] CLOSED (TP) | P&L: $412.50 (46.46%)
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #213] LONG SOL @ $116.94 | Size: $6.23 | Leverage: 8.2x | SL: $112.93 | TP: $124.96
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:259 - [TRADE #213] CLOSED (SL) | P&L: $-206.25 (-28.30%)
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #214] LONG SOL @ $114.85 | Size: $6.77 | Leverage: 8.2x | SL: $111.16 | TP: $122.23
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:259 - [TRADE #214] CLOSED (SL) | P&L: $-206.25 (-26.51%)
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #215] LONG SOL @ $114.93 | Size: $6.73 | Leverage: 8.2x | SL: $111.22 | TP: $122.36
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:259 - [TRADE #215] CLOSED (SL) | P&L: $-206.25 (-26.65%)
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #216] SHORT SOL @ $114.11 | Size: $7.02 | Leverage: 8.2x | SL: $117.67 | TP: $106.99
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:272 - [TRADE #216] CLOSED (SL) | P&L: $-206.25 (-25.74%)
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #217] SHORT SOL @ $115.78 | Size: $7.23 | Leverage: 8.2x | SL: $119.24 | TP: $108.87
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0005 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:272 - [TRADE #217] CLOSED (SL) | P&L: $-206.25 (-24.64%)
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #218] SHORT SOL @ $114.25 | Size: $7.59 | Leverage: 10.0x | SL: $117.54 | TP: $107.66
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:272 - [TRADE #218] CLOSED (SL) | P&L: $-250.00 (-28.83%)
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0001 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #219] SHORT SOL @ $114.19 | Size: $6.35 | Leverage: 8.2x | SL: $118.13 | TP: $106.32
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:272 - [TRADE #219] CLOSED (SL) | P&L: $-206.25 (-28.45%)
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0003 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #220] SHORT SOL @ $115.46 | Size: $7.73 | Leverage: 8.2x | SL: $118.70 | TP: $108.99
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:272 - [TRADE #220] CLOSED (SL) | P&L: $-206.25 (-23.12%)
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #221] SHORT SOL @ $115.34 | Size: $6.61 | Leverage: 8.2x | SL: $119.12 | TP: $107.77
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:272 - [TRADE #221] CLOSED (SL) | P&L: $-206.25 (-27.06%)
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #222] SHORT SOL @ $116.06 | Size: $7.21 | Leverage: 8.2x | SL: $119.53 | TP: $109.13
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:272 - [TRADE #222] CLOSED (SL) | P&L: $-206.25 (-24.65%)
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0004 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #223] SHORT SOL @ $116.02 | Size: $6.61 | Leverage: 8.2x | SL: $119.80 | TP: $108.46
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:272 - [TRADE #223] CLOSED (SL) | P&L: $-206.25 (-26.89%)
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate -0.0002 unfavorable for SHORT
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #224] SHORT SOL @ $116.73 | Size: $8.11 | Leverage: 8.2x | SL: $119.81 | TP: $110.56
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:272 - [TRADE #224] CLOSED (SL) | P&L: $-206.25 (-21.80%)
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #225] LONG SOL @ $117.69 | Size: $7.62 | Leverage: 8.2x | SL: $114.40 | TP: $124.25
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:259 - [TRADE #225] CLOSED (SL) | P&L: $-206.25 (-23.00%)
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #226] LONG SOL @ $117.33 | Size: $7.87 | Leverage: 8.2x | SL: $114.15 | TP: $123.68
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:259 - [TRADE #226] CLOSED (SL) | P&L: $-206.25 (-22.33%)
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #227] LONG SOL @ $117.50 | Size: $6.54 | Leverage: 8.2x | SL: $113.68 | TP: $125.15
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0001 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:259 - [TRADE #227] CLOSED (SL) | P&L: $-206.25 (-26.85%)
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #228] LONG SOL @ $116.64 | Size: $6.96 | Leverage: 8.2x | SL: $113.04 | TP: $123.82
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0002 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:265 - [TRADE #228] CLOSED (TP) | P&L: $412.50 (50.82%)
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #229] LONG SOL @ $120.87 | Size: $6.55 | Leverage: 8.2x | SL: $117.05 | TP: $128.51
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0004 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:259 - [TRADE #229] CLOSED (SL) | P&L: $-206.25 (-26.07%)
+2026-03-03 11:23:58 | INFO     | backtest:_open_position:244 - [TRADE #230] LONG SOL @ $120.21 | Size: $7.26 | Leverage: 8.2x | SL: $116.77 | TP: $127.10
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0003 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0005 unfavorable for LONG
+2026-03-03 11:23:58 | INFO     | backtest:_check_exit:259 - [TRADE #230] CLOSED (SL) | P&L: $-206.25 (-23.63%)
+2026-03-03 11:23:58 | INFO     | backtest:run_backtest:169 - Backtest complete | Trades: 230 | Final Balance: $10000.00
+2026-03-03 11:23:59 | INFO     | backtest:plot_results:374 - Saved backtest chart to backtest_SOL.png
+2026-03-03 11:23:59 | INFO     | __main__:run_backtest:43 - Backtest complete | Trades: 230 | Output: trades_SOL.csv, backtest_SOL.png
+2026-03-03 11:26:33 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:28:40 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:28:40 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 11:28:40 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 11:28:41 | INFO     | signal_generator:load_initial_data:53 - Loaded 51840 candles for SOL
+2026-03-03 11:28:41 | INFO     | signal_generator:load_initial_data:42 - Generating synthetic data for ETH...
+2026-03-03 11:28:41 | INFO     | data_loader:generate_synthetic_ohlcv:167 - Generated synthetic ETH_5m: 51840 candles
+2026-03-03 11:28:41 | INFO     | data_loader:save_cached_data:62 - Cached 51840 rows: ETH_5m
+2026-03-03 11:28:41 | INFO     | signal_generator:load_initial_data:53 - Loaded 51840 candles for ETH
+2026-03-03 11:28:41 | INFO     | signal_generator:load_initial_data:42 - Generating synthetic data for WBTC...
+2026-03-03 11:28:41 | INFO     | data_loader:generate_synthetic_ohlcv:167 - Generated synthetic WBTC_5m: 51840 candles
+2026-03-03 11:28:41 | INFO     | data_loader:save_cached_data:62 - Cached 51840 rows: WBTC_5m
+2026-03-03 11:28:42 | INFO     | signal_generator:load_initial_data:53 - Loaded 51840 candles for WBTC
+2026-03-03 11:36:00 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:36:01 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 11:36:01 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 11:36:01 | INFO     | signal_generator:load_initial_data:53 - Loaded 51840 candles for SOL
+2026-03-03 11:36:01 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 11:36:01 | INFO     | signal_generator:load_initial_data:53 - Loaded 51840 candles for ETH
+2026-03-03 11:36:01 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 11:36:02 | INFO     | signal_generator:load_initial_data:53 - Loaded 51840 candles for WBTC
+2026-03-03 11:45:04 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:45:04 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 11:45:04 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 11:45:05 | INFO     | signal_generator:load_initial_data:53 - Loaded 51840 candles for SOL
+2026-03-03 11:45:05 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 11:45:05 | INFO     | signal_generator:load_initial_data:53 - Loaded 51840 candles for ETH
+2026-03-03 11:45:05 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 11:45:05 | INFO     | signal_generator:load_initial_data:53 - Loaded 51840 candles for WBTC
+2026-03-03 11:46:10 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:46:21 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:46:31 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:46:42 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:46:52 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:47:03 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:47:06 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:47:13 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:47:24 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:47:35 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:47:45 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:47:56 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:48:06 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:48:16 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:48:16 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 11:48:17 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:48:27 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:48:38 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:48:49 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:48:53 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:48:53 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 11:48:59 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:49:10 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:49:20 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:49:31 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:49:41 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:49:52 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:50:02 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:50:13 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:50:24 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:50:34 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:50:45 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:50:55 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:51:06 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:51:16 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:51:27 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:51:38 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:51:48 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:51:59 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:52:03 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:52:04 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 11:52:09 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:52:20 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:52:30 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:52:41 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:52:41 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:52:52 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:53:02 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:53:13 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:53:23 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:53:34 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:53:44 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:53:55 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:54:05 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:54:16 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:54:27 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:54:37 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:54:41 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:54:48 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:54:58 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:55:09 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:55:19 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:55:30 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:55:40 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:55:51 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:56:02 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:56:12 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:56:23 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:56:33 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:56:44 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:56:44 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:56:54 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:57:05 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:57:15 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:57:26 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:57:37 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:57:47 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:57:58 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:58:08 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:58:19 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:58:29 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:58:40 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:58:50 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:59:01 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:59:12 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:59:22 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:59:33 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:59:43 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 11:59:54 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:00:04 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:00:15 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:00:25 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:00:36 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:00:36 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:00:45 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:00:45 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:00:46 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:00:47 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:00:47 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:00:57 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:00:57 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:01:08 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:01:08 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:01:18 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:01:19 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:01:29 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:01:29 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:01:39 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:01:40 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:01:50 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:01:50 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:02:00 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:02:01 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:02:11 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:02:11 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:02:22 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:02:22 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:02:32 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:02:33 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:02:43 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:02:43 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:02:53 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:02:54 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:03:04 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:03:04 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:03:14 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:03:15 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:03:25 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:03:25 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:03:26 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:03:26 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:03:36 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:03:37 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:03:47 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:03:47 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:03:57 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:03:58 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:04:08 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:04:08 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:04:18 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:04:19 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:04:29 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:04:29 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:04:40 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:04:40 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:04:50 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:04:51 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:05:01 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:05:01 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:05:11 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:05:12 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:05:22 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:05:22 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:05:32 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:05:33 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:05:43 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:05:43 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:05:54 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:05:54 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:06:04 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:06:04 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:06:15 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:06:15 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:06:25 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:06:26 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:06:36 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:06:36 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:06:46 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:06:47 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:06:47 | INFO     | signal_generator:run:71 - Starting signal generator for ['SOL', 'ETH', 'WBTC'] on 5m
+2026-03-03 12:06:47 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:06:47 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:06:47 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:06:48 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:06:48 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:06:48 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:06:50 | INFO     | logger:<module>:41 - Logging initialized | Level: INFO | File: logs/bot.log
+2026-03-03 12:06:50 | INFO     | __main__:run_signal_generator:48 - Starting signal generator...
+2026-03-03 12:06:50 | INFO     | signal_generator:run:71 - Starting signal generator for ['SOL', 'ETH', 'WBTC'] on 5m
+2026-03-03 12:06:50 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:06:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:06:51 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:06:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:06:51 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:06:51 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:07:51 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:07:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:07:52 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:07:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:07:52 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:07:52 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:08:52 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:08:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:08:53 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:08:53 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:08:53 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:08:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:09:54 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:09:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:09:54 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:09:54 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:09:54 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:09:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:10:55 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:10:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:10:55 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:10:55 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:10:55 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:10:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:11:56 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:11:56 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:11:56 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:11:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:11:57 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:11:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:12:57 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:12:57 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:12:57 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:12:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:12:58 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:12:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:13:58 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:13:58 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:13:58 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:13:59 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:13:59 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:13:59 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:14:59 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:14:59 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:14:59 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:15:00 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:15:00 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:15:00 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:16:00 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:16:00 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:16:01 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:16:01 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:16:01 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:16:01 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:17:01 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:17:02 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:17:02 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:17:02 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:17:02 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:17:02 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:18:02 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:18:03 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:18:03 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:18:03 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:18:03 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:18:03 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:19:03 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:19:04 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:19:04 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:19:04 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:19:04 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:19:04 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:20:04 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:20:05 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:20:05 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:20:05 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:20:05 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:20:06 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:21:06 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:21:06 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:21:06 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:21:06 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:21:06 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:21:07 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:22:07 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:22:07 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:22:07 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:22:07 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:22:07 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:22:08 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:23:08 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:23:08 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:23:08 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:23:08 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:23:08 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:23:09 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:24:09 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:24:09 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:24:09 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:24:10 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:24:10 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:24:10 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:25:10 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: SOL_5m
+2026-03-03 12:25:10 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:25:10 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: ETH_5m
+2026-03-03 12:25:11 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG
+2026-03-03 12:25:11 | INFO     | data_loader:load_cached_data:51 - Loaded 51840 rows from cache: WBTC_5m
+2026-03-03 12:25:11 | INFO     | risk_manager:funding_rate_filter:96 - Funding rate 0.0000 unfavorable for LONG

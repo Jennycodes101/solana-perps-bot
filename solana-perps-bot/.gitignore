@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# Environment
+.env
+.DS_Store
+
+# Logs (optional - remove if you want to track logs)
+logs/*.log
+
+# Cache files
+*.parquet
+data/cache/
+
+# Backup files
+*.bak
+
+# Output files
+*.png
+*.csv
