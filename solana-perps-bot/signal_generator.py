@@ -26,45 +26,52 @@ class SignalGenerator:
     def generate_signal(self, symbol: str, df: pd.DataFrame, funding_rate: float = 0.0):
         """Generate a trading signal for the given symbol."""
         if df is None or df.empty or len(df) < 30:
+            logger.warning(f"generate_signal: {symbol} - df is None/empty or len < 30")
             return {"signal": "NEUTRAL", "confidence": 0.0}
 
-        calc = IndicatorCalculator(indicators_config)
-        df = calc.calculate_all(df)
+        try:
+            calc = IndicatorCalculator(indicators_config)
+            df = calc.calculate_all(df)
 
-        ema_sig = calc.get_ema_signal(df)
-        st_sig = calc.get_supertrend_signal(df)
-        macd_sig = calc.get_macd_signal(df)
-        rsi_filt = calc.get_rsi_filter(df)
+            ema_sig = calc.get_ema_signal(df)
+            st_sig = calc.get_supertrend_signal(df)
+            macd_sig = calc.get_macd_signal(df)
+            rsi_filt = calc.get_rsi_filter(df)
 
-        signal = "NEUTRAL"
-        if ema_sig == "LONG" or st_sig == "LONG":
-            signal = "LONG"
-        elif ema_sig == "SHORT" or st_sig == "SHORT":
-            signal = "SHORT"
+            signal = "NEUTRAL"
+            if ema_sig == "LONG" or st_sig == "LONG":
+                signal = "LONG"
+            elif ema_sig == "SHORT" or st_sig == "SHORT":
+                signal = "SHORT"
 
-        confidence = calc.calculate_confidence_score(df, signal)
-        funding_ok = self.risk_mgr.funding_rate_filter(funding_rate, signal) if signal != "NEUTRAL" else True
+            confidence = calc.calculate_confidence_score(df, signal)
+            funding_ok = self.risk_mgr.funding_rate_filter(funding_rate, signal) if signal != "NEUTRAL" else True
 
-        current_price = df["close"].iloc[-1]
-        prev_price = df["close"].iloc[-2] if len(df) > 1 else current_price
-        sl, tp = calc.calculate_atr_stops(df, current_price, signal)
-        price_change_pct = ((current_price - prev_price) / prev_price) * 100 if prev_price != 0 else 0.0
+            current_price = df["close"].iloc[-1]
+            prev_price = df["close"].iloc[-2] if len(df) > 1 else current_price
+            sl, tp = calc.calculate_atr_stops(df, current_price, signal)
+            price_change_pct = ((current_price - prev_price) / prev_price) * 100 if prev_price != 0 else 0.0
 
-        return {
-            "symbol": symbol,
-            "signal": signal,
-            "confidence": confidence,
-            "price": current_price,
-            "price_change_pct": price_change_pct,
-            "rsi": df["rsi"].iloc[-1] if not pd.isna(df["rsi"].iloc[-1]) else 0.0,
-            "funding_rate": funding_rate,
-            "funding_ok": funding_ok,
-            "stop_loss": sl,
-            "take_profit": tp,
-            "ema_signal": ema_sig,
-            "st_signal": st_sig,
-            "macd_signal": macd_sig,
-        }
+            result = {
+                "symbol": symbol,
+                "signal": signal,
+                "confidence": confidence,
+                "price": current_price,
+                "price_change_pct": price_change_pct,
+                "rsi": df["rsi"].iloc[-1] if not pd.isna(df["rsi"].iloc[-1]) else 0.0,
+                "funding_rate": funding_rate,
+                "funding_ok": funding_ok,
+                "stop_loss": sl,
+                "take_profit": tp,
+                "ema_signal": ema_sig,
+                "st_signal": st_sig,
+                "macd_signal": macd_sig,
+            }
+            logger.info(f"generate_signal: {symbol} - Signal: {signal}, Price: ${current_price:.2f}")
+            return result
+        except Exception as e:
+            logger.error(f"Error in generate_signal for {symbol}: {e}", exc_info=True)
+            return {"signal": "NEUTRAL", "confidence": 0.0}
 
     async def run(self, update_interval: int = 60, duration_seconds: int = None):
         """Run real-time signal generator (async)."""
@@ -86,17 +93,31 @@ class SignalGenerator:
 
                 signals = []
                 for symbol in self.symbols:
-                    df = self.data_loader.load_cached_data(symbol, self.timeframe)
+                    # Try to fetch live data from CoinGecko API
+                    logger.info(f"Fetching live data for {symbol}...")
+                    df = await self.data_loader.fetch_coingecko_ohlcv(symbol, self.timeframe, days=180)
+                    
+                    if df is None or df.empty:
+                        logger.warning(f"Live data fetch failed for {symbol}, trying cache...")
+                        df = self.data_loader.load_cached_data(symbol, self.timeframe)
+                    else:
+                        # Save the fresh data to cache
+                        self.data_loader.save_cached_data(df, symbol, self.timeframe)
+                    
+                    logger.info(f"Loaded data for {symbol}: {df.shape if df is not None and not df.empty else 'None/Empty'}")
                     if df is not None and not df.empty:
                         funding_rate = 0.0
                         sig = self.generate_signal(symbol, df, funding_rate)
                         signals.append(sig)
+                    else:
+                        logger.warning(f"No data for {symbol}")
 
+                logger.info(f"Total signals generated: {len(signals)}")
                 self._display_signals(signals)
                 await asyncio.sleep(update_interval)
 
             except Exception as e:
-                logger.error(f"Error in signal generation: {e}")
+                logger.error(f"Error in signal generation: {e}", exc_info=True)
                 await asyncio.sleep(update_interval)
 
     def _display_signals(self, signals):
@@ -119,16 +140,10 @@ class SignalGenerator:
                 sig["symbol"],
                 sig_str,
                 f"{sig['confidence']:.1f}%",
-                f"${sig['price']:.4f}",
+                f"${sig['price']:.2f}",
                 f"{sig['price_change_pct']:+.2f}%",
                 f"{sig['rsi']:.1f}",
                 f"{sig['funding_rate']:.5f}",
                 funding_ok_str,
             )
         console.print(table)
-
-
-if __name__ == "__main__":
-    import asyncio
-    gen = SignalGenerator(symbols=["SOL", "ETH", "WBTC"], timeframe="5m")
-    asyncio.run(gen.run(update_interval=60))

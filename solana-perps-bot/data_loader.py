@@ -1,34 +1,37 @@
 """
-Load historical OHLCV data from Birdeye API with local caching.
-Also provides real-time price/funding rate fetching via async.
+Load historical OHLCV data from CoinGecko API with local caching.
 """
 
+import os
+import sys
 import pandas as pd
-import aiohttp
 import asyncio
-import json
+import aiohttp
 from pathlib import Path
 from datetime import datetime, timedelta
-from typing import Optional, Dict, List
-from logger import logger
+from typing import Optional, Dict
 from dotenv import load_dotenv
-import os
+from logger import logger
 
 load_dotenv()
 
-BIRDEYE_API_KEY = os.getenv("BIRDEYE_API_KEY", "")
-BIRDEYE_BASE_URL = "https://public-api.birdeye.so/v1"
-CACHE_DIR = Path("data/cache")
-CACHE_DIR.mkdir(parents=True, exist_ok=True)
+COINGECKO_BASE_URL = "https://api.coingecko.com/api/v3"
+
+# CoinGecko token IDs
+TOKEN_IDS = {
+    "SOL": "solana",
+    "ETH": "ethereum",
+    "WBTC": "bitcoin",
+}
 
 
 class DataLoader:
-    """Fetch and cache OHLCV data for backtesting."""
-
     @staticmethod
     def get_cache_path(symbol: str, timeframe: str) -> Path:
-        """Get local cache file path."""
-        return CACHE_DIR / f"{symbol}_{timeframe}.parquet"
+        """Get path to cache file."""
+        cache_dir = Path.home() / "solana-perps-bot" / "data" / "cache"
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        return cache_dir / f"{symbol}_{timeframe}.parquet"
 
     @staticmethod
     def load_cached_data(symbol: str, timeframe: str, max_age_days: int = 1) -> Optional[pd.DataFrame]:
@@ -58,66 +61,68 @@ class DataLoader:
     def save_cached_data(df: pd.DataFrame, symbol: str, timeframe: str) -> None:
         """Save DataFrame to local cache."""
         cache_path = DataLoader.get_cache_path(symbol, timeframe)
-        df.to_parquet(cache_path)
-        logger.info(f"Cached {len(df)} rows: {symbol}_{timeframe}")
+        try:
+            df.to_parquet(cache_path)
+            logger.info(f"Saved {len(df)} rows to cache: {symbol}_{timeframe}")
+        except Exception as e:
+            logger.error(f"Error saving cache: {e}")
 
     @staticmethod
-    async def fetch_birdeye_ohlcv(
-        symbol: str,
-        timeframe: str = "5m",
-        limit: int = 1000,
-    ) -> Optional[pd.DataFrame]:
-        """Fetch OHLCV data from Birdeye API."""
-        if not BIRDEYE_API_KEY:
-            logger.warning("BIRDEYE_API_KEY not set, cannot fetch from API")
+    async def fetch_coingecko_ohlcv(symbol: str, timeframe: str, days: int = 180) -> Optional[pd.DataFrame]:
+        """Fetch OHLCV data from CoinGecko API (free, no key required)."""
+        if symbol not in TOKEN_IDS:
+            logger.error(f"Unknown symbol: {symbol}")
             return None
         
-        tf_map = {"1m": "1m", "5m": "5m", "15m": "15m", "1h": "1h", "4h": "4h", "1d": "1d"}
-        if timeframe not in tf_map:
-            logger.error(f"Unsupported timeframe: {timeframe}")
-            return None
+        token_id = TOKEN_IDS[symbol]
         
-        url = f"{BIRDEYE_BASE_URL}/defi/ohlcv"
+        # CoinGecko returns daily data only in free tier
+        url = f"{COINGECKO_BASE_URL}/coins/{token_id}/market_chart"
         params = {
-            "address": symbol,
-            "type": tf_map[timeframe],
-            "limit": limit,
+            "vs_currency": "usd",
+            "days": days,
+            "interval": "daily",
         }
-        headers = {"X-API-KEY": BIRDEYE_API_KEY}
         
         try:
             async with aiohttp.ClientSession() as session:
-                async with session.get(url, params=params, headers=headers, timeout=10) as resp:
+                async with session.get(url, params=params, timeout=30) as resp:
                     if resp.status != 200:
-                        logger.error(f"Birdeye API error: {resp.status}")
+                        logger.error(f"CoinGecko API error: {resp.status}")
                         return None
                     
                     data = await resp.json()
                     
-                    if "data" not in data or "items" not in data["data"]:
-                        logger.error("Unexpected Birdeye response format")
+                    if "prices" not in data:
+                        logger.error(f"Unexpected CoinGecko response format")
                         return None
                     
                     records = []
-                    for item in data["data"]["items"]:
+                    for i, (timestamp_ms, price) in enumerate(data["prices"]):
+                        timestamp = pd.to_datetime(timestamp_ms, unit="ms")
+                        
                         records.append({
-                            "timestamp": pd.to_datetime(item["unixTime"], unit="s"),
-                            "open": float(item["o"]),
-                            "high": float(item["h"]),
-                            "low": float(item["l"]),
-                            "close": float(item["c"]),
-                            "volume": float(item["v"]),
+                            "timestamp": timestamp,
+                            "open": price,
+                            "high": price,
+                            "low": price,
+                            "close": price,
+                            "volume": 0,
                         })
                     
+                    if not records:
+                        logger.error(f"No valid records returned for {symbol}")
+                        return None
+                    
                     df = pd.DataFrame(records).set_index("timestamp").sort_index()
-                    logger.info(f"Fetched {len(df)} candles from Birdeye: {symbol}_{timeframe}")
+                    logger.info(f"Fetched {len(df)} days from CoinGecko API: {symbol}")
                     return df
         
         except asyncio.TimeoutError:
-            logger.error(f"Birdeye API timeout")
+            logger.error(f"CoinGecko API timeout for {symbol}")
             return None
         except Exception as e:
-            logger.error(f"Error fetching from Birdeye: {e}")
+            logger.error(f"Error fetching from CoinGecko: {e}")
             return None
 
     @staticmethod
