@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ScatterChart, Scatter } from 'recharts';
+import { LineChart, Line, ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -12,13 +12,18 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(false);
   const [callHistory, setCallHistory] = useState([]);
   const [chartData, setChartData] = useState({});
+  const [time, setTime] = useState(new Date());
 
   const API_URL = 'http://localhost:8000';
 
   useEffect(() => {
     fetchData();
     const interval = setInterval(fetchData, 60000);
-    return () => clearInterval(interval);
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => {
+      clearInterval(interval);
+      clearInterval(timer);
+    };
   }, []);
 
   const fetchData = async () => {
@@ -38,8 +43,7 @@ const Dashboard = () => {
       setPerformance(perfRes.data || {});
       setCallHistory(historyRes.data || []);
       
-      // Generate chart data
-      generateChartData(signalsRes.data || [], historyRes.data || []);
+      generateChartData(signalsRes.data || []);
     } catch (error) {
       console.error('Error fetching data:', error);
     } finally {
@@ -47,14 +51,13 @@ const Dashboard = () => {
     }
   };
 
-  const generateChartData = (signals, history) => {
+  const generateChartData = (signals) => {
     const data = {};
     
     signals.forEach(signal => {
       const symbol = signal.symbol;
-      // Create mock price data with entry/exit points
-      const priceData = [];
       const basePrice = signal.price;
+      const priceData = [];
       
       for (let i = -20; i <= 20; i++) {
         const price = basePrice + (Math.sin(i / 5) * basePrice * 0.02);
@@ -64,7 +67,6 @@ const Dashboard = () => {
           entry: i === 0 && signal.signal !== 'HOLD' ? signal.price : null,
           stopLoss: signal.stop_loss,
           takeProfit: signal.take_profit,
-          rsi: 50 + Math.sin(i / 5) * 20,
         });
       }
       
@@ -108,11 +110,15 @@ const Dashboard = () => {
 
   return (
     <div className="matrix-dashboard">
+      {/* Scanlines effect */}
+      <div className="scanlines"></div>
+
       {/* Header */}
       <header className="matrix-header">
         <div className="header-title">
-          <span className="terminal-text">{'>'}</span>
-          <span className="glow-text">JUPITER PERPS BOT v2.0</span>
+          <span className="cursor">{'>'}</span>
+          <span className="glow">JUPITER PERPS BOT v2.0</span>
+          <span className="timestamp">{time.toLocaleTimeString()}</span>
         </div>
         <div className="header-status">
           <span className={`status-indicator ${isRunning ? 'active' : 'inactive'}`}></span>
@@ -143,7 +149,7 @@ const Dashboard = () => {
         <section className="matrix-section signals-section">
           <div className="section-header">
             <span className="bracket">[</span>
-            <span className="section-title">LIVE SIGNALS</span>
+            <span>LIVE SIGNALS</span>
             <span className="bracket">]</span>
           </div>
 
@@ -154,15 +160,12 @@ const Dashboard = () => {
               {signals.map(signal => (
                 <div 
                   key={signal.symbol}
-                  className="signal-card matrix-card"
+                  className="signal-card"
                   style={{ borderColor: getSignalColor(signal.signal) }}
                 >
                   <div className="signal-header">
-                    <span className="symbol-text">{signal.symbol}</span>
-                    <span 
-                      className="signal-badge"
-                      style={{ color: getSignalColor(signal.signal) }}
-                    >
+                    <span className="symbol">{signal.symbol}</span>
+                    <span className="signal-badge" style={{ color: getSignalColor(signal.signal) }}>
                       [{signal.signal}]
                     </span>
                   </div>
@@ -173,7 +176,7 @@ const Dashboard = () => {
                       <span className="value">${signal.price?.toFixed(2)}</span>
                     </div>
                     <div className="data-row">
-                      <span className="label">CONFIDENCE:</span>
+                      <span className="label">CONF:</span>
                       <span className="value" style={{ color: signal.confidence > 70 ? '#00ff00' : signal.confidence > 40 ? '#ffff00' : '#ff0000' }}>
                         {signal.confidence?.toFixed(1)}%
                       </span>
@@ -189,40 +192,27 @@ const Dashboard = () => {
                   </div>
 
                   <div className="trade-levels">
-                    <div className="level tp">
-                      <span>TP</span>
-                      <span>${signal.take_profit?.toFixed(2)}</span>
-                    </div>
-                    <div className="level sl">
-                      <span>SL</span>
-                      <span>${signal.stop_loss?.toFixed(2)}</span>
-                    </div>
+                    <div className="level tp">TP: ${signal.take_profit?.toFixed(2)}</div>
+                    <div className="level sl">SL: ${signal.stop_loss?.toFixed(2)}</div>
                   </div>
 
-                  {/* Chart */}
+                  {/* Mini Chart */}
                   {chartData[signal.symbol] && (
                     <div className="signal-chart">
-                      <ResponsiveContainer width="100%" height={200}>
+                      <ResponsiveContainer width="100%" height={150}>
                         <ScatterChart data={chartData[signal.symbol]} margin={{ top: 5, right: 5, left: -20, bottom: 5 }}>
-                          <CartesianGrid strokeDasharray="3 3" stroke="#00aa00" opacity={0.1} />
-                          <XAxis type="number" dataKey="time" stroke="#00aa00" />
-                          <YAxis stroke="#00aa00" />
+                          <CartesianGrid strokeDasharray="3 3" stroke="#00aa00" opacity={0.2} />
+                          <XAxis type="number" dataKey="time" stroke="#00aa00" tick={{ fontSize: 11 }} />
+                          <YAxis stroke="#00aa00" tick={{ fontSize: 11 }} />
                           <Tooltip 
-                            contentStyle={{ backgroundColor: '#001a00', border: '1px solid #00ff00', color: '#00ff00' }}
-                            cursor={{ fill: 'rgba(0, 255, 0, 0.1)' }}
+                            contentStyle={{ backgroundColor: '#001a00', border: '1px solid #00ff00', color: '#00ff00', fontFamily: 'Courier New' }}
+                            formatter={(value) => value.toFixed(2)}
                           />
                           <Scatter 
                             name="Price" 
-                            data={chartData[signal.symbol].filter(d => d.time !== null)} 
+                            data={chartData[signal.symbol]} 
                             fill="#00ff00"
-                            fillOpacity={0.6}
-                          />
-                          {/* Entry Point */}
-                          <Scatter 
-                            name="Entry" 
-                            data={chartData[signal.symbol].filter(d => d.entry !== null)} 
-                            fill="#ffff00"
-                            shape="star"
+                            stroke="#00aa00"
                           />
                         </ScatterChart>
                       </ResponsiveContainer>
@@ -235,30 +225,28 @@ const Dashboard = () => {
         </section>
 
         {/* Performance Metrics */}
-        <section className="matrix-section metrics-section">
+        <section className="matrix-section">
           <div className="section-header">
             <span className="bracket">[</span>
-            <span className="section-title">SYSTEM METRICS</span>
+            <span>SYSTEM METRICS</span>
             <span className="bracket">]</span>
           </div>
           <div className="metrics-grid">
-            <div className="metric-item">
-              <span className="metric-label">TOTAL TRADES:</span>
+            <div className="metric">
+              <span className="metric-label">TRADES:</span>
               <span className="metric-value">{performance.total_trades || 0}</span>
             </div>
-            <div className="metric-item">
+            <div className="metric">
               <span className="metric-label">WIN RATE:</span>
-              <span className="metric-value" style={{ color: '#00ff00' }}>
-                {performance.win_rate?.toFixed(1) || 0}%
-              </span>
+              <span className="metric-value">{performance.win_rate?.toFixed(1) || 0}%</span>
             </div>
-            <div className="metric-item">
-              <span className="metric-label">TOTAL P&L:</span>
+            <div className="metric">
+              <span className="metric-label">P&L:</span>
               <span className="metric-value" style={{ color: (performance.total_pnl || 0) >= 0 ? '#00ff00' : '#ff0000' }}>
                 ${(performance.total_pnl || 0).toFixed(2)}
               </span>
             </div>
-            <div className="metric-item">
+            <div className="metric">
               <span className="metric-label">AVG P&L:</span>
               <span className="metric-value" style={{ color: (performance.avg_trade_pnl || 0) >= 0 ? '#00ff00' : '#ff0000' }}>
                 ${(performance.avg_trade_pnl || 0).toFixed(2)}
@@ -268,34 +256,30 @@ const Dashboard = () => {
         </section>
 
         {/* Signal History */}
-        <section className="matrix-section history-section">
+        <section className="matrix-section">
           <div className="section-header">
             <span className="bracket">[</span>
-            <span className="section-title">SIGNAL HISTORY</span>
+            <span>SIGNAL HISTORY</span>
             <span className="bracket">]</span>
           </div>
           {callHistory.length === 0 ? (
-            <div className="terminal-text">_ no history available _</div>
+            <div className="terminal-text">_ no history _</div>
           ) : (
             <div className="history-table">
               <div className="table-header">
-                <div className="col time">TIME</div>
-                <div className="col symbol">SYMBOL</div>
-                <div className="col signal">SIGNAL</div>
-                <div className="col price">PRICE</div>
-                <div className="col conf">CONF</div>
+                <div>TIME</div>
+                <div>SYMBOL</div>
+                <div>SIGNAL</div>
+                <div>PRICE</div>
+                <div>CONF</div>
               </div>
               {callHistory.slice().reverse().map((call, idx) => (
                 <div key={idx} className="table-row" style={{ borderLeftColor: getSignalColor(call.signal) }}>
-                  <div className="col time">{formatTime(call.timestamp)}</div>
-                  <div className="col symbol">{call.symbol}</div>
-                  <div className="col signal" style={{ color: getSignalColor(call.signal) }}>
-                    [{call.signal}]
-                  </div>
-                  <div className="col price">${call.price?.toFixed(2)}</div>
-                  <div className="col conf" style={{ color: call.confidence > 70 ? '#00ff00' : '#ffff00' }}>
-                    {call.confidence?.toFixed(1)}%
-                  </div>
+                  <div>{formatTime(call.timestamp)}</div>
+                  <div>{call.symbol}</div>
+                  <div style={{ color: getSignalColor(call.signal) }}>[{call.signal}]</div>
+                  <div>${call.price?.toFixed(2)}</div>
+                  <div style={{ color: call.confidence > 70 ? '#00ff00' : '#ffff00' }}>{call.confidence?.toFixed(1)}%</div>
                 </div>
               ))}
             </div>
@@ -303,26 +287,20 @@ const Dashboard = () => {
         </section>
 
         {/* Alerts */}
-        <section className="matrix-section alerts-section">
+        <section className="matrix-section">
           <div className="section-header">
             <span className="bracket">[</span>
-            <span className="section-title">SYSTEM ALERTS</span>
+            <span>SYSTEM ALERTS</span>
             <span className="bracket">]</span>
           </div>
           {alerts.length === 0 ? (
             <div className="terminal-text">_ no alerts _</div>
           ) : (
             <div className="alerts-list">
-              {alerts.slice(-8).reverse().map(alert => (
-                <div 
-                  key={alert.id} 
-                  className={`alert-item ${alert.severity}`}
-                >
-                  <span className="severity-icon">
-                    {alert.severity === 'error' ? '!' : alert.severity === 'warning' ? '◆' : 'i'}
-                  </span>
-                  <span className="alert-message">{alert.message}</span>
-                  <span className="alert-time">{formatTime(alert.timestamp)}</span>
+              {alerts.slice(-5).reverse().map(alert => (
+                <div key={alert.id} className={`alert ${alert.severity}`}>
+                  <span>{alert.message}</span>
+                  <span className="time">{formatTime(alert.timestamp)}</span>
                 </div>
               ))}
             </div>
@@ -332,7 +310,7 @@ const Dashboard = () => {
 
       {/* Footer */}
       <footer className="matrix-footer">
-        <span className="terminal-text">{'>'} SYSTEM READY</span>
+        <span>{'>'} SYSTEM READY {'<'}</span>
       </footer>
     </div>
   );
