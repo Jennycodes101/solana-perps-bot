@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { TrendingUp, AlertCircle, Activity, DollarSign, Target, Clock } from 'lucide-react';
+import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ScatterChart, Scatter } from 'recharts';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -9,44 +9,11 @@ const Dashboard = () => {
   const [alerts, setAlerts] = useState([]);
   const [performance, setPerformance] = useState({});
   const [isRunning, setIsRunning] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
   const [loading, setLoading] = useState(false);
-  const [theme, setTheme] = useState('default');
+  const [callHistory, setCallHistory] = useState([]);
+  const [chartData, setChartData] = useState({});
 
   const API_URL = 'http://localhost:8000';
-
-  const themeColors = {
-    default: {
-      primary: '#3b82f6',
-      success: '#10b981',
-      danger: '#ef4444',
-      warning: '#f59e0b',
-      name: 'Default',
-    },
-    ocean: {
-      primary: '#0ea5e9',
-      success: '#06b6d4',
-      danger: '#f43f5e',
-      warning: '#facc15',
-      name: 'Ocean',
-    },
-    sunset: {
-      primary: '#f97316',
-      success: '#ec4899',
-      danger: '#dc2626',
-      warning: '#f59e0b',
-      name: 'Sunset',
-    },
-    forest: {
-      primary: '#059669',
-      success: '#10b981',
-      danger: '#dc2626',
-      warning: '#fbbf24',
-      name: 'Forest',
-    },
-  };
-
-  const colors = themeColors[theme];
 
   useEffect(() => {
     fetchData();
@@ -57,22 +24,54 @@ const Dashboard = () => {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const [signalsRes, tradesRes, alertsRes, perfRes] = await Promise.all([
+      const [signalsRes, tradesRes, alertsRes, perfRes, historyRes] = await Promise.all([
         axios.get(`${API_URL}/api/signals`).catch(() => ({ data: [] })),
         axios.get(`${API_URL}/api/trades`).catch(() => ({ data: [] })),
         axios.get(`${API_URL}/api/alerts`).catch(() => ({ data: [] })),
         axios.get(`${API_URL}/api/performance`).catch(() => ({ data: {} })),
+        axios.get(`${API_URL}/api/signal-history`).catch(() => ({ data: [] })),
       ]);
 
       setSignals(signalsRes.data || []);
       setTrades(tradesRes.data || []);
       setAlerts(alertsRes.data || []);
       setPerformance(perfRes.data || {});
+      setCallHistory(historyRes.data || []);
+      
+      // Generate chart data
+      generateChartData(signalsRes.data || [], historyRes.data || []);
     } catch (error) {
       console.error('Error fetching data:', error);
     } finally {
       setLoading(false);
     }
+  };
+
+  const generateChartData = (signals, history) => {
+    const data = {};
+    
+    signals.forEach(signal => {
+      const symbol = signal.symbol;
+      // Create mock price data with entry/exit points
+      const priceData = [];
+      const basePrice = signal.price;
+      
+      for (let i = -20; i <= 20; i++) {
+        const price = basePrice + (Math.sin(i / 5) * basePrice * 0.02);
+        priceData.push({
+          time: i,
+          price: parseFloat(price.toFixed(2)),
+          entry: i === 0 && signal.signal !== 'HOLD' ? signal.price : null,
+          stopLoss: signal.stop_loss,
+          takeProfit: signal.take_profit,
+          rsi: 50 + Math.sin(i / 5) * 20,
+        });
+      }
+      
+      data[symbol] = priceData;
+    });
+    
+    setChartData(data);
   };
 
   const startBot = async () => {
@@ -96,240 +95,206 @@ const Dashboard = () => {
   };
 
   const getSignalColor = (signal) => {
-    if (signal === 'LONG') return colors.success;
-    if (signal === 'SHORT') return colors.danger;
-    return '#6b7280';
+    if (signal === 'LONG') return '#00ff00';
+    if (signal === 'SHORT') return '#ff0000';
+    return '#00aa00';
   };
 
-  const getSignalBgColor = (signal) => {
-    if (signal === 'LONG') return colors.success + '20';
-    if (signal === 'SHORT') return colors.danger + '20';
-    return '#f3f4f6';
+  const formatTime = (dateString) => {
+    if (!dateString) return 'N/A';
+    const date = new Date(dateString);
+    return date.toLocaleTimeString();
   };
 
   return (
-    <div className={`dashboard ${darkMode ? 'dark' : 'light'}`}>
-      <header className="header" style={{ borderColor: colors.primary + '40' }}>
-        <div className="header-left">
-          <h1 style={{ 
-            background: `linear-gradient(135deg, ${colors.primary}, ${colors.success})`,
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-          }}>
-            🤖 Jupiter Perps
-          </h1>
-          <span className={`status ${isRunning ? 'running' : 'stopped'}`} style={isRunning ? {
-            background: colors.success + '15',
-            color: colors.success,
-            borderColor: colors.success,
-          } : {}}>
-            {isRunning ? '🟢 Live' : '⚫ Stopped'}
-          </span>
+    <div className="matrix-dashboard">
+      {/* Header */}
+      <header className="matrix-header">
+        <div className="header-title">
+          <span className="terminal-text">{'>'}</span>
+          <span className="glow-text">JUPITER PERPS BOT v2.0</span>
         </div>
-        <div className="header-right">
-          <select 
-            value={theme} 
-            onChange={(e) => setTheme(e.target.value)}
-            style={{
-              padding: '0.625rem 1rem',
-              borderRadius: '0.75rem',
-              border: `2px solid ${colors.primary}`,
-              background: colors.primary + '10',
-              color: colors.primary,
-              cursor: 'pointer',
-              fontWeight: '600',
-              fontSize: '0.875rem',
-            }}
-          >
-            <option value="default">🎨 Default</option>
-            <option value="ocean">🌊 Ocean</option>
-            <option value="sunset">🌅 Sunset</option>
-            <option value="forest">🌲 Forest</option>
-          </select>
-
-          <button 
-            className="btn-toggle-theme"
-            onClick={() => setDarkMode(!darkMode)}
-            style={{ fontSize: '1.5rem' }}
-          >
-            {darkMode ? '☀️' : '🌙'}
-          </button>
-          {!isRunning ? (
-            <button 
-              className="btn-start" 
-              onClick={startBot}
-              style={{
-                background: `linear-gradient(135deg, ${colors.success}, #059669)`,
-                color: 'white',
-                boxShadow: `0 4px 15px ${colors.success}4d`,
-              }}
-            >
-              ▶️ Start
-            </button>
-          ) : (
-            <button 
-              className="btn-stop" 
-              onClick={stopBot}
-              style={{
-                background: `linear-gradient(135deg, ${colors.danger}, #dc2626)`,
-                color: 'white',
-                boxShadow: `0 4px 15px ${colors.danger}4d`,
-              }}
-            >
-              ⏹️ Stop
-            </button>
-          )}
-          <button 
-            className="btn-refresh" 
-            onClick={fetchData} 
-            disabled={loading}
-            style={{
-              background: `linear-gradient(135deg, ${colors.primary}, #2563eb)`,
-              color: 'white',
-              boxShadow: `0 4px 15px ${colors.primary}4d`,
-            }}
-          >
-            {loading ? '⏳' : '🔄'}
-          </button>
+        <div className="header-status">
+          <span className={`status-indicator ${isRunning ? 'active' : 'inactive'}`}></span>
+          <span className="status-text">{isRunning ? '[SYSTEM ACTIVE]' : '[SYSTEM OFFLINE]'}</span>
         </div>
       </header>
 
-      <main className="main-content">
-        <section className="section signals-section">
-          <h2>📊 Live Trading Signals</h2>
+      {/* Control Panel */}
+      <div className="matrix-controls">
+        <button 
+          className={`matrix-btn ${isRunning ? 'stop' : 'start'}`}
+          onClick={isRunning ? stopBot : startBot}
+        >
+          {isRunning ? '■ STOP' : '▶ START'}
+        </button>
+        <button 
+          className="matrix-btn refresh"
+          onClick={fetchData} 
+          disabled={loading}
+        >
+          {loading ? '◇ LOADING...' : '◆ REFRESH'}
+        </button>
+      </div>
+
+      {/* Main Content */}
+      <div className="matrix-content">
+        {/* Live Signals Section */}
+        <section className="matrix-section signals-section">
+          <div className="section-header">
+            <span className="bracket">[</span>
+            <span className="section-title">LIVE SIGNALS</span>
+            <span className="bracket">]</span>
+          </div>
+
           {signals.length === 0 ? (
-            <div className="empty-state">
-              <p>No signals available yet. Start the bot to see live signals!</p>
-            </div>
+            <div className="terminal-text">_ no active signals _</div>
           ) : (
             <div className="signals-grid">
               {signals.map(signal => (
                 <div 
                   key={signal.symbol}
-                  className="signal-card"
-                  style={{ 
-                    backgroundColor: getSignalBgColor(signal.signal), 
-                    borderColor: getSignalColor(signal.signal),
-                    borderWidth: '2px',
-                  }}
+                  className="signal-card matrix-card"
+                  style={{ borderColor: getSignalColor(signal.signal) }}
                 >
                   <div className="signal-header">
-                    <h3>{signal.symbol}</h3>
+                    <span className="symbol-text">{signal.symbol}</span>
                     <span 
                       className="signal-badge"
-                      style={{ backgroundColor: getSignalColor(signal.signal), color: 'white' }}
+                      style={{ color: getSignalColor(signal.signal) }}
                     >
-                      {signal.signal}
+                      [{signal.signal}]
                     </span>
                   </div>
 
-                  <div className="signal-details">
-                    <div className="detail">
-                      <span className="label">Price</span>
-                      <span className="value">${signal.price?.toFixed(2) || 'N/A'}</span>
+                  <div className="signal-data">
+                    <div className="data-row">
+                      <span className="label">PRICE:</span>
+                      <span className="value">${signal.price?.toFixed(2)}</span>
                     </div>
-                    <div className="detail">
-                      <span className="label">Confidence</span>
-                      <span className="value">{signal.confidence?.toFixed(1) || 'N/A'}%</span>
+                    <div className="data-row">
+                      <span className="label">CONFIDENCE:</span>
+                      <span className="value" style={{ color: signal.confidence > 70 ? '#00ff00' : signal.confidence > 40 ? '#ffff00' : '#ff0000' }}>
+                        {signal.confidence?.toFixed(1)}%
+                      </span>
                     </div>
-                    <div className="detail">
-                      <span className="label">RSI</span>
-                      <span className="value">{signal.rsi?.toFixed(1) || 'N/A'}</span>
+                    <div className="data-row">
+                      <span className="label">RSI:</span>
+                      <span className="value">{signal.rsi?.toFixed(1)}</span>
                     </div>
-                    <div className="detail">
-                      <span className="label">Funding</span>
-                      <span className="value">{signal.funding_rate?.toFixed(5) || 'N/A'}</span>
+                    <div className="data-row">
+                      <span className="label">TIME:</span>
+                      <span className="value">{formatTime(signal.timestamp)}</span>
                     </div>
                   </div>
 
-                  <div className="signal-targets">
-                    <div className="target">
-                      <Target size={16} />
-                      <span>TP: ${signal.take_profit?.toFixed(2) || 'N/A'}</span>
+                  <div className="trade-levels">
+                    <div className="level tp">
+                      <span>TP</span>
+                      <span>${signal.take_profit?.toFixed(2)}</span>
                     </div>
-                    <div className="target">
-                      <AlertCircle size={16} />
-                      <span>SL: ${signal.stop_loss?.toFixed(2) || 'N/A'}</span>
+                    <div className="level sl">
+                      <span>SL</span>
+                      <span>${signal.stop_loss?.toFixed(2)}</span>
                     </div>
                   </div>
+
+                  {/* Chart */}
+                  {chartData[signal.symbol] && (
+                    <div className="signal-chart">
+                      <ResponsiveContainer width="100%" height={200}>
+                        <ScatterChart data={chartData[signal.symbol]} margin={{ top: 5, right: 5, left: -20, bottom: 5 }}>
+                          <CartesianGrid strokeDasharray="3 3" stroke="#00aa00" opacity={0.1} />
+                          <XAxis type="number" dataKey="time" stroke="#00aa00" />
+                          <YAxis stroke="#00aa00" />
+                          <Tooltip 
+                            contentStyle={{ backgroundColor: '#001a00', border: '1px solid #00ff00', color: '#00ff00' }}
+                            cursor={{ fill: 'rgba(0, 255, 0, 0.1)' }}
+                          />
+                          <Scatter 
+                            name="Price" 
+                            data={chartData[signal.symbol].filter(d => d.time !== null)} 
+                            fill="#00ff00"
+                            fillOpacity={0.6}
+                          />
+                          {/* Entry Point */}
+                          <Scatter 
+                            name="Entry" 
+                            data={chartData[signal.symbol].filter(d => d.entry !== null)} 
+                            fill="#ffff00"
+                            shape="star"
+                          />
+                        </ScatterChart>
+                      </ResponsiveContainer>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
           )}
         </section>
 
-        <section className="section metrics-section">
-          <h2>📈 Performance Metrics</h2>
+        {/* Performance Metrics */}
+        <section className="matrix-section metrics-section">
+          <div className="section-header">
+            <span className="bracket">[</span>
+            <span className="section-title">SYSTEM METRICS</span>
+            <span className="bracket">]</span>
+          </div>
           <div className="metrics-grid">
-            <div className="metric-card">
-              <div className="metric-icon" style={{ background: `linear-gradient(135deg, ${colors.primary}, #2563eb)`, color: 'white' }}>
-                <Activity size={24} />
-              </div>
-              <div className="metric-content">
-                <span className="metric-label">Total Trades</span>
-                <span className="metric-value">{performance.total_trades || 0}</span>
-              </div>
+            <div className="metric-item">
+              <span className="metric-label">TOTAL TRADES:</span>
+              <span className="metric-value">{performance.total_trades || 0}</span>
             </div>
-
-            <div className="metric-card">
-              <div className="metric-icon" style={{ background: `linear-gradient(135deg, ${colors.success}, #059669)`, color: 'white' }}>
-                <TrendingUp size={24} />
-              </div>
-              <div className="metric-content">
-                <span className="metric-label">Win Rate</span>
-                <span className="metric-value">{performance.win_rate?.toFixed(1) || 0}%</span>
-              </div>
+            <div className="metric-item">
+              <span className="metric-label">WIN RATE:</span>
+              <span className="metric-value" style={{ color: '#00ff00' }}>
+                {performance.win_rate?.toFixed(1) || 0}%
+              </span>
             </div>
-
-            <div className="metric-card">
-              <div className="metric-icon" style={{ background: `linear-gradient(135deg, #a855f7, #9333ea)`, color: 'white' }}>
-                <DollarSign size={24} />
-              </div>
-              <div className="metric-content">
-                <span className="metric-label">Total P&L</span>
-                <span className={`metric-value`} style={{ color: (performance.total_pnl || 0) >= 0 ? colors.success : colors.danger }}>
-                  ${(performance.total_pnl || 0).toFixed(2)}
-                </span>
-              </div>
+            <div className="metric-item">
+              <span className="metric-label">TOTAL P&L:</span>
+              <span className="metric-value" style={{ color: (performance.total_pnl || 0) >= 0 ? '#00ff00' : '#ff0000' }}>
+                ${(performance.total_pnl || 0).toFixed(2)}
+              </span>
             </div>
-
-            <div className="metric-card">
-              <div className="metric-icon" style={{ background: `linear-gradient(135deg, ${colors.warning}, #ea580c)`, color: 'white' }}>
-                <Clock size={24} />
-              </div>
-              <div className="metric-content">
-                <span className="metric-label">Avg P&L</span>
-                <span className={`metric-value`} style={{ color: (performance.avg_trade_pnl || 0) >= 0 ? colors.success : colors.danger }}>
-                  ${(performance.avg_trade_pnl || 0).toFixed(2)}
-                </span>
-              </div>
+            <div className="metric-item">
+              <span className="metric-label">AVG P&L:</span>
+              <span className="metric-value" style={{ color: (performance.avg_trade_pnl || 0) >= 0 ? '#00ff00' : '#ff0000' }}>
+                ${(performance.avg_trade_pnl || 0).toFixed(2)}
+              </span>
             </div>
           </div>
         </section>
 
-        <section className="section alerts-section">
-          <h2>🔔 Recent Alerts</h2>
-          {alerts.length === 0 ? (
-            <div className="empty-state">
-              <p>No alerts yet</p>
-            </div>
+        {/* Signal History */}
+        <section className="matrix-section history-section">
+          <div className="section-header">
+            <span className="bracket">[</span>
+            <span className="section-title">SIGNAL HISTORY</span>
+            <span className="bracket">]</span>
+          </div>
+          {callHistory.length === 0 ? (
+            <div className="terminal-text">_ no history available _</div>
           ) : (
-            <div className="alerts-list">
-              {alerts.slice(-10).reverse().map(alert => (
-                <div 
-                  key={alert.id} 
-                  className={`alert alert-${alert.severity}`}
-                  style={{
-                    borderColor: alert.severity === 'error' ? colors.danger : alert.severity === 'warning' ? colors.warning : colors.primary,
-                  }}
-                >
-                  <span className="alert-icon">
-                    {alert.severity === 'error' ? '❌' : alert.severity === 'warning' ? '⚠️' : 'ℹ️'}
-                  </span>
-                  <div className="alert-content">
-                    <span className="alert-message">{alert.message}</span>
-                    <span className="alert-time">{new Date(alert.timestamp).toLocaleTimeString()}</span>
+            <div className="history-table">
+              <div className="table-header">
+                <div className="col time">TIME</div>
+                <div className="col symbol">SYMBOL</div>
+                <div className="col signal">SIGNAL</div>
+                <div className="col price">PRICE</div>
+                <div className="col conf">CONF</div>
+              </div>
+              {callHistory.slice().reverse().map((call, idx) => (
+                <div key={idx} className="table-row" style={{ borderLeftColor: getSignalColor(call.signal) }}>
+                  <div className="col time">{formatTime(call.timestamp)}</div>
+                  <div className="col symbol">{call.symbol}</div>
+                  <div className="col signal" style={{ color: getSignalColor(call.signal) }}>
+                    [{call.signal}]
+                  </div>
+                  <div className="col price">${call.price?.toFixed(2)}</div>
+                  <div className="col conf" style={{ color: call.confidence > 70 ? '#00ff00' : '#ffff00' }}>
+                    {call.confidence?.toFixed(1)}%
                   </div>
                 </div>
               ))}
@@ -337,50 +302,38 @@ const Dashboard = () => {
           )}
         </section>
 
-        <section className="section trades-section">
-          <h2>📋 Trade History</h2>
-          {trades.length === 0 ? (
-            <div className="empty-state">
-              <p>No trades yet. Start the bot to begin trading!</p>
-            </div>
+        {/* Alerts */}
+        <section className="matrix-section alerts-section">
+          <div className="section-header">
+            <span className="bracket">[</span>
+            <span className="section-title">SYSTEM ALERTS</span>
+            <span className="bracket">]</span>
+          </div>
+          {alerts.length === 0 ? (
+            <div className="terminal-text">_ no alerts _</div>
           ) : (
-            <div className="trades-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Symbol</th>
-                    <th>Side</th>
-                    <th>Entry</th>
-                    <th>Exit</th>
-                    <th>Size</th>
-                    <th>P&L</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {trades.slice(-20).reverse().map(trade => (
-                    <tr key={trade.id}>
-                      <td><strong>{trade.symbol}</strong></td>
-                      <td style={{ color: trade.side === 'LONG' ? colors.success : colors.danger, fontWeight: '700' }}>
-                        {trade.side}
-                      </td>
-                      <td>${trade.entry_price?.toFixed(2)}</td>
-                      <td>{trade.exit_price ? `$${trade.exit_price.toFixed(2)}` : '-'}</td>
-                      <td>{trade.size}</td>
-                      <td style={{ color: trade.pnl >= 0 ? colors.success : colors.danger }}>
-                        {trade.pnl ? `$${trade.pnl.toFixed(2)}` : '-'}
-                      </td>
-                      <td style={{ color: trade.status === 'closed' ? colors.success : colors.warning }}>
-                        {trade.status}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="alerts-list">
+              {alerts.slice(-8).reverse().map(alert => (
+                <div 
+                  key={alert.id} 
+                  className={`alert-item ${alert.severity}`}
+                >
+                  <span className="severity-icon">
+                    {alert.severity === 'error' ? '!' : alert.severity === 'warning' ? '◆' : 'i'}
+                  </span>
+                  <span className="alert-message">{alert.message}</span>
+                  <span className="alert-time">{formatTime(alert.timestamp)}</span>
+                </div>
+              ))}
             </div>
           )}
         </section>
-      </main>
+      </div>
+
+      {/* Footer */}
+      <footer className="matrix-footer">
+        <span className="terminal-text">{'>'} SYSTEM READY</span>
+      </footer>
     </div>
   );
 };
