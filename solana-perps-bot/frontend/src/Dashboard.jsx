@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-import { LineChart, Line, ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import MultiTimeframePanel from './MultiTimeframePanel';
 import './Dashboard.css';
 
 const Dashboard = () => {
   const [signals, setSignals] = useState([]);
-  const [trades, setTrades] = useState([]);
   const [alerts, setAlerts] = useState([]);
   const [performance, setPerformance] = useState({});
   const [isRunning, setIsRunning] = useState(false);
@@ -16,29 +16,17 @@ const Dashboard = () => {
 
   const API_URL = 'http://localhost:8000';
 
-  useEffect(() => {
-    fetchData();
-    const interval = setInterval(fetchData, 60000);
-    const timer = setInterval(() => setTime(new Date()), 1000);
-    return () => {
-      clearInterval(interval);
-      clearInterval(timer);
-    };
-  }, []);
-
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       setLoading(true);
-      const [signalsRes, tradesRes, alertsRes, perfRes, historyRes] = await Promise.all([
+      const [signalsRes, alertsRes, perfRes, historyRes] = await Promise.all([
         axios.get(`${API_URL}/api/signals`).catch(() => ({ data: [] })),
-        axios.get(`${API_URL}/api/trades`).catch(() => ({ data: [] })),
         axios.get(`${API_URL}/api/alerts`).catch(() => ({ data: [] })),
         axios.get(`${API_URL}/api/performance`).catch(() => ({ data: {} })),
         axios.get(`${API_URL}/api/signal-history`).catch(() => ({ data: [] })),
       ]);
 
       setSignals(signalsRes.data || []);
-      setTrades(tradesRes.data || []);
       setAlerts(alertsRes.data || []);
       setPerformance(perfRes.data || {});
       setCallHistory(historyRes.data || []);
@@ -49,7 +37,17 @@ const Dashboard = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchData();
+    const interval = setInterval(fetchData, 60000);
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => {
+      clearInterval(interval);
+      clearInterval(timer);
+    };
+  }, [fetchData]);
 
   const generateChartData = (signals) => {
     const data = {};
@@ -156,68 +154,72 @@ const Dashboard = () => {
           {signals.length === 0 ? (
             <div className="terminal-text">_ no active signals _</div>
           ) : (
-            <div className="signals-grid">
+            <div className="signals-container">
               {signals.map(signal => (
-                <div 
-                  key={signal.symbol}
-                  className="signal-card"
-                  style={{ borderColor: getSignalColor(signal.signal) }}
-                >
-                  <div className="signal-header">
-                    <span className="symbol">{signal.symbol}</span>
-                    <span className="signal-badge" style={{ color: getSignalColor(signal.signal) }}>
-                      [{signal.signal}]
-                    </span>
-                  </div>
-
-                  <div className="signal-data">
-                    <div className="data-row">
-                      <span className="label">PRICE:</span>
-                      <span className="value">${signal.price?.toFixed(2)}</span>
-                    </div>
-                    <div className="data-row">
-                      <span className="label">CONF:</span>
-                      <span className="value" style={{ color: signal.confidence > 70 ? '#00ff00' : signal.confidence > 40 ? '#ffff00' : '#ff0000' }}>
-                        {signal.confidence?.toFixed(1)}%
+                <div key={signal.symbol} className="signal-group">
+                  <div 
+                    className="signal-card"
+                    style={{ borderColor: getSignalColor(signal.signal) }}
+                  >
+                    <div className="signal-header">
+                      <span className="symbol">{signal.symbol}</span>
+                      <span className="signal-badge" style={{ color: getSignalColor(signal.signal) }}>
+                        [{signal.signal}]
                       </span>
                     </div>
-                    <div className="data-row">
-                      <span className="label">RSI:</span>
-                      <span className="value">{signal.rsi?.toFixed(1)}</span>
+
+                    <div className="signal-data">
+                      <div className="data-row">
+                        <span className="label">PRICE:</span>
+                        <span className="value">${signal.price?.toFixed(2)}</span>
+                      </div>
+                      <div className="data-row">
+                        <span className="label">CONF:</span>
+                        <span className="value" style={{ color: signal.confidence > 70 ? '#00ff00' : signal.confidence > 40 ? '#ffff00' : '#ff0000' }}>
+                          {signal.confidence?.toFixed(1)}%
+                        </span>
+                      </div>
+                      <div className="data-row">
+                        <span className="label">RSI:</span>
+                        <span className="value">{signal.rsi?.toFixed(1)}</span>
+                      </div>
+                      <div className="data-row">
+                        <span className="label">TIME:</span>
+                        <span className="value">{formatTime(signal.timestamp)}</span>
+                      </div>
                     </div>
-                    <div className="data-row">
-                      <span className="label">TIME:</span>
-                      <span className="value">{formatTime(signal.timestamp)}</span>
+
+                    <div className="trade-levels">
+                      <div className="level tp">TP: ${signal.take_profit?.toFixed(2)}</div>
+                      <div className="level sl">SL: ${signal.stop_loss?.toFixed(2)}</div>
                     </div>
+
+                    {/* Mini Chart */}
+                    {chartData[signal.symbol] && (
+                      <div className="signal-chart">
+                        <ResponsiveContainer width="100%" height={150}>
+                          <ScatterChart data={chartData[signal.symbol]} margin={{ top: 5, right: 5, left: -20, bottom: 5 }}>
+                            <CartesianGrid strokeDasharray="3 3" stroke="#00aa00" opacity={0.2} />
+                            <XAxis type="number" dataKey="time" stroke="#00aa00" tick={{ fontSize: 11 }} />
+                            <YAxis stroke="#00aa00" tick={{ fontSize: 11 }} />
+                            <Tooltip 
+                              contentStyle={{ backgroundColor: '#001a00', border: '1px solid #00ff00', color: '#00ff00', fontFamily: 'Courier New' }}
+                              formatter={(value) => value.toFixed(2)}
+                            />
+                            <Scatter 
+                              name="Price" 
+                              data={chartData[signal.symbol]} 
+                              fill="#00ff00"
+                              stroke="#00aa00"
+                            />
+                          </ScatterChart>
+                        </ResponsiveContainer>
+                      </div>
+                    )}
                   </div>
 
-                  <div className="trade-levels">
-                    <div className="level tp">TP: ${signal.take_profit?.toFixed(2)}</div>
-                    <div className="level sl">SL: ${signal.stop_loss?.toFixed(2)}</div>
-                  </div>
-
-                  {/* Mini Chart */}
-                  {chartData[signal.symbol] && (
-                    <div className="signal-chart">
-                      <ResponsiveContainer width="100%" height={150}>
-                        <ScatterChart data={chartData[signal.symbol]} margin={{ top: 5, right: 5, left: -20, bottom: 5 }}>
-                          <CartesianGrid strokeDasharray="3 3" stroke="#00aa00" opacity={0.2} />
-                          <XAxis type="number" dataKey="time" stroke="#00aa00" tick={{ fontSize: 11 }} />
-                          <YAxis stroke="#00aa00" tick={{ fontSize: 11 }} />
-                          <Tooltip 
-                            contentStyle={{ backgroundColor: '#001a00', border: '1px solid #00ff00', color: '#00ff00', fontFamily: 'Courier New' }}
-                            formatter={(value) => value.toFixed(2)}
-                          />
-                          <Scatter 
-                            name="Price" 
-                            data={chartData[signal.symbol]} 
-                            fill="#00ff00"
-                            stroke="#00aa00"
-                          />
-                        </ScatterChart>
-                      </ResponsiveContainer>
-                    </div>
-                  )}
+                  {/* Multi-Timeframe Analysis */}
+                  <MultiTimeframePanel symbol={signal.symbol} />
                 </div>
               ))}
             </div>

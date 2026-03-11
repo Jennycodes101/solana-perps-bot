@@ -1,0 +1,265 @@
+.mtf-panel {
+  border: 2px solid #00ff00;
+  border-radius: 5px;
+  padding: 20px;
+  background: rgba(0, 255, 0, 0.05);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  margin: 20px 0;
+}
+
+.mtf-loading {
+  text-align: center;
+  color: #00aa00;
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Summary Section */
+.mtf-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #00aa00;
+}
+
+.bias-indicator,
+.alignment-score,
+.correlation-score {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.bias-label {
+  color: #00aa00;
+  font-weight: bold;
+}
+
+.bias-value {
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 0 0 5px currentColor;
+}
+
+.label {
+  color: #00aa00;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.value {
+  color: #00ff00;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Timeframes Grid */
+.timeframes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.timeframe-card {
+  border: 1px solid #00aa00;
+  border-radius: 3px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.timeframe-card:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}
+
+.tf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+.tf-name {
+  font-weight: bold;
+  color: #ffff00;
+  font-size: 12px;
+}
+
+.tf-trend {
+  font-weight: bold;
+  font-size: 11px;
+  text-shadow: 0 0 5px currentColor;
+}
+
+.tf-data {
+  font-size: 11px;
+}
+
+.data-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+}
+
+.data-item .label {
+  font-size: 10px;
+}
+
+.data-item .value {
+  font-size: 11px;
+}
+
+.alignment-check {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 255, 0, 0.2);
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.alignment-check .aligned {
+  color: #00ff00;
+}
+
+.alignment-check .not-aligned {
+  color: #ffff00;
+}
+
+/* Scalping Setup */
+.scalping-setup {
+  border: 2px solid #ffff00;
+  border-radius: 3px;
+  padding: 15px;
+  background: rgba(255, 255, 0, 0.05);
+}
+
+.setup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ffff00;
+}
+
+.setup-title {
+  font-weight: bold;
+  color: #ffff00;
+}
+
+.setup-validity {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.setup-validity.valid {
+  color: #00ff00;
+}
+
+.setup-validity.invalid {
+  color: #ff0000;
+}
+
+.setup-details {
+  display: grid;
+  gap: 15px;
+}
+
+.setup-signal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.signal-type {
+  text-shadow: 0 0 5px currentColor;
+}
+
+.signal-price {
+  font-size: 16px;
+}
+
+.setup-levels {
+  display: flex;
+  gap: 10px;
+}
+
+.level {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.level.tp {
+  border-color: #00ff00;
+  color: #00ff00;
+}
+
+.level.sl {
+  border-color: #ff0000;
+  color: #ff0000;
+}
+
+.setup-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.meta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.setup-reasoning {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  color: #00aa00;
+  font-size: 12px;
+  font-style: italic;
+  border-left: 2px solid #ffff00;
+}
+
+.no-setup {
+  padding: 15px;
+  text-align: center;
+  color: #ff0000;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .mtf-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .timeframes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .setup-levels {
+    flex-direction: column;
+  }
+}
