@@ -1,22 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './MultiTimeframePanel.css';
 
 const MultiTimeframePanel = ({ symbol }) => {
   const [analysis, setAnalysis] = useState(null);
   const [setup, setSetup] = useState(null);
-  const [loading, setLoading] = useState(false);
   const API_URL = 'http://localhost:8000';
 
-  useEffect(() => {
-    if (symbol) {
-      fetchMultiTimeframe();
-    }
-  }, [symbol]);
-
-  const fetchMultiTimeframe = async () => {
+  const fetchMultiTimeframe = useCallback(async () => {
     try {
-      setLoading(true);
       const [analysisRes, setupRes] = await Promise.all([
         axios.get(`${API_URL}/api/multi-timeframe/${symbol}`).catch(() => ({ data: null })),
         axios.get(`${API_URL}/api/scalping-setup/${symbol}`).catch(() => ({ data: null })),
@@ -25,10 +17,14 @@ const MultiTimeframePanel = ({ symbol }) => {
       setSetup(setupRes.data);
     } catch (error) {
       console.error('Error fetching multi-timeframe data:', error);
-    } finally {
-      setLoading(false);
     }
-  };
+  }, [symbol]);
+
+  useEffect(() => {
+    if (symbol) {
+      fetchMultiTimeframe();
+    }
+  }, [symbol, fetchMultiTimeframe]);
 
   if (!analysis) return <div className="mtf-loading">Loading analysis...</div>;
 
