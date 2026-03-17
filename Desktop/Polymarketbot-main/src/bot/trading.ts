@@ -32,30 +32,30 @@ export interface Market {
 function simulateTradeClose(trade: TradeRecord, edge: number): void {
   if (trade.status !== "FILLED" || trade.paper === false) return;
 
-  // Short hold time (3-15 seconds)
-  const holdTime = 3000 + Math.random() * 12000;
+  // Short hold time (2-10 seconds)
+  const holdTime = 2000 + Math.random() * 8000;
   
   setTimeout(() => {
-    // Edge-based profit calculation
-    // If edge=0.05 (5%), expect to make 3-4% profit on average
-    const edgeProfit = edge * 0.70; // Convert 5% edge to ~3.5% expected profit
+    // Convert edge directly to profit
+    // Edge of 0.05 (5%) should yield ~4% profit after fees
+    const edgeProfit = edge * 0.85; // 85% of edge realized as profit
     
-    // Add some randomness (±1%)
-    const randomVariation = (Math.random() - 0.5) * 0.02;
+    // Add randomness (±1%)
+    const randomVariation = (Math.random() - 0.5) * 0.01;
     const profitRate = edgeProfit + randomVariation;
     
     // Calculate exit price
     const exitPrice = trade.price * (1 + profitRate);
     
-    // Minimal gas fee (0.02-0.05 USDC)
-    const gasFee = 0.02 + Math.random() * 0.03;
+    // Very low gas fee (0.005-0.015 USDC for micro trades)
+    const gasFee = 0.005 + Math.random() * 0.01;
     
     closeTradeWithPnL(trade.id, exitPrice, gasFee);
     
     const pnl = trade.pnl ?? 0;
-    const status = pnl > 0 ? "✅ WIN" : pnl < 0 ? "❌ LOSS" : "⚪ BREAK";
+    const status = pnl > 0.001 ? "✅ WIN" : pnl < -0.001 ? "❌ LOSS" : "⚪ BREAK";
     const returnPct = ((exitPrice - trade.price) / trade.price * 100).toFixed(2);
-    console.log(`[trading] ${status}: ${trade.outcome} closed @ ${exitPrice.toFixed(4)} (+${returnPct}%) | PnL: ${pnl.toFixed(3)} USDC`);
+    console.log(`[trading] ${status}: ${trade.outcome} closed @ ${exitPrice.toFixed(4)} (+${returnPct}%) | PnL: $${pnl.toFixed(4)}`);
   }, holdTime);
 }
 
