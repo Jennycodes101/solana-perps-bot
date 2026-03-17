@@ -25,38 +25,6 @@ export interface Market {
   }>;
 }
 
-/** Track open positions to prevent duplicates */
-interface Position {
-  market: string;
-  outcome: string;
-  size: number;
-  entryPrice: number;
-  timestamp: number;
-}
-
-const POSITIONS_KEY = "positions";
-
-function getPositions(): Position[] {
-  return getItem<Position[]>(POSITIONS_KEY) ?? [];
-}
-
-function addPosition(pos: Position): void {
-  const positions = getPositions();
-  positions.push(pos);
-  setItem(POSITIONS_KEY, positions, true);
-}
-
-function hasExistingPosition(market: string, outcome: string): boolean {
-  return getPositions().some((p) => p.market === market && p.outcome === outcome);
-}
-
-/** Count currently open trades from the last 5 minutes */
-function getOpenTradeCount(): number {
-  const trades = getAllTrades();
-  const fiveMinutesAgo = Date.now() - 5 * 60 * 1000;
-  return trades.filter((t) => t.timestamp > fiveMinutesAgo && t.status === "FILLED").length;
-}
-
 /** Simulate trade close with random outcome (for paper trading) */
 function simulateTradeClose(trade: TradeRecord): void {
   if (trade.status !== "FILLED" || trade.paper === false) return;
@@ -77,6 +45,16 @@ function simulateTradeClose(trade: TradeRecord): void {
     
     console.log(`[trading] CLOSED: ${trade.outcome} @ ${exitPrice.toFixed(4)} (PnL: ${(trade.pnl ?? 0).toFixed(2)} USDC)`);
   }, holdTime);
+}
+
+/** Check if we already have an open position for this market/outcome */
+function hasOpenPosition(marketId: string, outcome: string): boolean {
+  const trades = getAllTrades();
+  return trades.some((t) => 
+    t.market === marketId && 
+    t.outcome === outcome && 
+    (t.status === "FILLED" || t.status === "OPEN")
+  );
 }
 
 /** Fetch active markets accepting orders from the Polymarket CLOB API. */
@@ -135,7 +113,9 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
   const maxSize = getMaxPositionSize();
   const isPaper = isPaperMode();
   
-  const openTrades = getOpenTradeCount();
+  // Count currently open/filled trades
+  const trades = getAllTrades();
+  const openTrades = trades.filter((t) => t.status === "FILLED" || t.status === "OPEN").length;
   
   // Check concurrent trades limit
   if (openTrades >= maxConcurrent) {
@@ -159,9 +139,11 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
     if (price === undefined) continue;
 
     const outcome = market.outcomes[i];
+    const marketId = market.conditionId;
 
-    if (hasExistingPosition(market.conditionId, outcome)) {
-      console.log(`[trading] Skipping duplicate position: ${market.conditionId} / ${outcome}`);
+    // IMPORTANT: Check if we already have an open position
+    if (hasOpenPosition(marketId, outcome)) {
+      console.log(`[trading] ✓ Already have open position: ${outcome}`);
       continue;
     }
 
@@ -182,7 +164,7 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
     const trade: TradeRecord = {
       id: newId(),
       timestamp: Date.now(),
-      market: market.question,
+      market: marketId, // Use condition_id for deduplication
       outcome,
       side: "BUY",
       size,
@@ -273,5 +255,6 @@ export function isTradingLoopRunning(): boolean {
 }
 
 export function getCurrentOpenTradeCount(): number {
-  return getOpenTradeCount();
+  const trades = getAllTrades();
+  return trades.filter((t) => t.status === "FILLED" || t.status === "OPEN").length;
 }
