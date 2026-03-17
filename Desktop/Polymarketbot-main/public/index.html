@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polymarketbot</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d1117; color: #c9d1d9; font-family: 'Segoe UI', system-ui, sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
+    header { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    header h1 { font-size: 1.25rem; color: #e6edf3; }
+    #tradingModeToggle { padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; }
+    #tradingModeToggle.paper { background: #9e6a03; color: #fff; }
+    #tradingModeToggle.live { background: #da3633; color: #fff; }
+    nav { background: #161b22; border-bottom: 1px solid #30363d; display: flex; gap: 4px; padding: 0 32px; }
+    nav button { background: none; border: none; color: #8b949e; cursor: pointer; font-size: 0.9rem; padding: 12px 16px; border-bottom: 2px solid transparent; }
+    nav button.active { color: #e6edf3; border-bottom-color: #f78166; }
+    main { flex: 1; padding: 32px; }
+    .tab { display: none; }
+    .tab.active { display: block; }
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+    .card h2 { font-size: 1rem; color: #e6edf3; margin-bottom: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th { text-align: left; color: #8b949e; padding: 8px 12px; border-bottom: 1px solid #30363d; }
+    td { padding: 8px 12px; border-bottom: 1px solid #21262d; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; }
+    .badge-filled { background: #238636; color: #fff; }
+    .badge-paper { background: #9e6a03; color: #fff; }
+    .badge-live { background: #da3633; color: #fff; }
+    .analytics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .analytics-card { background: #0d1117; border-radius: 6px; padding: 12px; text-align: center; border: 1px solid #30363d; }
+    .analytics-card .label { font-size: 0.7rem; color: #8b949e; text-transform: uppercase; margin-bottom: 8px; }
+    .analytics-card .value { font-size: 1.5rem; font-weight: 700; color: #58a6ff; }
+    .analytics-card.win .value { color: #238636; }
+    .analytics-card.loss .value { color: #da3633; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🤖 Polymarketbot</h1>
+    <button id="tradingModeToggle" class="paper">Paper Trading</button>
+  </header>
+  <nav>
+    <button class="active" onclick="showTab('dashboard', this)">Dashboard</button>
+    <button onclick="showTab('analytics', this)">Analytics</button>
+    <button onclick="showTab('positions', this)">Positions</button>
+    <button onclick="showTab('trades', this)">Trades</button>
+    <button onclick="showTab('store', this)">Store</button>
+  </nav>
+  <main>
+    <div id="tab-dashboard" class="tab active">
+      <div class="card">
+        <h2>Live Stats</h2>
+        <p>Total Trades: <span id="stat-total">—</span></p>
+        <p>Open: <span id="stat-open">—</span> | Filled: <span id="stat-filled">—</span></p>
+        <p>Total PnL: <span id="stat-pnl">—</span> USDC</p>
+      </div>
+    </div>
+    <div id="tab-analytics" class="tab">
+      <div class="card">
+        <h2>Trade Analytics</h2>
+        <div class="analytics-grid">
+          <div class="analytics-card"><div class="label">Total Trades</div><div class="value" id="analytics-total">—</div></div>
+          <div class="analytics-card win"><div class="label">Winning</div><div class="value" id="analytics-wins">—</div></div>
+          <div class="analytics-card loss"><div class="label">Losing</div><div class="value" id="analytics-losses">—</div></div>
+          <div class="analytics-card"><div class="label">Win Rate</div><div class="value" id="analytics-winrate">—</div></div>
+          <div class="analytics-card"><div class="label">Total PnL</div><div class="value" id="analytics-pnl">—</div></div>
+          <div class="analytics-card"><div class="label">Avg PnL/Trade</div><div class="value" id="analytics-avgpnl">—</div></div>
+          <div class="analytics-card"><div class="label">Largest Win</div><div class="value" id="analytics-maxwin">—</div></div>
+          <div class="analytics-card"><div class="label">Largest Loss</div><div class="value" id="analytics-maxloss">—</div></div>
+          <div class="analytics-card"><div class="label">Avg Win</div><div class="value" id="analytics-avgwin">—</div></div>
+          <div class="analytics-card"><div class="label">Avg Loss</div><div class="value" id="analytics-avgloss">—</div></div>
+          <div class="analytics-card"><div class="label">Profit Factor</div><div class="value" id="analytics-pf">—</div></div>
+        </div>
+      </div>
+    </div>
+    <div id="tab-positions" class="tab">
+      <div class="card">
+        <h2>Current Positions</h2>
+        <p>Total Exposure: <strong id="total-exposure">—</strong> USDC</p>
+        <table>
+          <thead><tr><th>Market</th><th>Outcome</th><th>Side</th><th>Size</th><th>Cost</th><th>Exposure</th></tr></thead>
+          <tbody id="positions-tbody"><tr><td colspan="6">Loading…</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="tab-trades" class="tab">
+      <div class="card">
+        <h2>Trade History</h2>
+        <table>
+          <thead><tr><th>ID</th><th>Market</th><th>Side</th><th>Outcome</th><th>Price</th><th>Size</th><th>Status</th><th>Mode</th><th>PnL</th></tr></thead>
+          <tbody id="trades-tbody"><tr><td colspan="9">Loading…</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="tab-store" class="tab">
+      <div class="card">
+        <h2>In-Memory Store</h2>
+        <pre id="store-pre">Loading…</pre>
+      </div>
+    </div>
+  </main>
+  <script>
+    const ADMIN_SECRET = 'change_me_in_production';
+    let currentMode = 'paper';
+    function showTab(name, btn) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + name).classList.add('active');
+      btn.classList.add('active');
+      if (name === 'analytics') loadAnalytics();
+      if (name === 'positions') loadPositions();
+      if (name === 'trades') loadTrades();
+      if (name === 'store') loadStore();
+    }
+    document.getElementById('tradingModeToggle').addEventListener('click', async () => {
+      try {
+        const response = await fetch('/api/trading-mode/toggle', { method: 'POST' });
+        const data = await response.json();
+        updateTradingModeButton(data.state.mode);
+      } catch (error) {
+        console.error('Error toggling trading mode:', error);
+      }
+    });
+    function updateTradingModeButton(mode) {
+      const btn = document.getElementById('tradingModeToggle');
+      currentMode = mode;
+      btn.textContent = mode === 'paper' ? 'Paper Trading' : 'Live Trading';
+      btn.className = mode === 'paper' ? 'paper' : 'live';
+    }
+    const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+    const ws = new WebSocket(wsProtocol + '//' + location.host);
+    ws.addEventListener('message', ({ data }) => {
+      try {
+        const { event, data: payload } = JSON.parse(data);
+        if (event === 'stats') {
+          document.getElementById('stat-total').textContent = payload.totalTrades;
+          document.getElementById('stat-open').textContent = payload.openTrades;
+          document.getElementById('stat-filled').textContent = payload.filledTrades;
+          document.getElementById('stat-pnl').textContent = payload.totalPnl;
+        }
+        if (event === 'tradingMode') {
+          updateTradingModeButton(payload.mode);
+        }
+      } catch {}
+    });
+    fetch('/api/trading-mode').then(res => res.json()).then(data => updateTradingModeButton(data.mode));
+    async function loadAnalytics() {
+      const res = await fetch('/admin/analytics', { headers: { 'x-admin-secret': ADMIN_SECRET } });
+      const data = await res.json();
+      document.getElementById('analytics-total').textContent = data.totalTrades;
+      document.getElementById('analytics-wins').textContent = data.winningTrades;
+      document.getElementById('analytics-losses').textContent = data.losingTrades;
+      document.getElementById('analytics-winrate').textContent = (data.winRate * 100).toFixed(1) + '%';
+      document.getElementById('analytics-pnl').textContent = data.totalPnL.toFixed(2);
+      document.getElementById('analytics-avgpnl').textContent = data.averagePnLPerTrade.toFixed(2);
+      document.getElementById('analytics-maxwin').textContent = data.largestWin.toFixed(2);
+      document.getElementById('analytics-maxloss').textContent = data.largestLoss.toFixed(2);
+      document.getElementById('analytics-avgwin').textContent = data.avgWin.toFixed(2);
+      document.getElementById('analytics-avgloss').textContent = data.avgLoss.toFixed(2);
+      document.getElementById('analytics-pf').textContent = data.profitFactor === Infinity ? '∞' : data.profitFactor.toFixed(2);
+    }
+    async function loadPositions() {
+      const res = await fetch('/admin/positions', { headers: { 'x-admin-secret': ADMIN_SECRET } });
+      const data = await res.json();
+      document.getElementById('total-exposure').textContent = data.totalExposure.toFixed(2);
+      const tbody = document.getElementById('positions-tbody');
+      if (!data.positions.length) {
+        tbody.innerHTML = '<tr><td colspan="6">No positions</td></tr>';
+        return;
+      }
+      tbody.innerHTML = data.positions.map(p => `<tr><td>${p.market.slice(0,20)}…</td><td>${p.outcome}</td><td>${p.side}</td><td>${p.totalSize}</td><td>${p.totalCost.toFixed(2)}</td><td>${(p.netExposure || 0).toFixed(2)}</td></tr>`).join('');
+    }
+    async function loadTrades() {
+      const res = await fetch('/admin/trades', { headers: { 'x-admin-secret': ADMIN_SECRET } });
+      const data = await res.json();
+      const tbody = document.getElementById('trades-tbody');
+      if (!data.trades.length) {
+        tbody.innerHTML = '<tr><td colspan="9">No trades</td></tr>';
+        return;
+      }
+      tbody.innerHTML = data.trades.map(t => `<tr><td>${t.id.slice(0,12)}…</td><td>${t.market.slice(0,10)}…</td><td>${t.side}</td><td>${t.outcome}</td><td>${t.price}</td><td>${t.size}</td><td><span class="badge badge-${t.status.toLowerCase()}">${t.status}</span></td><td><span class="badge ${t.paper ? 'badge-paper' : 'badge-live'}">${t.paper ? 'paper' : 'live'}</span></td><td>${t.pnl ?? '—'}</td></tr>`).join('');
+    }
+    async function loadStore() {
+      const res = await fetch('/admin/store', { headers: { 'x-admin-secret': ADMIN_SECRET } });
+      document.getElementById('store-pre').textContent = JSON.stringify(await res.json(), null, 2);
+    }
+  </script>
+</body>
+</html>
