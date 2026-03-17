@@ -17,9 +17,8 @@ export interface Market {
   question: string;
   outcomes: string[];
   prices: number[];
-  status?: string;
-  end_date?: string;
-  closeTime?: number;
+  closed?: boolean;
+  active?: boolean;
   tokens?: Array<{
     token_id: string;
     outcome: string;
@@ -66,27 +65,17 @@ function getOpenTradesCount(): number {
 }
 
 /**
- * Check if a market is still active (not closed/resolved and hasn't ended)
+ * Check if a market is still active (not closed)
  */
-function isMarketActive(market: Market): boolean {
-  // Check if market status indicates it's closed/resolved
-  if (market.status === "closed" || market.status === "resolved" || market.status === "CLOSED" || market.status === "RESOLVED") {
+function isMarketActive(market: any): boolean {
+  // Filter out closed markets
+  if (market.closed === true) {
     return false;
   }
 
-  // Check if market end date has passed
-  if (market.end_date) {
-    const endDate = new Date(market.end_date);
-    if (endDate < new Date()) {
-      return false;
-    }
-  }
-
-  if (market.closeTime) {
-    const closeTime = new Date(market.closeTime);
-    if (closeTime < new Date()) {
-      return false;
-    }
+  // Filter out markets not accepting orders
+  if (market.accepting_orders === false) {
+    return false;
   }
 
   return true;
@@ -112,17 +101,13 @@ export async function fetchMarkets(): Promise<Market[]> {
     const rawMarkets = Array.isArray(data) ? data : (data.data ?? data.markets ?? []);
     
     console.log("[trading] Total markets from API:", rawMarkets.length);
-    
-    const acceptingOrders = rawMarkets.filter((m: any) => m.accepting_orders === true);
-    console.log("[trading] Markets with accepting_orders=true:", acceptingOrders.length);
 
     const markets: Market[] = rawMarkets
       .filter((m: any) => {
-        const passes = m.accepting_orders === true &&
+        const passes = isMarketActive(m) &&
                        m.tokens && 
                        Array.isArray(m.tokens) && 
-                       m.tokens.length > 0 &&
-                       isMarketActive(m);
+                       m.tokens.length > 0;
         return passes;
       })
       .map((m: any) => ({
@@ -131,13 +116,12 @@ export async function fetchMarkets(): Promise<Market[]> {
         question: m.question,
         outcomes: m.tokens.map((t: any) => t.outcome),
         prices: m.tokens.map((t: any) => t.price),
-        status: m.status,
-        end_date: m.end_date,
-        closeTime: m.closeTime,
+        closed: m.closed,
+        active: m.active,
         tokens: m.tokens,
       }));
     
-    console.log("[trading] Active markets (not closed):", markets.length);
+    console.log("[trading] Active, non-closed markets:", markets.length);
     return markets;
   } catch (err) {
     console.error("[trading] fetchMarkets error:", err);
