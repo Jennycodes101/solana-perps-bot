@@ -4,6 +4,7 @@ import { recordTrade, getAllTrades, closeTradeWithPnL } from "../admin/stats";
 import { isPaperMode } from "../admin/tradingMode";
 import { getMaxConcurrentTrades, getMaxPositionSize } from "../admin/tradingLimits";
 import type { TradeRecord } from "../admin/stats";
+import { MOCK_MARKETS } from "./mockMarkets";
 
 let _tradeIdCounter = 0;
 function newId(): string {
@@ -24,7 +25,6 @@ export interface Market {
   }>;
 }
 
-/** Simulate trade close with random outcome (for paper trading) */
 function simulateTradeClose(trade: TradeRecord): void {
   if (trade.status !== "FILLED" || trade.paper === false) return;
 
@@ -40,7 +40,6 @@ function simulateTradeClose(trade: TradeRecord): void {
   }, holdTime);
 }
 
-/** Check if we already have an open position for this market */
 function hasOpenPositionInMarket(marketId: string): boolean {
   const trades = getAllTrades();
   return trades.some((t) => 
@@ -49,14 +48,20 @@ function hasOpenPositionInMarket(marketId: string): boolean {
   );
 }
 
-/** Count currently open trades */
 function getOpenTradesCount(): number {
   const trades = getAllTrades();
   return trades.filter((t) => t.status === "FILLED" || t.status === "OPEN").length;
 }
 
-/** Fetch active markets accepting orders from the Polymarket CLOB API. */
 export async function fetchMarkets(): Promise<Market[]> {
+  // Use mock markets for testing
+  const USE_MOCK = process.env.USE_MOCK_MARKETS === "true";
+  
+  if (USE_MOCK) {
+    console.log("[trading] Using MOCK markets for testing");
+    return MOCK_MARKETS as Market[];
+  }
+
   const baseUrl = process.env.CLOB_API_URL ?? "https://clob.polymarket.com";
   try {
     const { data } = await axios.get<any>(`${baseUrl}/markets`, {
@@ -101,25 +106,18 @@ export async function fetchMarkets(): Promise<Market[]> {
   }
 }
 
-/**
- * Calculate edge for an outcome in a binary market.
- */
 function calculateEdge(outcome: string, price: number, otherPrice: number): number {
   const fairValue = 1.0 - otherPrice;
   const edge = fairValue - price;
   return edge;
 }
 
-/**
- * Evaluate a market and trade the outcome with highest edge.
- */
 export async function evaluateAndTrade(market: Market): Promise<void> {
   const minEdge = parseFloat(process.env.MIN_EDGE ?? "0.05");
   const maxConcurrent = getMaxConcurrentTrades();
   const maxSize = getMaxPositionSize();
   const isPaper = isPaperMode();
   
-  // Get current open trades COUNT (refreshed for each market)
   const openTrades = getOpenTradesCount();
   
   if (openTrades >= maxConcurrent) {
@@ -142,7 +140,6 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
     return;
   }
 
-  // For binary markets, calculate edge for each outcome
   let bestOutcomeIdx = -1;
   let bestEdge = minEdge - 0.0001;
 
@@ -162,7 +159,6 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
       bestOutcomeIdx = 1;
     }
   } else {
-    // For multi-outcome markets, use simpler logic
     for (let i = 0; i < market.outcomes.length; i++) {
       const price = market.prices[i];
       if (price === undefined) continue;
