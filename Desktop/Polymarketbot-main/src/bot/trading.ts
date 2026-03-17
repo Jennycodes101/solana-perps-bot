@@ -28,25 +28,19 @@ export interface Market {
 function simulateTradeClose(trade: TradeRecord): void {
   if (trade.status !== "FILLED" || trade.paper === false) return;
 
-  // Simulate holding for 10-60 seconds before closing
   const holdTime = 10000 + Math.random() * 50000;
   
   setTimeout(() => {
-    // Random exit price within ±5% of entry
-    const variation = (Math.random() - 0.5) * 0.1; // ±5%
+    const variation = (Math.random() - 0.5) * 0.1;
     const exitPrice = trade.price * (1 + variation);
-    
-    // Simulate small gas fee (0.10-0.25 USDC)
     const gasFee = 0.10 + Math.random() * 0.15;
     
-    // Close the trade with PnL calculation
     closeTradeWithPnL(trade.id, exitPrice, gasFee);
-    
     console.log(`[trading] CLOSED: ${trade.outcome} @ ${exitPrice.toFixed(4)} (PnL: ${(trade.pnl ?? 0).toFixed(2)} USDC)`);
   }, holdTime);
 }
 
-/** Check if we already have an open position for this market (any outcome) */
+/** Check if we already have an open position for this market */
 function hasOpenPositionInMarket(marketId: string): boolean {
   const trades = getAllTrades();
   return trades.some((t) => 
@@ -102,9 +96,23 @@ export async function fetchMarkets(): Promise<Market[]> {
 }
 
 /**
- * Evaluate a market and return a trade signal if edge exceeds MIN_EDGE.
- * Only trades the BEST outcome (highest edge), not all outcomes.
- * Respects MAX_CONCURRENT_TRADES and MAX_POSITION_SIZE limits.
+ * Calculate edge for an outcome in a binary market.
+ * Edge = How much the actual price differs from fair value.
+ * 
+ * For binary outcomes where prices should sum to ~1.0:
+ * - If Yes=0.3 and No=0.7, they're fairly priced (summed to 1.0)
+ * - If Yes=0.2 and No=0.7, Yes is underpriced (edge = 0.1)
+ * - If Yes=0.4 and No=0.7, Yes is overpriced (edge = -0.1)
+ */
+function calculateEdge(outcome: string, price: number, otherPrice: number): number {
+  // Fair value would be where prices sum to 1.0
+  const fairValue = 1.0 - otherPrice;
+  const edge = fairValue - price;
+  return edge;
+}
+
+/**
+ * Evaluate a market and trade the outcome with highest edge.
  */
 export async function evaluateAndTrade(market: Market): Promise<void> {
   const minEdge = parseFloat(process.env.MIN_EDGE ?? "0.05");
@@ -112,15 +120,11 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
   const maxSize = getMaxPositionSize();
   const isPaper = isPaperMode();
   
-  // Count currently open/filled trades
   const trades = getAllTrades();
   const openTrades = trades.filter((t) => t.status === "FILLED" || t.status === "OPEN").length;
   
-  // Check concurrent trades limit
   if (openTrades >= maxConcurrent) {
-    console.log(
-      `[trading] Skipping market: ${openTrades}/${maxConcurrent} concurrent trades reached`
-    );
+    console.log(`[trading] Skipping market: ${openTrades}/${maxConcurrent} concurrent trades reached`);
     return;
   }
         
@@ -133,44 +137,55 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
     return;
   }
 
-  // Check if we already have a position in this market
   const marketId = market.conditionId;
   if (hasOpenPositionInMarket(marketId)) {
     console.log(`[trading] ✓ Already have position in market: ${market.question.substring(0, 40)}…`);
     return;
   }
 
-  // Find the outcome with the HIGHEST EDGE
+  // For binary markets, calculate edge for each outcome
   let bestOutcomeIdx = -1;
-  let bestEdge = minEdge - 0.0001; // Start below minimum
+  let bestEdge = minEdge - 0.0001;
 
-  for (let i = 0; i < market.outcomes.length; i++) {
-    const price = market.prices[i];
-    if (price === undefined) continue;
+  if (market.outcomes.length === 2) {
+    // Binary market: compare Yes vs No
+    const edge0 = calculateEdge(market.outcomes[0], market.prices[0], market.prices[1]);
+    const edge1 = calculateEdge(market.outcomes[1], market.prices[1], market.prices[0]);
 
-    const edge = 1 - price - minEdge;
+    console.log(`[trading] Market: ${market.question?.substring(0, 60)}`);
+    console.log(`[trading]   ${market.outcomes[0]}: price=${market.prices[0].toFixed(4)}, edge=${edge0.toFixed(4)}`);
+    console.log(`[trading]   ${market.outcomes[1]}: price=${market.prices[1].toFixed(4)}, edge=${edge1.toFixed(4)}`);
 
-    if (edge > bestEdge) {
-      bestEdge = edge;
-      bestOutcomeIdx = i;
+    if (edge0 > edge1 && edge0 > bestEdge) {
+      bestEdge = edge0;
+      bestOutcomeIdx = 0;
+    } else if (edge1 > bestEdge) {
+      bestEdge = edge1;
+      bestOutcomeIdx = 1;
+    }
+  } else {
+    // For multi-outcome markets, use simpler logic
+    for (let i = 0; i < market.outcomes.length; i++) {
+      const price = market.prices[i];
+      if (price === undefined) continue;
+      const edge = 1 - price - minEdge;
+      if (edge > bestEdge) {
+        bestEdge = edge;
+        bestOutcomeIdx = i;
+      }
     }
   }
 
-  // If no outcome has sufficient edge, skip this market
   if (bestOutcomeIdx === -1) {
-    console.log(`[trading] Market: ${market.question?.substring(0, 60)}`);
     console.log(`[trading]   → SKIP (no outcome with sufficient edge)`);
     return;
   }
 
-  // Trade only the best outcome
   const bestPrice = market.prices[bestOutcomeIdx];
   const bestOutcome = market.outcomes[bestOutcomeIdx];
-  const size = Math.min(maxSize, Math.round(bestEdge * maxSize * 100) / 100);
+  const size = Math.min(maxSize, Math.round(Math.abs(bestEdge) * maxSize * 100) / 100);
 
-  console.log(`[trading] Market: ${market.question?.substring(0, 60)}`);
-  console.log(`[trading]   ${bestOutcome}: price=${bestPrice.toFixed(4)}, edge=${bestEdge.toFixed(4)}, minEdge=${minEdge}`);
-  console.log(`[trading] BUY ${size} USDC of "${bestOutcome}" @ ${bestPrice.toFixed(4)}`);
+  console.log(`[trading] ✅ BUY ${size} USDC of "${bestOutcome}" @ ${bestPrice.toFixed(4)}`);
 
   const trade: TradeRecord = {
     id: newId(),
@@ -188,7 +203,6 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
 
   recordTrade(trade);
 
-  // For paper trading, simulate closing the trade after a random delay
   if (isPaper) {
     simulateTradeClose(trade);
   }
