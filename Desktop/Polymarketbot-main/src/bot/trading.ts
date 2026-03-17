@@ -1,6 +1,6 @@
 import axios from "axios";
 import { getWallet, getTokenBalance } from "../utils/wallet";
-import { recordTrade, getAllTrades } from "../admin/stats";
+import { recordTrade, getAllTrades, updateTradeStatus, closeTradeWithPnL } from "../admin/stats";
 import { getItem, setItem } from "../utils/jsonStore";
 import { isPaperMode } from "../admin/tradingMode";
 import { getMaxConcurrentTrades, getMaxPositionSize } from "../admin/tradingLimits";
@@ -55,6 +55,28 @@ function getOpenTradeCount(): number {
   const trades = getAllTrades();
   const fiveMinutesAgo = Date.now() - 5 * 60 * 1000;
   return trades.filter((t) => t.timestamp > fiveMinutesAgo && t.status === "FILLED").length;
+}
+
+/** Simulate trade close with random outcome (for paper trading) */
+function simulateTradeClose(trade: TradeRecord): void {
+  if (trade.status !== "FILLED" || trade.paper === false) return;
+
+  // Simulate holding for 10-60 seconds before closing
+  const holdTime = 10000 + Math.random() * 50000;
+  
+  setTimeout(() => {
+    // Random exit price within ±5% of entry
+    const variation = (Math.random() - 0.5) * 0.1; // ±5%
+    const exitPrice = trade.price * (1 + variation);
+    
+    // Simulate small gas fee (0.10-0.25 USDC)
+    const gasFee = 0.10 + Math.random() * 0.15;
+    
+    // Close the trade with PnL calculation
+    closeTradeWithPnL(trade.id, exitPrice, gasFee);
+    
+    console.log(`[trading] CLOSED: ${trade.outcome} @ ${exitPrice.toFixed(4)} (PnL: ${(trade.pnl ?? 0).toFixed(2)} USDC)`);
+  }, holdTime);
 }
 
 /** Fetch active markets accepting orders from the Polymarket CLOB API. */
@@ -157,7 +179,7 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
 
     console.log(`[trading] BUY ${size} USDC of "${outcome}" @ ${price}`);
 
-    recordTrade({
+    const trade: TradeRecord = {
       id: newId(),
       timestamp: Date.now(),
       market: market.question,
@@ -165,9 +187,17 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
       side: "BUY",
       size,
       price,
+      entryPrice: price,
       paper: isPaper,
       status: "FILLED",
-    });
+    };
+
+    recordTrade(trade);
+
+    // For paper trading, simulate closing the trade after a random delay
+    if (isPaper) {
+      simulateTradeClose(trade);
+    }
   }
 }
 
