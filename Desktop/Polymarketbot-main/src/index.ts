@@ -7,6 +7,7 @@ import { WebSocketServer, WebSocket } from "ws";
 import { loadStore, saveStore } from "./utils/jsonStore";
 import adminRouter from "./admin/tabs";
 import limitsApiRouter from "./admin/limitsApi";
+import walletApiRouter from "./admin/walletApi";
 import { runTradingLoop, stopTradingLoop } from "./bot/trading";
 import { getStats, flushStats } from "./admin/stats";
 import { 
@@ -53,6 +54,9 @@ app.use("/admin", adminRouter);
 
 // Trading Limits API
 app.use("/api/trading-limits", limitsApiRouter);
+
+// Wallet API
+app.use("/api/wallet", walletApiRouter);
 
 // Simple liveness probe
 app.get("/health", (_req, res) => {
@@ -231,6 +235,7 @@ server.listen(PORT, () => {
   console.log(`[server] Health    →  http://localhost:${PORT}/health`);
   console.log(`[server] Speed Trade API  →  http://localhost:${PORT}/api/speed-trade/status`);
   console.log(`[server] Trading Limits API  →  http://localhost:${PORT}/api/trading-limits`);
+  console.log(`[server] Wallet API  →  http://localhost:${PORT}/api/wallet`);
 });
 
 // Start auto-broadcast of stats
