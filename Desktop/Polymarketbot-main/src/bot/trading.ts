@@ -25,18 +25,38 @@ export interface Market {
   }>;
 }
 
-function simulateTradeClose(trade: TradeRecord): void {
+/**
+ * Simulate trade close with realistic PnL based on edge.
+ * Better trades (higher edge) should be more likely to win.
+ */
+function simulateTradeClose(trade: TradeRecord, edge: number): void {
   if (trade.status !== "FILLED" || trade.paper === false) return;
 
-  const holdTime = 10000 + Math.random() * 50000;
+  // Shorter hold time for tighter simulation (5-30 seconds)
+  const holdTime = 5000 + Math.random() * 25000;
   
   setTimeout(() => {
-    const variation = (Math.random() - 0.5) * 0.1;
-    const exitPrice = trade.price * (1 + variation);
-    const gasFee = 0.10 + Math.random() * 0.15;
+    // Use edge to determine exit price
+    // Higher edge = more likely to exit at profit
+    // Edge of 0.05 (5%) means we bought 5% below fair value
+    
+    // Exit price variation based on edge:
+    // If edge is 0.05, we expect ~2-3% profit on average
+    // Add some randomness: ±2% around the edge-adjusted price
+    const expectedProfit = edge * 0.6; // Convert edge to expected profit (60% of edge)
+    const randomVariation = (Math.random() - 0.5) * 0.04; // ±2% randomness
+    const exitMultiplier = 1 + expectedProfit + randomVariation;
+    
+    const exitPrice = trade.price * exitMultiplier;
+    
+    // Lower gas fee (0.05-0.10 USDC for smaller trades)
+    const gasFee = 0.05 + Math.random() * 0.05;
     
     closeTradeWithPnL(trade.id, exitPrice, gasFee);
-    console.log(`[trading] CLOSED: ${trade.outcome} @ ${exitPrice.toFixed(4)} (PnL: ${(trade.pnl ?? 0).toFixed(2)} USDC)`);
+    
+    const pnl = trade.pnl ?? 0;
+    const status = pnl > 0 ? "✅ WIN" : pnl < 0 ? "❌ LOSS" : "⚪ BREAKEVEN";
+    console.log(`[trading] ${status}: ${trade.outcome} closed @ ${exitPrice.toFixed(4)} | PnL: ${pnl.toFixed(2)} USDC`);
   }, holdTime);
 }
 
@@ -106,16 +126,8 @@ export async function fetchMarkets(): Promise<Market[]> {
 }
 
 /**
- * Calculate edge for a binary market outcome.
- * 
- * Arbitrage exists when: price_yes + price_no < 1.0
- * Example:
- *   Yes = 0.30, No = 0.65
- *   Sum = 0.95, so there's 5% profit opportunity (edge = 0.05)
- * 
- * The edge is: how much profit can you make by buying both sides?
- * If you buy 1 unit of Yes at 0.30 and 1 unit of No at 0.65,
- * you spend 0.95 but get 1.0 back = 0.05 profit
+ * Calculate arbitrage edge in a binary market.
+ * Edge exists when prices sum to < 1.0
  */
 function calculateEdge(price1: number, price2: number): number {
   const priceSum = price1 + price2;
@@ -155,7 +167,6 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
   let bestEdge = minEdge - 0.0001;
 
   if (market.outcomes.length === 2) {
-    // For binary market, calculate total edge
     const totalEdge = calculateEdge(market.prices[0], market.prices[1]);
 
     console.log(`[trading] Market: ${market.question?.substring(0, 60)}`);
@@ -213,7 +224,7 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
   recordTrade(trade);
 
   if (isPaper) {
-    simulateTradeClose(trade);
+    simulateTradeClose(trade, bestEdge);
   }
 }
 
