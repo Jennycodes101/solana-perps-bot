@@ -46,12 +46,11 @@ function simulateTradeClose(trade: TradeRecord): void {
   }, holdTime);
 }
 
-/** Check if we already have an open position for this market/outcome */
-function hasOpenPosition(marketId: string, outcome: string): boolean {
+/** Check if we already have an open position for this market (any outcome) */
+function hasOpenPositionInMarket(marketId: string): boolean {
   const trades = getAllTrades();
   return trades.some((t) => 
     t.marketId === marketId && 
-    t.outcome === outcome && 
     (t.status === "FILLED" || t.status === "OPEN")
   );
 }
@@ -104,6 +103,7 @@ export async function fetchMarkets(): Promise<Market[]> {
 
 /**
  * Evaluate a market and return a trade signal if edge exceeds MIN_EDGE.
+ * Only trades the BEST outcome (highest edge), not all outcomes.
  * Respects MAX_CONCURRENT_TRADES and MAX_POSITION_SIZE limits.
  */
 export async function evaluateAndTrade(market: Market): Promise<void> {
@@ -133,53 +133,64 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
     return;
   }
 
+  // Check if we already have a position in this market
+  const marketId = market.conditionId;
+  if (hasOpenPositionInMarket(marketId)) {
+    console.log(`[trading] ✓ Already have position in market: ${market.question.substring(0, 40)}…`);
+    return;
+  }
+
+  // Find the outcome with the HIGHEST EDGE
+  let bestOutcomeIdx = -1;
+  let bestEdge = minEdge - 0.0001; // Start below minimum
+
   for (let i = 0; i < market.outcomes.length; i++) {
     const price = market.prices[i];
     if (price === undefined) continue;
 
-    const outcome = market.outcomes[i];
-    const marketId = market.conditionId;
-
-    // IMPORTANT: Check if we already have an open position for this exact market/outcome combo
-    if (hasOpenPosition(marketId, outcome)) {
-      console.log(`[trading] ✓ Already have open position: ${outcome}`);
-      continue;
-    }
-
     const edge = 1 - price - minEdge;
 
+    if (edge > bestEdge) {
+      bestEdge = edge;
+      bestOutcomeIdx = i;
+    }
+  }
+
+  // If no outcome has sufficient edge, skip this market
+  if (bestOutcomeIdx === -1) {
     console.log(`[trading] Market: ${market.question?.substring(0, 60)}`);
-    console.log(`[trading]   ${outcome}: price=${price}, edge=${edge.toFixed(4)}, minEdge=${minEdge}`);
+    console.log(`[trading]   → SKIP (no outcome with sufficient edge)`);
+    return;
+  }
 
-    if (edge < 0) {
-      console.log(`[trading]   → SKIP (edge too low)`);
-      continue;
-    }
+  // Trade only the best outcome
+  const bestPrice = market.prices[bestOutcomeIdx];
+  const bestOutcome = market.outcomes[bestOutcomeIdx];
+  const size = Math.min(maxSize, Math.round(bestEdge * maxSize * 100) / 100);
 
-    const size = Math.min(maxSize, Math.round(edge * maxSize * 100) / 100);
+  console.log(`[trading] Market: ${market.question?.substring(0, 60)}`);
+  console.log(`[trading]   ${bestOutcome}: price=${bestPrice.toFixed(4)}, edge=${bestEdge.toFixed(4)}, minEdge=${minEdge}`);
+  console.log(`[trading] BUY ${size} USDC of "${bestOutcome}" @ ${bestPrice.toFixed(4)}`);
 
-    console.log(`[trading] BUY ${size} USDC of "${outcome}" @ ${price}`);
+  const trade: TradeRecord = {
+    id: newId(),
+    timestamp: Date.now(),
+    marketId,
+    market: market.question,
+    outcome: bestOutcome,
+    side: "BUY",
+    size,
+    price: bestPrice,
+    entryPrice: bestPrice,
+    paper: isPaper,
+    status: "FILLED",
+  };
 
-    const trade: TradeRecord = {
-      id: newId(),
-      timestamp: Date.now(),
-      marketId,              // Use condition_id for deduplication
-      market: market.question, // Use question for display
-      outcome,
-      side: "BUY",
-      size,
-      price,
-      entryPrice: price,
-      paper: isPaper,
-      status: "FILLED",
-    };
+  recordTrade(trade);
 
-    recordTrade(trade);
-
-    // For paper trading, simulate closing the trade after a random delay
-    if (isPaper) {
-      simulateTradeClose(trade);
-    }
+  // For paper trading, simulate closing the trade after a random delay
+  if (isPaper) {
+    simulateTradeClose(trade);
   }
 }
 
