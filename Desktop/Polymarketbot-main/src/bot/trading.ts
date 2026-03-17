@@ -106,37 +106,21 @@ export async function fetchMarkets(): Promise<Market[]> {
 }
 
 /**
- * Calculate edge for a binary outcome.
- * In a fair binary market: Yes + No prices = 1.0
+ * Calculate edge for a binary market outcome.
  * 
- * If Yes=0.35 and No=0.65:
- *   - Fair Yes price should be 0.35 (35% likely)
- *   - Edge = 0 (fair pricing)
+ * Arbitrage exists when: price_yes + price_no < 1.0
+ * Example:
+ *   Yes = 0.30, No = 0.65
+ *   Sum = 0.95, so there's 5% profit opportunity (edge = 0.05)
  * 
- * If Yes=0.30 and No=0.70:
- *   - Fair Yes price should be 0.30
- *   - Edge = 0 (fair pricing)
- * 
- * If Yes is mispriced (too low):
- *   - Yes=0.20, No=0.80
- *   - Fair Yes should be 0.20, but we can buy at discount
- *   - Edge = how much it deviates from fair
- * 
- * Better approach: calculate implied probability and compare
+ * The edge is: how much profit can you make by buying both sides?
+ * If you buy 1 unit of Yes at 0.30 and 1 unit of No at 0.65,
+ * you spend 0.95 but get 1.0 back = 0.05 profit
  */
-function calculateEdge(yourPrice: number, otherPrice: number): number {
-  // In a perfectly efficient market: price_a + price_b = 1.0
-  // If they don't sum to 1.0, there's an arbitrage opportunity
-  const priceSum = yourPrice + otherPrice;
-  
-  // If sum < 1.0, both sides are underpriced (edge = 1.0 - sum)
-  // If sum > 1.0, both sides are overpriced (edge = sum - 1.0, negative)
-  const edge = 1.0 - priceSum;
-  
-  // But really, we want: is THIS outcome underpriced?
-  // Underpriced if: yourPrice < 1 - otherPrice
-  const fairPrice = 1.0 - otherPrice;
-  return fairPrice - yourPrice;
+function calculateEdge(price1: number, price2: number): number {
+  const priceSum = price1 + price2;
+  const edge = Math.max(0, 1.0 - priceSum);
+  return edge;
 }
 
 export async function evaluateAndTrade(market: Market): Promise<void> {
@@ -171,21 +155,25 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
   let bestEdge = minEdge - 0.0001;
 
   if (market.outcomes.length === 2) {
-    const edge0 = calculateEdge(market.prices[0], market.prices[1]);
-    const edge1 = calculateEdge(market.prices[1], market.prices[0]);
+    // For binary market, calculate total edge
+    const totalEdge = calculateEdge(market.prices[0], market.prices[1]);
 
     console.log(`[trading] Market: ${market.question?.substring(0, 60)}`);
-    console.log(`[trading]   ${market.outcomes[0]}: price=${market.prices[0].toFixed(4)}, edge=${edge0.toFixed(4)}`);
-    console.log(`[trading]   ${market.outcomes[1]}: price=${market.prices[1].toFixed(4)}, edge=${edge1.toFixed(4)}`);
+    console.log(`[trading]   ${market.outcomes[0]}: price=${market.prices[0].toFixed(4)}`);
+    console.log(`[trading]   ${market.outcomes[1]}: price=${market.prices[1].toFixed(4)}`);
+    console.log(`[trading]   Total edge: ${totalEdge.toFixed(4)}`);
 
-    if (edge0 > edge1 && edge0 > bestEdge) {
-      bestEdge = edge0;
-      bestOutcomeIdx = 0;
-    } else if (edge1 > bestEdge) {
-      bestEdge = edge1;
-      bestOutcomeIdx = 1;
+    // Buy the cheaper outcome to capture the edge
+    if (totalEdge > bestEdge) {
+      if (market.prices[0] < market.prices[1]) {
+        bestOutcomeIdx = 0;
+      } else {
+        bestOutcomeIdx = 1;
+      }
+      bestEdge = totalEdge;
     }
   } else {
+    // For multi-outcome markets, use simpler logic
     for (let i = 0; i < market.outcomes.length; i++) {
       const price = market.prices[i];
       if (price === undefined) continue;
@@ -198,15 +186,15 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
   }
 
   if (bestOutcomeIdx === -1) {
-    console.log(`[trading]   → SKIP (no outcome with sufficient edge)`);
+    console.log(`[trading]   → SKIP (edge ${bestEdge.toFixed(4)} < minimum ${minEdge})`);
     return;
   }
 
   const bestPrice = market.prices[bestOutcomeIdx];
   const bestOutcome = market.outcomes[bestOutcomeIdx];
-  const size = Math.min(maxSize, Math.round(Math.abs(bestEdge) * maxSize * 100) / 100);
+  const size = Math.min(maxSize, Math.round(bestEdge * maxSize * 100) / 100);
 
-  console.log(`[trading] ✅ BUY ${size} USDC of "${bestOutcome}" @ ${bestPrice.toFixed(4)}`);
+  console.log(`[trading] ✅ BUY ${size} USDC of "${bestOutcome}" @ ${bestPrice.toFixed(4)} (edge: ${bestEdge.toFixed(4)})`);
 
   const trade: TradeRecord = {
     id: newId(),
