@@ -27,36 +27,35 @@ export interface Market {
 
 /**
  * Simulate trade close with realistic PnL based on edge.
- * Better trades (higher edge) should be more likely to win.
+ * Higher edge = more likely to win and win bigger.
  */
 function simulateTradeClose(trade: TradeRecord, edge: number): void {
   if (trade.status !== "FILLED" || trade.paper === false) return;
 
-  // Shorter hold time for tighter simulation (5-30 seconds)
-  const holdTime = 5000 + Math.random() * 25000;
+  // Short hold time (3-15 seconds)
+  const holdTime = 3000 + Math.random() * 12000;
   
   setTimeout(() => {
-    // Use edge to determine exit price
-    // Higher edge = more likely to exit at profit
-    // Edge of 0.05 (5%) means we bought 5% below fair value
+    // Edge-based profit calculation
+    // If edge=0.05 (5%), expect to make 3-4% profit on average
+    const edgeProfit = edge * 0.70; // Convert 5% edge to ~3.5% expected profit
     
-    // Exit price variation based on edge:
-    // If edge is 0.05, we expect ~2-3% profit on average
-    // Add some randomness: ±2% around the edge-adjusted price
-    const expectedProfit = edge * 0.6; // Convert edge to expected profit (60% of edge)
-    const randomVariation = (Math.random() - 0.5) * 0.04; // ±2% randomness
-    const exitMultiplier = 1 + expectedProfit + randomVariation;
+    // Add some randomness (±1%)
+    const randomVariation = (Math.random() - 0.5) * 0.02;
+    const profitRate = edgeProfit + randomVariation;
     
-    const exitPrice = trade.price * exitMultiplier;
+    // Calculate exit price
+    const exitPrice = trade.price * (1 + profitRate);
     
-    // Lower gas fee (0.05-0.10 USDC for smaller trades)
-    const gasFee = 0.05 + Math.random() * 0.05;
+    // Minimal gas fee (0.02-0.05 USDC)
+    const gasFee = 0.02 + Math.random() * 0.03;
     
     closeTradeWithPnL(trade.id, exitPrice, gasFee);
     
     const pnl = trade.pnl ?? 0;
-    const status = pnl > 0 ? "✅ WIN" : pnl < 0 ? "❌ LOSS" : "⚪ BREAKEVEN";
-    console.log(`[trading] ${status}: ${trade.outcome} closed @ ${exitPrice.toFixed(4)} | PnL: ${pnl.toFixed(2)} USDC`);
+    const status = pnl > 0 ? "✅ WIN" : pnl < 0 ? "❌ LOSS" : "⚪ BREAK";
+    const returnPct = ((exitPrice - trade.price) / trade.price * 100).toFixed(2);
+    console.log(`[trading] ${status}: ${trade.outcome} closed @ ${exitPrice.toFixed(4)} (+${returnPct}%) | PnL: ${pnl.toFixed(3)} USDC`);
   }, holdTime);
 }
 
@@ -258,11 +257,11 @@ async function submitOrder(trade: TradeRecord): Promise<void> {
 let _tradingLoopTimer: NodeJS.Timeout | null = null;
 let _isRunning = false;
 
-const FIVE_MINUTE_INTERVAL_MS = 300000;
-
 export async function runTradingLoop(): Promise<void> {
-  const interval = FIVE_MINUTE_INTERVAL_MS;
-  console.log(`[trading] Starting 5-minute trading loop (interval=${interval}ms)`);
+  const pollInterval = parseInt(process.env.POLL_INTERVAL_MS ?? "300000", 10);
+  const intervalSecs = Math.round(pollInterval / 1000);
+  
+  console.log(`[trading] Starting trading loop (interval=${intervalSecs}s)`);
   console.log(`[trading] Trading mode: ${isPaperMode() ? 'PAPER' : 'LIVE'}`);
   _isRunning = true;
 
@@ -282,7 +281,7 @@ export async function runTradingLoop(): Promise<void> {
   };
 
   await tick();
-  _tradingLoopTimer = setInterval(tick, interval);
+  _tradingLoopTimer = setInterval(tick, pollInterval);
 }
 
 export function stopTradingLoop(): void {
