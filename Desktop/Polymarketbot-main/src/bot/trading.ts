@@ -49,6 +49,12 @@ function hasOpenPositionInMarket(marketId: string): boolean {
   );
 }
 
+/** Count currently open trades */
+function getOpenTradesCount(): number {
+  const trades = getAllTrades();
+  return trades.filter((t) => t.status === "FILLED" || t.status === "OPEN").length;
+}
+
 /** Fetch active markets accepting orders from the Polymarket CLOB API. */
 export async function fetchMarkets(): Promise<Market[]> {
   const baseUrl = process.env.CLOB_API_URL ?? "https://clob.polymarket.com";
@@ -97,15 +103,8 @@ export async function fetchMarkets(): Promise<Market[]> {
 
 /**
  * Calculate edge for an outcome in a binary market.
- * Edge = How much the actual price differs from fair value.
- * 
- * For binary outcomes where prices should sum to ~1.0:
- * - If Yes=0.3 and No=0.7, they're fairly priced (summed to 1.0)
- * - If Yes=0.2 and No=0.7, Yes is underpriced (edge = 0.1)
- * - If Yes=0.4 and No=0.7, Yes is overpriced (edge = -0.1)
  */
 function calculateEdge(outcome: string, price: number, otherPrice: number): number {
-  // Fair value would be where prices sum to 1.0
   const fairValue = 1.0 - otherPrice;
   const edge = fairValue - price;
   return edge;
@@ -120,8 +119,8 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
   const maxSize = getMaxPositionSize();
   const isPaper = isPaperMode();
   
-  const trades = getAllTrades();
-  const openTrades = trades.filter((t) => t.status === "FILLED" || t.status === "OPEN").length;
+  // Get current open trades COUNT (refreshed for each market)
+  const openTrades = getOpenTradesCount();
   
   if (openTrades >= maxConcurrent) {
     console.log(`[trading] Skipping market: ${openTrades}/${maxConcurrent} concurrent trades reached`);
@@ -139,7 +138,7 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
 
   const marketId = market.conditionId;
   if (hasOpenPositionInMarket(marketId)) {
-    console.log(`[trading] ✓ Already have position in market: ${market.question.substring(0, 40)}…`);
+    console.log(`[trading] ✓ Already have position in: ${market.question.substring(0, 40)}…`);
     return;
   }
 
@@ -148,7 +147,6 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
   let bestEdge = minEdge - 0.0001;
 
   if (market.outcomes.length === 2) {
-    // Binary market: compare Yes vs No
     const edge0 = calculateEdge(market.outcomes[0], market.prices[0], market.prices[1]);
     const edge1 = calculateEdge(market.outcomes[1], market.prices[1], market.prices[0]);
 
@@ -280,6 +278,5 @@ export function isTradingLoopRunning(): boolean {
 }
 
 export function getCurrentOpenTradeCount(): number {
-  const trades = getAllTrades();
-  return trades.filter((t) => t.status === "FILLED" || t.status === "OPEN").length;
+  return getOpenTradesCount();
 }
