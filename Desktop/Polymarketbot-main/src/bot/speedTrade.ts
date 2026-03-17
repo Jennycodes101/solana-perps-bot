@@ -501,8 +501,10 @@ async function executeTrade(params: ExecuteTradeParams): Promise<void> {
     }
 
     // Record trade to stats
+    // Record trade to stats
     const tradeRecord: TradeRecord = {
       id: trade.id,
+      marketId: marketId,
       market: marketId,
       side: trade.side,
       outcome: trade.outcome,
