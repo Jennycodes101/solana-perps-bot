@@ -1,7 +1,6 @@
 import axios from "axios";
-import { getWallet, getTokenBalance } from "../utils/wallet";
-import { recordTrade, getAllTrades, updateTradeStatus, closeTradeWithPnL } from "../admin/stats";
-import { getItem, setItem } from "../utils/jsonStore";
+import { getWallet } from "../utils/wallet";
+import { recordTrade, getAllTrades, closeTradeWithPnL } from "../admin/stats";
 import { isPaperMode } from "../admin/tradingMode";
 import { getMaxConcurrentTrades, getMaxPositionSize } from "../admin/tradingLimits";
 import type { TradeRecord } from "../admin/stats";
@@ -51,7 +50,7 @@ function simulateTradeClose(trade: TradeRecord): void {
 function hasOpenPosition(marketId: string, outcome: string): boolean {
   const trades = getAllTrades();
   return trades.some((t) => 
-    t.market === marketId && 
+    t.marketId === marketId && 
     t.outcome === outcome && 
     (t.status === "FILLED" || t.status === "OPEN")
   );
@@ -141,7 +140,7 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
     const outcome = market.outcomes[i];
     const marketId = market.conditionId;
 
-    // IMPORTANT: Check if we already have an open position
+    // IMPORTANT: Check if we already have an open position for this exact market/outcome combo
     if (hasOpenPosition(marketId, outcome)) {
       console.log(`[trading] ✓ Already have open position: ${outcome}`);
       continue;
@@ -164,7 +163,8 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
     const trade: TradeRecord = {
       id: newId(),
       timestamp: Date.now(),
-      market: marketId, // Use condition_id for deduplication
+      marketId,              // Use condition_id for deduplication
+      market: market.question, // Use question for display
       outcome,
       side: "BUY",
       size,
@@ -200,7 +200,7 @@ async function submitOrder(trade: TradeRecord): Promise<void> {
   await axios.post(
     `${baseUrl}/order`,
     {
-      market: trade.market,
+      market: trade.marketId,
       side: trade.side,
       price: trade.price,
       size: trade.size,

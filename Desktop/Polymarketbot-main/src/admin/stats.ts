@@ -2,7 +2,8 @@ import { setItem, getItem, saveStore } from "../utils/jsonStore";
 
 export interface TradeRecord {
   id: string;
-  market: string;
+  marketId: string;  // condition_id for deduplication
+  market: string;    // question for display
   side: "BUY" | "SELL";
   outcome: string;
   price: number;

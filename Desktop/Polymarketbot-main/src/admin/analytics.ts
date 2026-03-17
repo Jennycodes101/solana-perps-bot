@@ -1,6 +1,5 @@
 import { TradeRecord } from "./stats";
 
-/** PnL Tracking - Calculate profit/loss per trade and total */
 export interface PnLData {
   tradeId: string;
   pnl: number;
@@ -8,6 +7,7 @@ export interface PnLData {
 }
 
 export interface Position {
+  marketId: string;
   market: string;
   outcome: string;
   side: "BUY" | "SELL";
@@ -29,10 +29,9 @@ export interface Analytics {
   largestLoss: number;
   avgWin: number;
   avgLoss: number;
-  profitFactor: number; // total wins / total losses
+  profitFactor: number;
 }
 
-/** Calculate PnL for all trades */
 export function calculateAllPnL(trades: TradeRecord[]): PnLData[] {
   return trades.map((trade) => ({
     tradeId: trade.id,
@@ -41,14 +40,14 @@ export function calculateAllPnL(trades: TradeRecord[]): PnLData[] {
   }));
 }
 
-/** Get position summary by market/outcome */
 export function getPositionSummary(trades: TradeRecord[]): Position[] {
   const posMap = new Map<string, Position>();
 
   trades.forEach((trade) => {
-    if (trade.status === "CANCELLED" || trade.status === "CLOSED") return; // Skip cancelled and closed trades
+    if (trade.status === "CANCELLED" || trade.status === "CLOSED") return;
 
-    const key = `${trade.market}|${trade.outcome}|${trade.side}`;
+    // Use marketId + outcome + side as key to avoid duplicates
+    const key = `${trade.marketId}|${trade.outcome}|${trade.side}`;
     const existing = posMap.get(key);
 
     if (existing) {
@@ -56,6 +55,7 @@ export function getPositionSummary(trades: TradeRecord[]): Position[] {
       existing.totalCost += trade.size * trade.price;
     } else {
       posMap.set(key, {
+        marketId: trade.marketId,
         market: trade.market,
         outcome: trade.outcome,
         side: trade.side,
@@ -65,17 +65,14 @@ export function getPositionSummary(trades: TradeRecord[]): Position[] {
     }
   });
 
-  // Convert to array and calculate net exposure
   return Array.from(posMap.values()).map((pos) => ({
     ...pos,
     netExposure: pos.totalCost,
-    currentValue: pos.totalCost, // Will be updated when market data is available
+    currentValue: pos.totalCost,
   }));
 }
 
-/** Calculate comprehensive trade analytics */
 export function calculateAnalytics(trades: TradeRecord[]): Analytics {
-  // Only count CLOSED trades (trades that have settled with a PnL)
   const closedTrades = trades.filter((t) => t.status === "CLOSED" && t.pnl !== undefined);
 
   if (closedTrades.length === 0) {
