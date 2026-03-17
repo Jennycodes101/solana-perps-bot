@@ -54,7 +54,6 @@ function getOpenTradesCount(): number {
 }
 
 export async function fetchMarkets(): Promise<Market[]> {
-  // Use mock markets for testing
   const USE_MOCK = process.env.USE_MOCK_MARKETS === "true";
   
   if (USE_MOCK) {
@@ -106,10 +105,38 @@ export async function fetchMarkets(): Promise<Market[]> {
   }
 }
 
-function calculateEdge(outcome: string, price: number, otherPrice: number): number {
-  const fairValue = 1.0 - otherPrice;
-  const edge = fairValue - price;
-  return edge;
+/**
+ * Calculate edge for a binary outcome.
+ * In a fair binary market: Yes + No prices = 1.0
+ * 
+ * If Yes=0.35 and No=0.65:
+ *   - Fair Yes price should be 0.35 (35% likely)
+ *   - Edge = 0 (fair pricing)
+ * 
+ * If Yes=0.30 and No=0.70:
+ *   - Fair Yes price should be 0.30
+ *   - Edge = 0 (fair pricing)
+ * 
+ * If Yes is mispriced (too low):
+ *   - Yes=0.20, No=0.80
+ *   - Fair Yes should be 0.20, but we can buy at discount
+ *   - Edge = how much it deviates from fair
+ * 
+ * Better approach: calculate implied probability and compare
+ */
+function calculateEdge(yourPrice: number, otherPrice: number): number {
+  // In a perfectly efficient market: price_a + price_b = 1.0
+  // If they don't sum to 1.0, there's an arbitrage opportunity
+  const priceSum = yourPrice + otherPrice;
+  
+  // If sum < 1.0, both sides are underpriced (edge = 1.0 - sum)
+  // If sum > 1.0, both sides are overpriced (edge = sum - 1.0, negative)
+  const edge = 1.0 - priceSum;
+  
+  // But really, we want: is THIS outcome underpriced?
+  // Underpriced if: yourPrice < 1 - otherPrice
+  const fairPrice = 1.0 - otherPrice;
+  return fairPrice - yourPrice;
 }
 
 export async function evaluateAndTrade(market: Market): Promise<void> {
@@ -144,8 +171,8 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
   let bestEdge = minEdge - 0.0001;
 
   if (market.outcomes.length === 2) {
-    const edge0 = calculateEdge(market.outcomes[0], market.prices[0], market.prices[1]);
-    const edge1 = calculateEdge(market.outcomes[1], market.prices[1], market.prices[0]);
+    const edge0 = calculateEdge(market.prices[0], market.prices[1]);
+    const edge1 = calculateEdge(market.prices[1], market.prices[0]);
 
     console.log(`[trading] Market: ${market.question?.substring(0, 60)}`);
     console.log(`[trading]   ${market.outcomes[0]}: price=${market.prices[0].toFixed(4)}, edge=${edge0.toFixed(4)}`);
