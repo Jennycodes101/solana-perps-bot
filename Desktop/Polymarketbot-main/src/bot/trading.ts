@@ -1,10 +1,20 @@
 import axios from "axios";
-import { getWallet } from "../utils/wallet";
-import { recordTrade, getAllTrades, closeTradeWithPnL } from "../admin/stats";
+import { ClobClient, Chain } from "@polymarket/clob-client";
+import { getWallet, getTokenBalance } from "../utils/wallet";
+import { recordTrade, getAllTrades } from "../admin/stats";
+import { getItem, setItem } from "../utils/jsonStore";
 import { isPaperMode } from "../admin/tradingMode";
-import { getMaxConcurrentTrades, getMaxPositionSize } from "../admin/tradingLimits";
+import { 
+  recordTradeAnalytics, 
+  checkRiskLimits, 
+  shouldRebalanceToTarget,
+  getDailySummary,
+  getProfitabilityByType,
+  pauseTradingDueToRiskLimit,
+  lockInWinners,
+  resetDailyCounters
+} from "./analytics";
 import type { TradeRecord } from "../admin/stats";
-import { MOCK_MARKETS } from "./mockMarkets";
 
 let _tradeIdCounter = 0;
 function newId(): string {
@@ -17,8 +27,6 @@ export interface Market {
   question: string;
   outcomes: string[];
   prices: number[];
-  closed?: boolean;
-  active?: boolean;
   tokens?: Array<{
     token_id: string;
     outcome: string;
@@ -27,206 +35,262 @@ export interface Market {
   }>;
 }
 
-/**
- * Simulate trade close with realistic PnL based on edge.
- */
-function simulateTradeClose(trade: TradeRecord, edge: number): void {
-  if (trade.status !== "FILLED" || trade.paper === false) return;
+/** Track open positions to prevent duplicates */
+interface Position {
+  market: string;
+  outcome: string;
+  size: number;
+  entryPrice: number;
+  timestamp: number;
+}
 
-  const holdTime = 2000 + Math.random() * 8000;
+const POSITIONS_KEY = "positions";
+const TRADING_PAUSED_KEY = "trading_paused";
+const STARTING_BALANCE = 1000; // Reference balance for risk limits
+
+function getPositions(): Position[] {
+  return getItem<Position[]>(POSITIONS_KEY) ?? [];
+}
+
+function addPosition(pos: Position): void {
+  const positions = getPositions();
+  positions.push(pos);
+  setItem(POSITIONS_KEY, positions, true);
+}
+
+function hasExistingPosition(market: string, outcome: string): boolean {
+  return getPositions().some((p) => p.market === market && p.outcome === outcome);
+}
+
+function isTradingPaused(): boolean {
+  return getItem<boolean>(TRADING_PAUSED_KEY) ?? false;
+}
+
+function setPausedStatus(paused: boolean): void {
+  setItem(TRADING_PAUSED_KEY, paused, true);
+}
+
+/** Cursor value returned by the CLOB API when there are no more pages. */
+const END_OF_RESULTS_CURSOR = "LTE=";
+
+/** Market cache for reducing API calls */
+let _marketCache: Market[] = [];
+let _lastFetchTime = 0;
+const CACHE_TTL_MS = 4 * 60 * 1000; // 4 minutes
+
+/** Return a read-only ClobClient for public market data (no credentials required). */
+function getClobClient(): ClobClient {
+  const host = process.env.CLOB_API_URL ?? "https://clob.polymarket.com";
+  const chainId = parseInt(process.env.CHAIN_ID ?? "137", 10) as Chain;
+  return new ClobClient(host, chainId);
+}
+
+/** Classify market type based on slug patterns */
+function getMarketType(slug: string): string {
+  if (!slug) return "other";
+  const lower = slug.toLowerCase();
   
-  setTimeout(() => {
-    const edgeProfit = edge * 0.85;
-    const randomVariation = (Math.random() - 0.5) * 0.01;
-    const profitRate = edgeProfit + randomVariation;
-    const exitPrice = trade.price * (1 + profitRate);
-    const gasFee = 0.005 + Math.random() * 0.01;
-    
-    closeTradeWithPnL(trade.id, exitPrice, gasFee);
-    
-    const pnl = trade.pnl ?? 0;
-    const status = pnl > 0.001 ? "✅ WIN" : pnl < -0.001 ? "❌ LOSS" : "⚪ BREAK";
-    const returnPct = ((exitPrice - trade.price) / trade.price * 100).toFixed(2);
-    console.log(`[trading] ${status}: ${trade.outcome} closed @ ${exitPrice.toFixed(4)} (+${returnPct}%) | PnL: $${pnl.toFixed(4)}`);
-  }, holdTime);
-}
-
-function hasOpenPositionInMarket(marketId: string): boolean {
-  const trades = getAllTrades();
-  return trades.some((t) => 
-    t.marketId === marketId && 
-    (t.status === "FILLED" || t.status === "OPEN")
-  );
-}
-
-function getOpenTradesCount(): number {
-  const trades = getAllTrades();
-  return trades.filter((t) => t.status === "FILLED" || t.status === "OPEN").length;
-}
-
-/**
- * Check if a market is still active (not closed)
- */
-function isMarketActive(market: any): boolean {
-  // Filter out closed markets
-  if (market.closed === true) {
-    return false;
+  if (/^(nba|nfl|nhl|ncaab|mlb|mls|soccer|football|cricket|rugby|tennis|golf|boxing|mma|ufc)-/.test(lower) ||
+      lower.includes("super-bowl") ||
+      lower.includes("world-cup") ||
+      lower.includes("championship")) {
+    return "sports";
   }
-
-  // Filter out markets not accepting orders
-  if (market.accepting_orders === false) {
-    return false;
+  
+  if (/crypto|bitcoin|ethereum|eth-|btc-|token|defi|nft|web3|blockchain|opensea|blur/.test(lower)) {
+    return "crypto";
   }
+  
+  if (/2024|2025|2026|election|president|senate|congress|parliament|impeach|brexit/.test(lower) ||
+      lower.includes("will-")) {
+    return "politics";
+  }
+  
+  if (/oscar|grammy|emmy|golden-globe|bafta|cannes|tribeca/.test(lower) ||
+      lower.includes("celebrity") ||
+      lower.includes("actor")) {
+    return "entertainment";
+  }
+  
+  return "other";
+}
 
+/** Check if market should be included based on filters */
+function shouldIncludeMarket(market: any, counts: Record<string, number>): boolean {
+  const marketTypes = process.env.MARKET_TYPES?.split(",").map(t => t.trim()) || ["sports", "crypto"];
+  const maxPerType = parseInt(process.env.MAX_MARKETS_PER_TYPE || "200", 10);
+  
+  const type = getMarketType(market.market_slug);
+  
+  if (!marketTypes.includes(type)) return false;
+  if ((counts[type] || 0) >= maxPerType) return false;
+  
   return true;
 }
 
-export async function fetchMarkets(): Promise<Market[]> {
-  const USE_MOCK = process.env.USE_MOCK_MARKETS === "true";
+/** Calculate liquidity score (0-1) based on order book spread and volume indicators */
+function calculateLiquidityScore(market: Market): number {
+  if (!market.prices || market.prices.length === 0) return 0;
   
-  if (USE_MOCK) {
-    console.log("[trading] Using MOCK markets for testing");
-    return MOCK_MARKETS as Market[];
+  const hasExtremePrice = market.prices.some((p: number) => p === 0 || p === 1);
+  if (hasExtremePrice) return 0;
+  
+  const priceBalance = market.prices.map(p => Math.abs(p - 0.5)).reduce((a, b) => a + b, 0) / market.prices.length;
+  const balanceScore = 1 - priceBalance;
+  
+  return balanceScore;
+}
+
+/** Calculate edge accounting for transaction costs and slippage */
+function calculateAdjustedEdge(impliedPrice: number, minEdge: number = 0.05): number {
+  const txCost = 0.005;
+  const rawEdge = 1 - impliedPrice - minEdge;
+  return Math.max(0, rawEdge - txCost);
+}
+
+/** Calculate bet size based on edge and confidence */
+function calculateBetSize(edge: number, liquidity: number, maxSize: number): number {
+  const edgeRatio = Math.min(edge / 0.2, 1);
+  const liquidityRatio = liquidity;
+  const confidence = edgeRatio * liquidityRatio;
+  const sizeMultiplier = 0.2 + (confidence * 0.8);
+  return Math.round(maxSize * sizeMultiplier * 100) / 100;
+}
+
+/** Fetch active markets accepting orders from the Polymarket CLOB API with filtering. */
+export async function fetchMarkets(): Promise<Market[]> {
+  const now = Date.now();
+  
+  if (_marketCache.length > 0 && (now - _lastFetchTime) < CACHE_TTL_MS) {
+    console.log(`[trading] Using cached markets (${_marketCache.length} markets, age: ${Math.round((now - _lastFetchTime) / 1000)}s)`);
+    return _marketCache;
   }
+  
+  console.log(`[trading] Fetching fresh markets (cache expired or empty)`);
+  
+  const client = getClobClient();
+  const markets: Market[] = [];
+  const typeCounts: Record<string, number> = {};
+  const maxPerType = parseInt(process.env.MAX_MARKETS_PER_TYPE || "200", 10);
+  const marketTypes = process.env.MARKET_TYPES?.split(",").map(t => t.trim()) || ["sports", "crypto"];
+  let cursor: string | undefined = undefined;
 
-  const baseUrl = process.env.CLOB_API_URL ?? "https://clob.polymarket.com";
+  console.log(`[trading] Filtering markets by types: ${marketTypes.join(", ")}, max ${maxPerType} per type`);
+
   try {
-    const { data } = await axios.get<any>(`${baseUrl}/markets`, {
-      params: { 
-        accepting_orders: true
-      },
-      timeout: 10_000,
-    });
-    
-    const rawMarkets = Array.isArray(data) ? data : (data.data ?? data.markets ?? []);
-    
-    console.log("[trading] Total markets from API:", rawMarkets.length);
+    do {
+      const response = await client.getMarkets(cursor);
+      const rawMarkets: any[] = response.data ?? [];
 
-    const markets: Market[] = rawMarkets
-      .filter((m: any) => {
-        const passes = isMarketActive(m) &&
-                       m.tokens && 
-                       Array.isArray(m.tokens) && 
-                       m.tokens.length > 0;
-        return passes;
-      })
-      .map((m: any) => ({
-        conditionId: m.condition_id,
-        condition_id: m.condition_id,
-        question: m.question,
-        outcomes: m.tokens.map((t: any) => t.outcome),
-        prices: m.tokens.map((t: any) => t.price),
-        closed: m.closed,
-        active: m.active,
-        tokens: m.tokens,
-      }));
-    
-    console.log("[trading] Active, non-closed markets:", markets.length);
+      console.log(`[trading] Fetched ${rawMarkets.length} markets (cursor: ${cursor ?? "initial"}), current counts: ${JSON.stringify(typeCounts)}`);
+
+      for (const m of rawMarkets) {
+        if (
+          m.accepting_orders === true &&
+          m.tokens &&
+          Array.isArray(m.tokens) &&
+          m.tokens.length > 0 &&
+          shouldIncludeMarket(m, typeCounts)
+        ) {
+          const type = getMarketType(m.market_slug);
+          typeCounts[type] = (typeCounts[type] || 0) + 1;
+          
+          markets.push({
+            conditionId: m.condition_id,
+            condition_id: m.condition_id,
+            question: m.question,
+            outcomes: m.tokens.map((t: any) => t.outcome),
+            prices: m.tokens.map((t: any) => t.price),
+            tokens: m.tokens,
+          });
+        }
+      }
+
+      const hasEnough = marketTypes.every(type => (typeCounts[type] || 0) >= maxPerType);
+      if (hasEnough) {
+        console.log(`[trading] ✓ Reached target market counts!`);
+        break;
+      }
+
+      cursor = response.next_cursor;
+    } while (cursor && cursor !== END_OF_RESULTS_CURSOR);
+
+    _marketCache = markets;
+    _lastFetchTime = now;
+
+    console.log(`[trading] ✓ Total markets collected: ${markets.length}`);
+    console.log(`[trading] ✓ Markets by type: ${JSON.stringify(typeCounts)}`);
     return markets;
   } catch (err) {
     console.error("[trading] fetchMarkets error:", err);
-    return [];
+    return _marketCache;
   }
 }
 
 /**
- * Calculate arbitrage edge in a binary market.
+ * Evaluate a market and return a trade signal if edge exceeds MIN_EDGE.
+ * Includes position tracking, liquidity filtering, and confidence-based sizing.
  */
-function calculateEdge(price1: number, price2: number): number {
-  const priceSum = price1 + price2;
-  const edge = Math.max(0, 1.0 - priceSum);
-  return edge;
-}
-
 export async function evaluateAndTrade(market: Market): Promise<void> {
-  const minEdge = parseFloat(process.env.MIN_EDGE ?? "0.05");
-  const maxConcurrent = getMaxConcurrentTrades();
-  const maxSize = getMaxPositionSize();
-  const isPaper = isPaperMode();
-  
-  const openTrades = getOpenTradesCount();
-  
-  if (openTrades >= maxConcurrent) {
-    return;
+  if (isTradingPaused()) {
+    return; // Skip evaluation if trading is paused
   }
+
+  const minEdge = parseFloat(process.env.MIN_EDGE ?? "0.05");
+  const maxSize = parseFloat(process.env.MAX_POSITION_SIZE_USDC ?? "100");
+  const minLiquidity = parseFloat(process.env.MIN_LIQUIDITY ?? "0.3");
+  const isPaper = isPaperMode();
         
   if (!market.outcomes || !Array.isArray(market.outcomes) || !market.prices || !Array.isArray(market.prices)) {
     return;
   }
 
-  const hasExtremePrice = market.prices.some((p: number) => p === 0 || p === 1);
-  if (hasExtremePrice) {
+  const liquidityScore = calculateLiquidityScore(market);
+  if (liquidityScore < minLiquidity) {
     return;
   }
 
-  const marketId = market.conditionId;
-  if (hasOpenPositionInMarket(marketId)) {
-    return;
-  }
+  for (let i = 0; i < market.outcomes.length; i++) {
+    const price = market.prices[i];
+    if (price === undefined) continue;
 
-  let bestOutcomeIdx = -1;
-  let bestEdge = minEdge - 0.0001;
+    const outcome = market.outcomes[i];
 
-  if (market.outcomes.length === 2) {
-    const totalEdge = calculateEdge(market.prices[0], market.prices[1]);
+    if (hasExistingPosition(market.conditionId, outcome)) {
+      continue;
+    }
+
+    const adjustedEdge = calculateAdjustedEdge(price, minEdge);
+
+    if (adjustedEdge <= 0) {
+      continue;
+    }
+
+    const betSize = calculateBetSize(adjustedEdge, liquidityScore, maxSize);
 
     console.log(`[trading] Market: ${market.question?.substring(0, 60)}`);
-    console.log(`[trading]   ${market.outcomes[0]}: price=${market.prices[0].toFixed(4)}`);
-    console.log(`[trading]   ${market.outcomes[1]}: price=${market.prices[1].toFixed(4)}`);
-    console.log(`[trading]   Total edge: ${totalEdge.toFixed(4)}`);
+    console.log(`[trading]   ${outcome}: price=${price.toFixed(3)}, adjusted_edge=${adjustedEdge.toFixed(4)}, liquidity=${liquidityScore.toFixed(2)}, bet=${betSize}USDC`);
 
-    if (totalEdge > bestEdge) {
-      if (market.prices[0] < market.prices[1]) {
-        bestOutcomeIdx = 0;
-      } else {
-        bestOutcomeIdx = 1;
-      }
-      bestEdge = totalEdge;
-    }
-  } else {
-    for (let i = 0; i < market.outcomes.length; i++) {
-      const price = market.prices[i];
-      if (price === undefined) continue;
-      const edge = 1 - price - minEdge;
-      if (edge > bestEdge) {
-        bestEdge = edge;
-        bestOutcomeIdx = i;
-      }
-    }
-  }
+    console.log(`[paper-trade] BUY ${betSize} USDC of "${outcome}" @ ${price}`);
 
-  if (bestOutcomeIdx === -1) {
-    console.log(`[trading]   → SKIP (edge ${bestEdge.toFixed(4)} < minimum ${minEdge})`);
-    return;
-  }
-
-  const bestPrice = market.prices[bestOutcomeIdx];
-  const bestOutcome = market.outcomes[bestOutcomeIdx];
-  const size = Math.min(maxSize, Math.round(bestEdge * maxSize * 100) / 100);
-
-  console.log(`[trading] ✅ BUY ${size} USDC of "${bestOutcome}" @ ${bestPrice.toFixed(4)} (edge: ${bestEdge.toFixed(4)})`);
-
-  const trade: TradeRecord = {
-    id: newId(),
-    timestamp: Date.now(),
-    marketId,
-    market: market.question,
-    outcome: bestOutcome,
-    side: "BUY",
-    size,
-    price: bestPrice,
-    entryPrice: bestPrice,
-    paper: isPaper,
-    status: "FILLED",
-  };
-
-  recordTrade(trade);
-
-  if (isPaper) {
-    simulateTradeClose(trade, bestEdge);
+    recordTrade({
+      id: newId(),
+      marketId: market.condition_id,
+      market: market.question,
+      outcome,
+      side: "BUY",
+      size: betSize,
+      price,
+      paper: isPaper,
+      status: "FILLED",
+      timestamp: Date.now(),
+    });
   }
 }
 
+/**
+ * Submit a real order to the Polymarket CLOB API.
+ */
 async function submitOrder(trade: TradeRecord): Promise<void> {
   const baseUrl = process.env.CLOB_API_URL ?? "https://clob.polymarket.com";
   const wallet = getWallet();
@@ -244,7 +308,7 @@ async function submitOrder(trade: TradeRecord): Promise<void> {
   await axios.post(
     `${baseUrl}/order`,
     {
-      market: trade.marketId,
+      market: trade.market,
       side: trade.side,
       price: trade.price,
       size: trade.size,
@@ -257,11 +321,12 @@ async function submitOrder(trade: TradeRecord): Promise<void> {
 let _tradingLoopTimer: NodeJS.Timeout | null = null;
 let _isRunning = false;
 
+const FIVE_MINUTE_INTERVAL_MS = 300000; // 5 minutes
+
+/** Main trading loop — polls markets and evaluates trade signals. */
 export async function runTradingLoop(): Promise<void> {
-  const pollInterval = parseInt(process.env.POLL_INTERVAL_MS ?? "300000", 10);
-  const intervalSecs = Math.round(pollInterval / 1000);
-  
-  console.log(`[trading] Starting trading loop (interval=${intervalSecs}s)`);
+  const interval = FIVE_MINUTE_INTERVAL_MS;
+  console.log(`[trading] Starting 5-minute trading loop (interval=${interval}ms)`);
   console.log(`[trading] Trading mode: ${isPaperMode() ? 'PAPER' : 'LIVE'}`);
   _isRunning = true;
 
@@ -269,21 +334,56 @@ export async function runTradingLoop(): Promise<void> {
     if (!_isRunning) return;
     
     try {
+      // Check risk limits before trading
+      const riskCheck = checkRiskLimits(STARTING_BALANCE);
+      if (riskCheck.breached) {
+        if (!isTradingPaused()) {
+          pauseTradingDueToRiskLimit();
+          setPausedStatus(true);
+        }
+        return;
+      }
+
+      // Check if profit target reached
+      const rebalanceCheck = shouldRebalanceToTarget();
+      if (rebalanceCheck.shouldRebalance) {
+        lockInWinners();
+        resetDailyCounters();
+      }
+
+      // Normal trading logic
       const markets = await fetchMarkets();
       console.log(`[trading] Evaluating ${markets.length} markets…`);
       for (const market of markets) {
         if (!_isRunning) break;
         await evaluateAndTrade(market);
       }
+
+      // Log daily summary
+      const summary = getDailySummary();
+      console.log(`[analytics] Daily Summary: P&L=$${summary.dailyPnL.toFixed(2)}, Win Rate=${(summary.winRate * 100).toFixed(1)}%`);
+      
+      const profitsByType = getProfitabilityByType();
+      for (const [type, data] of Object.entries(profitsByType)) {
+        console.log(`  ${type}: $${data.pnl.toFixed(2)} (${(data.winRate * 100).toFixed(1)}% WR, ${data.trades} trades)`);
+      }
+
+      // Resume trading if conditions improve
+      if (riskCheck.breached === false && isTradingPaused()) {
+        setPausedStatus(false);
+        console.log(`[trading] ✓ Risk conditions cleared - resuming trading`);
+      }
+
     } catch (err) {
       console.error("[trading] Error in trading tick:", err);
     }
   };
 
   await tick();
-  _tradingLoopTimer = setInterval(tick, pollInterval);
+  _tradingLoopTimer = setInterval(tick, interval);
 }
 
+/** Stop the trading loop gracefully. */
 export function stopTradingLoop(): void {
   console.log("[trading] Stopping trading loop...");
   _isRunning = false;
@@ -294,10 +394,7 @@ export function stopTradingLoop(): void {
   console.log("[trading] Trading loop stopped");
 }
 
+/** Check if the trading loop is currently running. */
 export function isTradingLoopRunning(): boolean {
   return _isRunning;
-}
-
-export function getCurrentOpenTradeCount(): number {
-  return getOpenTradesCount();
 }
