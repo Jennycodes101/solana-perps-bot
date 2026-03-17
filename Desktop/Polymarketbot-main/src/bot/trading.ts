@@ -17,6 +17,9 @@ export interface Market {
   question: string;
   outcomes: string[];
   prices: number[];
+  status?: string;
+  end_date?: string;
+  closeTime?: number;
   tokens?: Array<{
     token_id: string;
     outcome: string;
@@ -27,27 +30,17 @@ export interface Market {
 
 /**
  * Simulate trade close with realistic PnL based on edge.
- * Higher edge = more likely to win and win bigger.
  */
 function simulateTradeClose(trade: TradeRecord, edge: number): void {
   if (trade.status !== "FILLED" || trade.paper === false) return;
 
-  // Short hold time (2-10 seconds)
   const holdTime = 2000 + Math.random() * 8000;
   
   setTimeout(() => {
-    // Convert edge directly to profit
-    // Edge of 0.05 (5%) should yield ~4% profit after fees
-    const edgeProfit = edge * 0.85; // 85% of edge realized as profit
-    
-    // Add randomness (±1%)
+    const edgeProfit = edge * 0.85;
     const randomVariation = (Math.random() - 0.5) * 0.01;
     const profitRate = edgeProfit + randomVariation;
-    
-    // Calculate exit price
     const exitPrice = trade.price * (1 + profitRate);
-    
-    // Very low gas fee (0.005-0.015 USDC for micro trades)
     const gasFee = 0.005 + Math.random() * 0.01;
     
     closeTradeWithPnL(trade.id, exitPrice, gasFee);
@@ -70,6 +63,33 @@ function hasOpenPositionInMarket(marketId: string): boolean {
 function getOpenTradesCount(): number {
   const trades = getAllTrades();
   return trades.filter((t) => t.status === "FILLED" || t.status === "OPEN").length;
+}
+
+/**
+ * Check if a market is still active (not closed/resolved and hasn't ended)
+ */
+function isMarketActive(market: Market): boolean {
+  // Check if market status indicates it's closed/resolved
+  if (market.status === "closed" || market.status === "resolved" || market.status === "CLOSED" || market.status === "RESOLVED") {
+    return false;
+  }
+
+  // Check if market end date has passed
+  if (market.end_date) {
+    const endDate = new Date(market.end_date);
+    if (endDate < new Date()) {
+      return false;
+    }
+  }
+
+  if (market.closeTime) {
+    const closeTime = new Date(market.closeTime);
+    if (closeTime < new Date()) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 export async function fetchMarkets(): Promise<Market[]> {
@@ -101,10 +121,8 @@ export async function fetchMarkets(): Promise<Market[]> {
         const passes = m.accepting_orders === true &&
                        m.tokens && 
                        Array.isArray(m.tokens) && 
-                       m.tokens.length > 0;
-        if (!passes && m.accepting_orders === true) {
-          console.log("[trading] ⚠️  Market rejected (no tokens):", m.question?.substring(0, 50));
-        }
+                       m.tokens.length > 0 &&
+                       isMarketActive(m);
         return passes;
       })
       .map((m: any) => ({
@@ -113,10 +131,13 @@ export async function fetchMarkets(): Promise<Market[]> {
         question: m.question,
         outcomes: m.tokens.map((t: any) => t.outcome),
         prices: m.tokens.map((t: any) => t.price),
+        status: m.status,
+        end_date: m.end_date,
+        closeTime: m.closeTime,
         tokens: m.tokens,
       }));
     
-    console.log("[trading] Markets with tokens:", markets.length);
+    console.log("[trading] Active markets (not closed):", markets.length);
     return markets;
   } catch (err) {
     console.error("[trading] fetchMarkets error:", err);
@@ -126,7 +147,6 @@ export async function fetchMarkets(): Promise<Market[]> {
 
 /**
  * Calculate arbitrage edge in a binary market.
- * Edge exists when prices sum to < 1.0
  */
 function calculateEdge(price1: number, price2: number): number {
   const priceSum = price1 + price2;
@@ -143,7 +163,6 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
   const openTrades = getOpenTradesCount();
   
   if (openTrades >= maxConcurrent) {
-    console.log(`[trading] Skipping market: ${openTrades}/${maxConcurrent} concurrent trades reached`);
     return;
   }
         
@@ -158,7 +177,6 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
 
   const marketId = market.conditionId;
   if (hasOpenPositionInMarket(marketId)) {
-    console.log(`[trading] ✓ Already have position in: ${market.question.substring(0, 40)}…`);
     return;
   }
 
@@ -173,7 +191,6 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
     console.log(`[trading]   ${market.outcomes[1]}: price=${market.prices[1].toFixed(4)}`);
     console.log(`[trading]   Total edge: ${totalEdge.toFixed(4)}`);
 
-    // Buy the cheaper outcome to capture the edge
     if (totalEdge > bestEdge) {
       if (market.prices[0] < market.prices[1]) {
         bestOutcomeIdx = 0;
@@ -183,7 +200,6 @@ export async function evaluateAndTrade(market: Market): Promise<void> {
       bestEdge = totalEdge;
     }
   } else {
-    // For multi-outcome markets, use simpler logic
     for (let i = 0; i < market.outcomes.length; i++) {
       const price = market.prices[i];
       if (price === undefined) continue;
